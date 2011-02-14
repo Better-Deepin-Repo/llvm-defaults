@@ -1,3 +1,11 @@
+llvm-defaults (0.3) UNRELEASED; urgency=low
+
+  * Sync from Ubuntu
+  * Add myself to the uploader
+  * Update of the tags Vcs-Svn & Vcs-Browser
+
+ -- Sylvestre Ledru <sylvestre@debian.org>  Mon, 14 Feb 2011 23:50:26 +0100
+
 llvm-defaults (0.2ubuntu3) maverick; urgency=low
 
   * Bump dependencies to the final 2.8 version.
