@@ -1,4 +1,4 @@
-llvm-defaults (0.3) UNRELEASED; urgency=low
+llvm-defaults (0.3~exp1) UNRELEASED; urgency=low
 
   * Sync from Ubuntu
   * Add myself to the uploader
