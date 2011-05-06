@@ -1,10 +1,11 @@
-llvm-defaults (0.3~exp1) UNRELEASED; urgency=low
+llvm-defaults (0.3) unstable; urgency=low
 
   * Sync from Ubuntu
   * Add myself to the uploader
   * Update of the tags Vcs-Svn & Vcs-Browser
+  * Standards-Version updated to 3.9.2
 
- -- Sylvestre Ledru <sylvestre@debian.org>  Mon, 14 Feb 2011 23:50:26 +0100
+ -- Sylvestre Ledru <sylvestre@debian.org>  Wed, 04 May 2011 18:40:06 +0200
 
 llvm-defaults (0.2ubuntu3) maverick; urgency=low
 
