@@ -125,12 +125,12 @@ install: build README substvars
 	: # llvm-dev
 	dh_installdirs -pllvm-dev \
 		/usr/include \
-		/usr/share/vim/vimcurrent/syntax
+		/usr/share/vim/addons/syntax/
 	dh_link -pllvm-dev \
 		/usr/lib/llvm-2.8/include/llvm /usr/include/llvm \
 		/usr/lib/llvm-2.8/include/llvm-c /usr/include/llvm-c \
-		/usr/share/vim/vimcurrent/syntax/llvm-2.8.vim /usr/share/vim/vimcurrent/syntax/llvm.vim \
-		/usr/share/vim/vimcurrent/syntax/tablegen-2.8.vim /usr/share/vim/vimcurrent/syntax/tablegen.vim \
+		/usr/share/vim/addons/syntax/llvm-2.8.vim /usr/share/vim/addons/syntax/llvm.vim \
+		/usr/share/vim/addons/syntax/tablegen-2.8.vim /usr/share/vim/addons/syntax/tablegen.vim \
 		/usr/share/emacs/site-lisp/llvm-2.8 /usr/share/emacs/site-lisp/llvm
 
 	: # libllvm-ocaml-dev
