@@ -1,8 +1,11 @@
-llvm-defaults (0.4) UNRELEASED; urgency=low
+llvm-defaults (0.4) unstable; urgency=low
 
+  * Change hardcoded values in debian/rules for CURRENT_VERSION
   * Update of the path for vim
+  * Update the path to META.llvm reflecting the change in llvm-2.8 
+    (META.llvm-2.8 => META.llvm-2_8)
 
- -- Sylvestre Ledru <sylvestre@debian.org>  Tue, 10 May 2011 00:07:52 +0200
+ -- Sylvestre Ledru <sylvestre@debian.org>  Tue, 17 May 2011 17:53:32 +0200
 
 llvm-defaults (0.3) unstable; urgency=low
 
