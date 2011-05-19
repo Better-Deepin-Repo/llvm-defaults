@@ -17,7 +17,7 @@ REL_NO_27	:= $(shell expr $(VMINOR) - 0)$(REL_EXT)
 REL_NO_28	:= $(shell expr $(VMINOR) - 0)$(REL_EXT)
 
 # minimum required version
-REQV_28		:= (>= 2.8)
+REQV_28		:= (>= 2.8-4)
 
 CURRENT_VERSION := 2.8
 

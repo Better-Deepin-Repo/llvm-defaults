@@ -46,7 +46,7 @@ Description: Low-Level Virtual Machine (LLVM), libraries and headers
 Package: libllvm-ocaml-dev
 Architecture: any
 Section: ocaml
-Depends: llvm-runtime (= ${binary:Version}), libllvm-ocaml-${pv:llvm}-dev ${reqv:llvm}, ${misc:Depends}
+Depends: llvm-runtime (= ${binary:Version}), libllvm-${pv:llvm}-ocaml-dev ${reqv:llvm}, ${misc:Depends}
 Replaces: libllvm-ocaml-2.7-dev (<< 2.7-6)
 Description: Low-Level Virtual Machine (LLVM), bindings for OCaml
  The Low-Level Virtual Machine (LLVM) is a collection of libraries and
