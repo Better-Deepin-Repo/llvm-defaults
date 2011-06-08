@@ -2,7 +2,7 @@ llvm-defaults (0.5) unstable; urgency=low
 
   * debian/rules: Depends at least on the version 2.8-4 (Closes: #627344)
   * debian/control: Update the dependency on libllvm-2.8-ocaml-dev (instead of
-    libllvm-ocaml-2.8-dev)
+    libllvm-ocaml-2.8-dev) (Closes: #629756)
 
  -- Sylvestre Ledru <sylvestre@debian.org>  Thu, 19 May 2011 21:46:15 +0200
 
