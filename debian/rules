@@ -17,7 +17,7 @@ REL_NO_27	:= $(shell expr $(VMINOR) - 0)$(REL_EXT)
 REL_NO_28	:= $(shell expr $(VMINOR) - 0)$(REL_EXT)
 
 # minimum required version
-REQV_28		:= (>= 2.8-5)
+REQV_28		:= (>= 2.8-6)
 
 CURRENT_VERSION := 2.8
 
@@ -127,13 +127,21 @@ install: build README substvars
 	: # llvm-dev
 	dh_installdirs -pllvm-dev \
 		/usr/include \
-		/usr/share/vim/addons/syntax/
+		/usr/share/vim/addons/syntax/ \
+		/usr/lib
 	dh_link -pllvm-dev \
 		/usr/lib/llvm-$(CURRENT_VERSION)/include/llvm /usr/include/llvm \
 		/usr/lib/llvm-$(CURRENT_VERSION)/include/llvm-c /usr/include/llvm-c \
 		/usr/share/vim/addons/syntax/llvm-$(CURRENT_VERSION).vim /usr/share/vim/addons/syntax/llvm.vim \
 		/usr/share/vim/addons/syntax/tablegen-$(CURRENT_VERSION).vim /usr/share/vim/addons/syntax/tablegen.vim \
 		/usr/share/emacs/site-lisp/llvm-$(CURRENT_VERSION) /usr/share/emacs/site-lisp/llvm
+
+	for lib in \
+		libLTO.so libLLVMgold.so; do \
+		dh_link -pllvm-dev \
+		/usr/lib/llvm-$(CURRENT_VERSION)/lib/$$lib /usr/lib/$$lib; \
+	done
+
 
 	: # libllvm-ocaml-dev
 	dh_installdirs -plibllvm-ocaml-dev \

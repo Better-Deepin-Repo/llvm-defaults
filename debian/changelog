@@ -1,3 +1,14 @@
+llvm-defaults (0.6) unstable; urgency=low
+
+  * debian/rules: Depends at least on the version 2.8-6 of llvm
+  * debian/rules: Link /usr/lib/llvm-2.8/lib/libLLVMgold.so to
+                  /usr/lib/libLLVMgold.so
+                  and /usr/lib/llvm-2.8/lib/libLTO.so to
+                  /usr/lib/libLTO.so
+    See bug #631178
+
+ -- Sylvestre Ledru <sylvestre@debian.org>  Sun, 26 Jun 2011 23:44:04 +0200
+
 llvm-defaults (0.5) unstable; urgency=low
 
   * debian/rules: Depends at least on the version 2.8-4 (Closes: #627344)
