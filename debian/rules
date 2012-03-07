@@ -144,7 +144,7 @@ install: build README substvars
 		/usr/share/emacs/site-lisp/llvm-$(CURRENT_VERSION) /usr/share/emacs/site-lisp/llvm
 
 	for lib in \
-		libLTO.so libLLVMgold.so; do \
+		libLTO.so LLVMgold.so; do \
 		dh_link -pllvm-dev \
 		/usr/lib/llvm-$(CURRENT_VERSION)/lib/$$lib /usr/lib/$$lib; \
 	done

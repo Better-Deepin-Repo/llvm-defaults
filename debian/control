@@ -4,7 +4,7 @@ Priority: optional
 Maintainer: LLVM Packaging Team <pkg-llvm-team@lists.alioth.debian.org>
 Uploaders: Arthur Loiret <aloiret@debian.org>, Matthias Klose <doko@debian.org>,
  Sylvestre Ledru <sylvestre@debian.org>
-Standards-Version: 3.9.2
+Standards-Version: 3.9.3
 Build-Depends: debhelper (>= 5.0.0), dpkg-dev (>= 1.13.9), lsb-release,
  llvm-2.9-dev (>= 2.9), libllvm-2.9-ocaml-dev (>= 2.9), m4
 Vcs-Svn: svn://svn.debian.org/svn/pkg-llvm/llvm-defaults/trunk/
