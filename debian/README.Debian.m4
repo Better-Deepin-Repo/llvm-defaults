@@ -18,7 +18,7 @@ appropriate.
 Versions of LLVM present in Debian Squeeze
 -----------------------------------------
 
-- LLVM 2.9 is the default version for all architectures.
+- LLVM 3.0 is the default version for all architectures.
 
 How are the default compilers selected?
 ---------------------------------------
@@ -26,9 +26,9 @@ How are the default compilers selected?
 Starting in Debian 6.0, there is now a llvm-defaults package set. This
 creates the actual packages for llvm, llvm-runtime, llvm-dev and
 libllvm-ocaml-dev. These packages will depend on the corresponding
-default compiler for that architecture. For Debian 6.0 for example,
-"llvm" depends on "llvm-2.9", which means that the "llvm-2.9" package
-will install some binaries suffixed by "-2.9", which are symlinked in
+default compiler for that architecture. For example,
+"llvm" depends on "llvm-3.0", which means that the "llvm-3.0" package
+will install some binaries suffixed by "-3.0", which are symlinked in
 the "llvm" package to unversioned binaries.
 
 This may seem confusing, but what it allows you do to is install more
@@ -71,6 +71,7 @@ Maintainers of these packages
 
 Arthur Loiret <aloiret@debian.org>
 Matthias Klose <doko@debian.org>
+Sylvestre Ledru <sylvestre@debian.org>
 
 ===============================================================================
 

@@ -1,3 +1,15 @@
+llvm-defaults (0.10) unstable; urgency=low
+
+  * Switch default to llvm 3.1 for Wheezy (Closes: #677555)
+
+ -- Sylvestre Ledru <sylvestre@debian.org>  Thu, 21 Jun 2012 22:51:53 +0200
+
+llvm-defaults (0.9) unstable; urgency=low
+
+  * Switch default to llvm 3.0 for Wheezy
+
+ -- Sylvestre Ledru <sylvestre@debian.org>  Sat, 10 Mar 2012 18:42:31 +0100
+
 llvm-defaults (0.8) unstable; urgency=low
 
   * Incorrect path to libLLVMgold.so (Closes: #655925)

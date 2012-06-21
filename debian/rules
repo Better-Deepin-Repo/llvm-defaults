@@ -16,25 +16,26 @@ REL_NO_27	:= $(shell expr $(VMINOR) - 0)$(REL_EXT)
 # llvm-defaults 0.2 is the first version for 2.8.
 REL_NO_28	:= $(shell expr $(VMINOR) - 0)$(REL_EXT)
 
-# llvm-defaults 0.6 is the first version for 2.9.
+# llvm-defaults 0.7 is the first version for 2.9.
 REL_NO_29	:= $(shell expr $(VMINOR) - 0)$(REL_EXT)
 
-# llvm-defaults 0.7 is the first version for 3.0.
+# llvm-defaults 0.9 is the first version for 3.0.
 REL_NO_30	:= $(shell expr $(VMINOR) - 0)$(REL_EXT)
 
-# minimum required version
-REQV_29		:= (>= 2.9-4)
+# llvm-defaults 0.10 is the first version for 3.1.
+REL_NO_31	:= $(shell expr $(VMINOR) - 0)$(REL_EXT)
 
-CURRENT_VERSION := 2.9
+# minimum required version
+REQV		:= (>= 3.1)
+
+CURRENT_VERSION := 3.1
 
 # architecture dependent variables
 DEB_HOST_ARCH		:= $(shell dpkg-architecture -qDEB_HOST_ARCH)
 DEB_HOST_GNU_TYPE	:= $(shell dpkg-architecture -qDEB_HOST_GNU_TYPE)
 
 # complete version number, including the release
-CV_LLVM		:= $(CURRENT_VERSION)-$(REL_NO_29)
-
-REQV_LLVM	:= $(REQV_29)
+CV_LLVM		:= $(CURRENT_VERSION)-$(REL_NO_30)
 
 distribution := $(shell lsb_release -is)
 all_packages	:= llvm llvm-runtime llvm-dev libllvm-ocaml-dev
@@ -76,7 +77,7 @@ substvars:
 	( \
 	  echo 'version:llvm=$(CV_LLVM)'; \
 	  echo 'pv:llvm=$(PV_LLVM)'; \
-	  echo 'reqv:llvm=$(REQV_LLVM)'; \
+	  echo 'reqv:llvm=$(REQV)'; \
 	) > debian/substvars.local
 .PHONY: substvars
 build: build-arch build-indep
