@@ -1,3 +1,9 @@
+llvm-defaults (0.11) unstable; urgency=low
+
+  * Actually, 0.10 is too risky for wheezy. Rollback to 3.0 for default
+
+ -- Sylvestre Ledru <sylvestre@debian.org>  Fri, 22 Jun 2012 09:19:22 +0200
+
 llvm-defaults (0.10) unstable; urgency=low
 
   * Switch default to llvm 3.1 for Wheezy (Closes: #677555)
