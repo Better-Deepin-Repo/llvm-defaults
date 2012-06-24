@@ -35,7 +35,7 @@ DEB_HOST_ARCH		:= $(shell dpkg-architecture -qDEB_HOST_ARCH)
 DEB_HOST_GNU_TYPE	:= $(shell dpkg-architecture -qDEB_HOST_GNU_TYPE)
 
 # complete version number, including the release
-CV_LLVM		:= $(CURRENT_VERSION)-$(REL_NO_30)
+CV_LLVM		:= 1:$(CURRENT_VERSION)-$(REL_NO_30)
 
 distribution := $(shell lsb_release -is)
 all_packages	:= llvm llvm-runtime llvm-dev libllvm-ocaml-dev
@@ -63,7 +63,7 @@ README:
 	m4 -DPACKAGES="$(packages)" \
 	   -DOS_NAME=$(OS_NAME) \
 	   -DDEB_ARCH=$(DEB_HOST_ARCH) \
-	   -DPV_LLVM=$(PV_LLVM) \
+	   -DPV_LLVM=$(CURRENT_VERSION) \
 	   debian/README.Debian.m4 > debian/README.Debian.tmp2
 	uniq debian/README.Debian.tmp2 > debian/README.Debian.tmp
 	rm -f debian/README.Debian.tmp2
@@ -76,7 +76,7 @@ README:
 substvars:
 	( \
 	  echo 'version:llvm=$(CV_LLVM)'; \
-	  echo 'pv:llvm=$(PV_LLVM)'; \
+	  echo 'pv:llvm=$(CURRENT_VERSION)'; \
 	  echo 'reqv:llvm=$(REQV)'; \
 	) > debian/substvars.local
 .PHONY: substvars
