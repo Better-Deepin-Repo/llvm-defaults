@@ -1,3 +1,9 @@
+llvm-defaults (0.13) unstable; urgency=low
+
+  * Fix the symlink bad path. Thanks to Sam Hocevar (Closes: #679468)
+
+ -- Sylvestre Ledru <sylvestre@debian.org>  Fri, 29 Jun 2012 23:51:40 +0200
+
 llvm-defaults (0.12) unstable; urgency=low
 
   * Add an epoch to fix my mistake with the binary version

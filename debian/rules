@@ -44,7 +44,7 @@ no_packages	:= llvm-gcc # must be built?
 packages := $(filter-out $(no_packages), $(all_packages))
 
 # derived version number (without release)
-V_LLVM	:= $(shell echo $(CV_LLVM) |  sed 's/-[^-]*$$//')
+V_LLVM  := $(shell echo $(CV_LLVM) | sed 's/^[0-9]*://' | sed 's/-[^-]*$$//')
 
 # number for the package name
 PV_LLVM := $(shell echo $(V_LLVM) | awk -F. '{printf "%d.%d", $$1, $$2}')
