@@ -1,3 +1,11 @@
+llvm-defaults (0.14) unstable; urgency=low
+
+  [ Vincent Legout ]
+  * debian/rules: Update symlinks to match binaries and manpages from llvm-3.0
+    instead of llvm-2.7 (Closes: #674896)
+
+ -- Sylvestre Ledru <sylvestre@debian.org>  Mon, 16 Jul 2012 22:39:22 +0200
+
 llvm-defaults (0.13) unstable; urgency=low
 
   * Fix the symlink bad path. Thanks to Sam Hocevar (Closes: #679468)

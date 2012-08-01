@@ -107,18 +107,19 @@ install: build README substvars
 	dh_installdirs -pllvm \
 		usr/bin usr/share/man/man1
 	for bin in \
-		llvm-as llvm-prof llvm-bcanalyzer llvm-dis llvmc \
-		llvm-ranlib llvm-ld llvm-link llvm-nm tblgen llvm-ar \
-		llvm-extract llvm-config llc bugpoint opt ; do \
+		bugpoint llc llvm-ar llvm-as llvm-bcanalyzer llvm-config \
+		llvm-cov llvm-diff llvm-dis llvm-dwarfdump llvm-extract \
+		llvm-ld llvm-link llvm-mc llvm-nm llvm-objdump llvm-prof \
+		llvm-ranlib llvm-rtdyld llvm-size llvm-stub llvm-tblgen \
+		macho-dump opt ; do \
 		dh_link -pllvm \
 			/usr/lib/llvm-$(PV_LLVM)/bin/$$bin \
 			/usr/bin/$$bin ; \
 	done
 	for man in \
-		opt bugpoint llvm-ranlib llvmc llvm-as llvm-ar llvmgxx \
-		llvm-prof llvm-ld tblgen llvm-bcanalyzer llvm-dis \
-		llvm-config llc llvm-link lit llvm-extract llvm-nm \
-		llvmgcc ; do \
+		bugpoint lit llc llvm-ar llvm-as llvm-bcanalyzer llvm-config \
+		llvm-diff llvm-dis llvm-extract llvm-ld llvm-link llvm-nm \
+		llvm-prof llvm-ranlib opt tblgen ; do \
 		dh_link -pllvm \
 			/usr/share/man/man1/$$man-$(PV_LLVM).1.gz \
 			/usr/share/man/man1/$$man.1.gz ; \
