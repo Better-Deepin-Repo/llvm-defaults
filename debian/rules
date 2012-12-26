@@ -29,7 +29,7 @@ REL_NO_31	:= $(shell expr $(VMINOR) - 0)$(REL_EXT)
 REL_NO_32	:= $(shell expr $(VMINOR) - 0)$(REL_EXT)
 
 # minimum required version
-REQV            := (>= 3.2-1)
+REQV            := (>= 3.2-1~)
 
 CURRENT_VERSION := 3.2
 
@@ -41,7 +41,7 @@ DEB_HOST_GNU_TYPE	:= $(shell dpkg-architecture -qDEB_HOST_GNU_TYPE)
 CV_LLVM		:= 1:$(CURRENT_VERSION)-$(REL_NO_32)
 
 distribution := $(shell lsb_release -is)
-all_packages	:= llvm llvm-runtime llvm-dev libllvm-ocaml-dev
+all_packages	:= llvm llvm-runtime llvm-dev libllvm-ocaml-dev clang
 no_packages	:= llvm-gcc # must be built?
 
 packages := $(filter-out $(no_packages), $(all_packages))

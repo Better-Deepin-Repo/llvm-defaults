@@ -54,3 +54,34 @@ Description: Low-Level Virtual Machine (LLVM), bindings for OCaml
  .
  This is a dependency package providing the default bindings for OCaml.
 
+Package: clang
+Architecture: any
+Section: ocaml
+Depends: clang-${pv:llvm} ${reqv:llvm}, ${misc:Depends}
+Replaces: clang (<< 3.2-1~exp2)
+Description: C, C++ and Objective-C compiler (LLVM based)
+ Clang project is a C, C++, Objective C and Objective C++ front-end
+ for the LLVM compiler. Some of its goals include the following:
+ .
+ End-User Features:
+ .
+    * Fast compiles and low memory use
+    * Expressive diagnostics (examples)
+    * GCC compatibility
+ .
+ Utility and Applications:
+ .
+    * Modular library based architecture
+    * Support diverse clients (refactoring, static analysis, code
+      generation, etc)
+    * Allow tight integration with IDEs
+    * Use the LLVM 'BSD' License
+ .
+ Internal Design and Implementation:
+ .
+    * A real-world, production quality compiler
+    * A simple and hackable code base
+    * A single unified parser for C, Objective C, C++, and Objective C++
+    * Conformance with C/C++/ObjC and their variants
+ .
+ This is a dependency package providing the default version of clang.
