@@ -41,7 +41,7 @@ DEB_HOST_GNU_TYPE	:= $(shell dpkg-architecture -qDEB_HOST_GNU_TYPE)
 CV_LLVM		:= 1:$(CURRENT_VERSION)-$(REL_NO_32)
 
 distribution := $(shell lsb_release -is)
-all_packages	:= llvm llvm-runtime llvm-dev libllvm-ocaml-dev clang
+all_packages	:= llvm llvm-runtime llvm-dev libllvm-ocaml-dev clang lldb
 no_packages	:= llvm-gcc # must be built?
 
 packages := $(filter-out $(no_packages), $(all_packages))
@@ -113,7 +113,7 @@ install: build README substvars
 		bugpoint llc llvm-ar llvm-as llvm-bcanalyzer llvm-config \
 		llvm-cov llvm-diff llvm-dis llvm-dwarfdump llvm-extract \
 		llvm-ld llvm-link llvm-mc llvm-nm llvm-objdump llvm-prof \
-		llvm-ranlib llvm-rtdyld llvm-size llvm-stub llvm-tblgen \
+		llvm-ranlib llvm-rtdyld llvm-size llvm-tblgen \
 		macho-dump opt ; do \
 		dh_link -pllvm \
 			/usr/lib/llvm-$(PV_LLVM)/bin/$$bin \
@@ -121,7 +121,7 @@ install: build README substvars
 	done
 	for man in \
 		bugpoint lit llc llvm-ar llvm-as llvm-bcanalyzer llvm-config \
-		llvm-diff llvm-dis llvm-extract llvm-ld llvm-link llvm-nm \
+		llvm-diff llvm-dis llvm-extract llvm-link llvm-nm \
 		llvm-prof llvm-ranlib opt tblgen ; do \
 		dh_link -pllvm \
 			/usr/share/man/man1/$$man-$(PV_LLVM).1.gz \
@@ -159,8 +159,8 @@ install: build README substvars
 	dh_installdirs -plibllvm-ocaml-dev \
 		/usr/lib/ocaml/METAS
 	dh_link -plibllvm-ocaml-dev \
-		/usr/lib/ocaml/METAS/META.llvm-$(subst .,_,$(CURRENT_VERSION)) /usr/lib/ocaml/METAS/META.llvm \
-		/usr/lib/ocaml/llvm-$(subst .,_,$(CURRENT_VERSION)) /usr/lib/ocaml/llvm
+		/usr/lib/ocaml/METAS/META.llvm-$(subst .,-,$(CURRENT_VERSION)) /usr/lib/ocaml/METAS/META.llvm \
+		/usr/lib/ocaml/llvm-$(subst .,-,$(CURRENT_VERSION)) /usr/lib/ocaml/llvm
 
 nopkgs := $(foreach p, $(no_packages),-N$(p))
 

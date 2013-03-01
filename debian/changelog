@@ -1,8 +1,12 @@
 llvm-defaults (0.16~exp2) experimental; urgency=low
 
   * Introduce the "clang" package which will point to the right version
+  * Introduce the "lldb" package which will point to the right version
+  * Fix the path install in libllvm-ocaml-dev (Closes: #644101)
+  * Remove llvm-ld & llvm-stub manpages (binaries removed)
+    (Closes: #697115)
 
- -- Sylvestre Ledru <sylvestre@debian.org>  Wed, 26 Dec 2012 18:08:55 +0100
+ -- Sylvestre Ledru <sylvestre@debian.org>  Fri, 01 Mar 2013 15:38:01 +0100
 
 llvm-defaults (0.16~exp1) experimental; urgency=low
 

@@ -56,7 +56,6 @@ Description: Low-Level Virtual Machine (LLVM), bindings for OCaml
 
 Package: clang
 Architecture: any
-Section: ocaml
 Depends: clang-${pv:llvm} ${reqv:llvm}, ${misc:Depends}
 Replaces: clang (<< 3.2-1~exp2)
 Description: C, C++ and Objective-C compiler (LLVM based)
@@ -85,3 +84,12 @@ Description: C, C++ and Objective-C compiler (LLVM based)
     * Conformance with C/C++/ObjC and their variants
  .
  This is a dependency package providing the default version of clang.
+
+Package: lldb
+Architecture: any
+Depends: lldb-${pv:llvm} ${reqv:llvm}, ${misc:Depends}
+Pre-Depends: ${misc:Pre-Depends}
+Description: Next generation, high-performance debugger
+ LLDB is a next generation, high-performance debugger. It is built as a set of
+ reusable components which highly leverage existing libraries in the larger LLVM
+ Project, such as the Clang expression parser and LLVM disassembler.
