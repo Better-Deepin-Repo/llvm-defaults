@@ -1,3 +1,10 @@
+llvm-defaults (0.16) unstable; urgency=low
+
+  * Upload to unstable
+  * Standards-Version updated to 3.9.4
+
+ -- Sylvestre Ledru <sylvestre@debian.org>  Fri, 10 May 2013 10:05:46 +0200
+
 llvm-defaults (0.16~exp2) experimental; urgency=low
 
   * Introduce the "clang" package which will point to the right version
