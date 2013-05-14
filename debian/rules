@@ -41,8 +41,8 @@ DEB_HOST_GNU_TYPE	:= $(shell dpkg-architecture -qDEB_HOST_GNU_TYPE)
 CV_LLVM		:= 1:$(CURRENT_VERSION)-$(REL_NO_32)
 
 distribution := $(shell lsb_release -is)
-all_packages	:= llvm llvm-runtime llvm-dev libllvm-ocaml-dev clang lldb
-no_packages	:= llvm-gcc # must be built?
+all_packages   := llvm llvm-runtime llvm-dev libllvm-ocaml-dev clang lldb
+no_packages	   := llvm-gcc # must be built?
 
 packages := $(filter-out $(no_packages), $(all_packages))
 
@@ -100,7 +100,7 @@ clean:
 install: build README substvars
 	dh_testdir
 	dh_testroot
-	dh_clean -k
+	dh_prep
 
 	for p in $(packages); do \
 	  cp -l debian/substvars.local debian/$$p.substvars; \
@@ -171,17 +171,15 @@ binary-arch: build install
 	dh_testdir
 	dh_testroot
 
+	dh_lintian
 	dh_installchangelogs -a $(nopkgs)
 	dh_installdocs -a $(nopkgs) debian/README.Debian
-
-	for p in $(filter-out llvm-runtime, $(all_packages)); do \
-	  rm -rf debian/$$p/usr/share/doc/$$p; \
-	  ln -s llvm-runtime debian/$$p/usr/share/doc/$$p; \
+	for p in $(packages) ; do \
+		if [ -f debian/$$p/usr/share/doc/$$p/changelog ]; then \
+		  mv debian/$$p/usr/share/doc/$$p/changelog \
+	    	debian/$$p/usr/share/doc/$$p/changelog.Debian; \
+		fi; \
 	done
-	if [ -f debian/llvm-runtime/usr/share/doc/llvm-runtime/changelog ]; then \
-	  mv debian/llvm-runtime/usr/share/doc/llvm-runtime/changelog \
-	    debian/llvm-runtime/usr/share/doc/llvm-runtime/changelog.Debian; \
-	fi
 
 	dh_compress -a $(nopkgs) -X README.Debian
 	dh_fixperms -a $(nopkgs)

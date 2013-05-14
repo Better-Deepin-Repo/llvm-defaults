@@ -1,3 +1,11 @@
+llvm-defaults (0.17) unstable; urgency=low
+
+  * Copy the copyright file for clang & lldb (Closes: #707838)
+  * Update of the lldb description to avoid the empty-binary-package warning.
+  * Replace dh_clean -k by dh_prep
+
+ -- Sylvestre Ledru <sylvestre@debian.org>  Tue, 14 May 2013 12:08:05 +0200
+
 llvm-defaults (0.16) unstable; urgency=low
 
   * Upload to unstable
