@@ -86,7 +86,7 @@ Description: C, C++ and Objective-C compiler (LLVM based)
  This is a dependency package providing the default version of clang.
 
 Package: lldb
-Architecture: any
+Architecture: amd64 i386
 Depends: lldb-${pv:llvm} ${reqv:llvm}, ${misc:Depends}
 Pre-Depends: ${misc:Pre-Depends}
 Description: Next generation, high-performance debugger

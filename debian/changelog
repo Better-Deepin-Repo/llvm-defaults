@@ -1,3 +1,10 @@
+llvm-defaults (0.18) unstable; urgency=low
+
+  [ Adam Conrad ]
+  * Only build lldb metapackage on i386 and amd64 to match the binary.
+
+ -- Sylvestre Ledru <sylvestre@debian.org>  Mon, 01 Jul 2013 13:46:48 +0200
+
 llvm-defaults (0.17) unstable; urgency=low
 
   * Copy the copyright file for clang & lldb (Closes: #707838)
