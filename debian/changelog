@@ -1,3 +1,9 @@
+llvm-defaults (0.20) unstable; urgency=low
+
+  * Handle symlink to directory conversion (Closes: #720149)
+
+ -- Sylvestre Ledru <sylvestre@debian.org>  Wed, 21 Aug 2013 17:57:08 +0200
+
 llvm-defaults (0.19) unstable; urgency=low
 
   * I forgot that lldb-3.2 is no longer built (we are waiting the 3.3 switch)
