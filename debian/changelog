@@ -1,3 +1,10 @@
+llvm-defaults (0.19) unstable; urgency=low
+
+  * I forgot that lldb-3.2 is no longer built (we are waiting the 3.3 switch)
+    Disable it for all archs
+
+ -- Sylvestre Ledru <sylvestre@debian.org>  Mon, 01 Jul 2013 18:22:27 +0200
+
 llvm-defaults (0.18) unstable; urgency=low
 
   [ Adam Conrad ]

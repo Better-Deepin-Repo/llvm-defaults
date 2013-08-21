@@ -42,9 +42,9 @@ CV_LLVM		:= 1:$(CURRENT_VERSION)-$(REL_NO_32)
 
 distribution := $(shell lsb_release -is)
 all_packages   := llvm llvm-runtime llvm-dev libllvm-ocaml-dev clang
-ifneq (,$(filter $(DEB_HOST_ARCH),i386 amd64))
-    all_packages += lldb
-endif
+# ifneq (,$(filter $(DEB_HOST_ARCH),i386 amd64))
+#     all_packages += lldb
+# endif
 no_packages	   := llvm-gcc # must be built?
 
 packages := $(filter-out $(no_packages), $(all_packages))
