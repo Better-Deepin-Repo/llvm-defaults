@@ -1,3 +1,9 @@
+llvm-defaults (0.21) UNRELEASED; urgency=low
+
+  * Update of the clang descriptions (Closes: #727684)
+
+ --
+
 llvm-defaults (0.20) unstable; urgency=low
 
   * Handle symlink to directory conversion (Closes: #720149)
