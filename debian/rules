@@ -44,7 +44,7 @@ DEB_HOST_GNU_TYPE	:= $(shell dpkg-architecture -qDEB_HOST_GNU_TYPE)
 CV_LLVM		:= 1:$(CURRENT_VERSION)-$(REL_NO_32)
 
 distribution := $(shell lsb_release -is)
-all_packages   := llvm llvm-runtime llvm-dev libllvm-ocaml-dev clang
+all_packages   := llvm llvm-runtime llvm-dev libllvm-ocaml-dev clang libclang1 libclang-dev
 # ifneq (,$(filter $(DEB_HOST_ARCH),i386 amd64))
 #     all_packages += lldb
 # endif
