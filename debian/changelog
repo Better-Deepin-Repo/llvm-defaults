@@ -1,8 +1,9 @@
 llvm-defaults (0.21) UNRELEASED; urgency=low
 
+  * Switch default to 3.3
   * Update of the clang descriptions (Closes: #727684)
   * WIP: Provide libclang1 and libclang-dev virtual packages
-  NEED MORE TESTING
+
 
  -- Sylvestre Ledru <sylvestre@debian.org>  Tue, 29 Oct 2013 14:59:22 +0100
 

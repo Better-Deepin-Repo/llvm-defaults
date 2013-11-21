@@ -28,10 +28,13 @@ REL_NO_31	:= $(shell expr $(VMINOR) - 0)$(REL_EXT)
 # llvm-defaults 0.16 is the first version for 3.2.
 REL_NO_32	:= $(shell expr $(VMINOR) - 0)$(REL_EXT)
 
-# minimum required version
-REQV            := (>= 3.2-1~)
+# llvm-defaults 0.21 is the first version for 3.3.
+REL_NO_33	:= $(shell expr $(VMINOR) - 0)$(REL_EXT)
 
-CURRENT_VERSION := 3.2
+# minimum required version
+REQV            := (>= 3.3-1~)
+
+CURRENT_VERSION := 3.3
 
 # architecture dependent variables
 DEB_HOST_ARCH		:= $(shell dpkg-architecture -qDEB_HOST_ARCH)
