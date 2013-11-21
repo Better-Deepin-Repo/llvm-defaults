@@ -1,6 +1,6 @@
 llvm-defaults (0.21~exp1) experimental; urgency=low
 
-  * Switch default to 3.3
+  * Switch default to 3.3 (Closes: #729925)
   * Update of the clang descriptions (Closes: #727684)
   * WIP: Provide libclang1 and libclang-dev virtual packages
   * Standards-Version updated to 3.9.5
