@@ -61,10 +61,12 @@ Description: C, C++ and Objective-C compiler (LLVM based)
  .
  Clang implements all of the ISO C++ 1998 and 2001 standards and also provides
  a partial support of C++1y.
+ .
+ This is a dependency package providing the default clang compiler.
 
 Package: libclang1
 Architecture: any
-Depends: ${shlibs:Depends}, ${misc:Depends}, ${dep:devlibs}, liblclang1-${pv:llvm} ${reqv:llvm}
+Depends: ${shlibs:Depends}, ${misc:Depends}, ${dep:devlibs}, libclang1-${pv:llvm} ${reqv:llvm}
 Pre-Depends: ${misc:Pre-Depends}
 Multi-Arch: same
 Description: C, C++ and Objective-C compiler (LLVM based)
