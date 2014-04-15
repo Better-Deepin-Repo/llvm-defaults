@@ -1,3 +1,10 @@
+llvm-defaults (0.21+nmu1) unstable; urgency=medium
+
+  * Non-maintainer upload
+  * Handle symlink to directories conversion (Closes: #736311)
+
+ -- David Prévot <taffit@debian.org>  Mon, 14 Apr 2014 20:41:27 -0400
+
 llvm-defaults (0.21) unstable; urgency=low
 
   * Upload in unstable
