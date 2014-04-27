@@ -31,17 +31,20 @@ REL_NO_32	:= $(shell expr $(VMINOR) - 0)$(REL_EXT)
 # llvm-defaults 0.21 is the first version for 3.3.
 REL_NO_33	:= $(shell expr $(VMINOR) - 0)$(REL_EXT)
 
-# minimum required version
-REQV            := (>= 3.3-1~)
+# llvm-defaults 0.22 is the first version for 3.4.
+REL_NO_34	:= $(shell expr $(VMINOR) - 22)$(REL_EXT)
 
-CURRENT_VERSION := 3.3
+# minimum required version
+REQV            := (>= 3.4-1~)
+
+CURRENT_VERSION := 3.4
 
 # architecture dependent variables
 DEB_HOST_ARCH		:= $(shell dpkg-architecture -qDEB_HOST_ARCH)
 DEB_HOST_GNU_TYPE	:= $(shell dpkg-architecture -qDEB_HOST_GNU_TYPE)
 
 # complete version number, including the release
-CV_LLVM		:= 1:$(CURRENT_VERSION)-$(REL_NO_32)
+CV_LLVM		:= 1:$(CURRENT_VERSION)-$(REL_NO_34)
 
 distribution := $(shell lsb_release -is)
 all_packages   := llvm llvm-runtime llvm-dev libllvm-ocaml-dev clang libclang1 libclang-dev

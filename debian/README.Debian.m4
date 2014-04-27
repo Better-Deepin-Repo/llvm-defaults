@@ -3,8 +3,8 @@ define(`ifenabled', `ifelse(index(PACKAGES, `$1'), -1, `dnl', `$2')')
 
 divert`'dnl
 dnl --------------------------------------------------------------------------
-		The Debian Low Level Virtual Machine Setup
-		==========================================
+		The Debian LLVM Setup
+		=====================
 
 Abstract
 --------
@@ -18,7 +18,7 @@ appropriate.
 Versions of LLVM present in Debian Squeeze
 -----------------------------------------
 
-- LLVM 3.0 is the default version for all architectures.
+- LLVM 3.4 is the default version for all architectures.
 
 How are the default compilers selected?
 ---------------------------------------
@@ -69,7 +69,6 @@ mailing list.
 Maintainers of these packages
 -----------------------------
 
-Arthur Loiret <aloiret@debian.org>
 Matthias Klose <doko@debian.org>
 Sylvestre Ledru <sylvestre@debian.org>
 
