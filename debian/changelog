@@ -1,3 +1,9 @@
+llvm-defaults (0.22) unstable; urgency=medium
+
+  * Upload in unstable
+
+ -- Sylvestre Ledru <sylvestre@debian.org>  Sun, 06 Jul 2014 19:23:54 +0200
+
 llvm-defaults (0.22~exp1) experimental; urgency=medium
 
   * Ack previous NMU. Thanks mate!

@@ -32,7 +32,7 @@ REL_NO_32	:= $(shell expr $(VMINOR) - 0)$(REL_EXT)
 REL_NO_33	:= $(shell expr $(VMINOR) - 0)$(REL_EXT)
 
 # llvm-defaults 0.22 is the first version for 3.4.
-REL_NO_34	:= $(shell expr $(VMINOR) - 22)$(REL_EXT)
+REL_NO_34	:= $(shell expr $(VMINOR) - 0)$(REL_EXT)
 
 # minimum required version
 REQV            := (>= 3.4-1~)
