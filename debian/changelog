@@ -14,6 +14,7 @@ llvm-defaults (0.23~exp1) experimental; urgency=medium
     - scan-view
   * yaml2obj, obj2yaml, verify-uselistorder will be managed once defaulting
     to 3.6 (probably Jessie+1)
+  * clang alternatives are managed by this package now
 
  -- Sylvestre Ledru <sylvestre@debian.org>  Sat, 02 Aug 2014 13:34:59 +0200
 
