@@ -128,6 +128,16 @@ install: build README substvars
 			/usr/lib/llvm-$(PV_LLVM)/bin/$$bin \
 			/usr/bin/$$bin ; \
 	done
+	: # From LLVM 3.6
+	if test $(CURRENT_VERSION) -ge 3.6; then \
+		for bin in \
+			yaml2obj, obj2yaml, verify-uselistorder \
+			; do \
+			dh_link -pllvm \
+				/usr/lib/llvm-$(PV_LLVM)/bin/$$bin \
+				/usr/bin/$$bin ; \
+		done; \
+	fi
 	for man in \
 		bugpoint lit llc llvm-ar llvm-as llvm-bcanalyzer llvm-config \
 		llvm-diff llvm-dis llvm-extract llvm-link llvm-nm \
@@ -170,6 +180,28 @@ install: build README substvars
 	dh_link -plibllvm-ocaml-dev \
 		/usr/lib/ocaml/METAS/META.llvm-$(subst .,-,$(CURRENT_VERSION)) /usr/lib/ocaml/METAS/META.llvm \
 		/usr/lib/ocaml/llvm-$(subst .,-,$(CURRENT_VERSION)) /usr/lib/ocaml/llvm
+
+	: # clang
+	dh_installdirs -pclang \
+		usr/bin usr/share/man/man1
+	for bin in \
+		clang clang++ clang-check clang-tblgen c-index-test \
+		clang-apply-replacements clang-tidy pp-trace clang-query \
+		; do \
+		dh_link -pclang \
+			/usr/lib/llvm-$(PV_LLVM)/bin/$$bin \
+			/usr/bin/$$bin ; \
+	done
+	dh_link -pclang \
+			tools/clang/tools/scan-build-$(PV_LLVM)/scan-build \
+			/usr/bin/scan-build
+	dh_link -pclang \
+			tools/clang/tools/scan-view-$(PV_LLVM)/scan-view \
+			/usr/bin/scan-view
+	dh_link -pclang \
+			usr/bin/asan_symbolize-$(PV_LLVM) \
+			usr/bin/asan_symbolize
+
 
 nopkgs := $(foreach p, $(no_packages),-N$(p))
 
