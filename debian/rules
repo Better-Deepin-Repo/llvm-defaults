@@ -193,14 +193,14 @@ install: build README substvars
 			/usr/bin/$$bin ; \
 	done
 	dh_link -pclang \
-			tools/clang/tools/scan-build-$(PV_LLVM)/scan-build \
+			/usr/bin/scan-build-$(PV_LLVM) \
 			/usr/bin/scan-build
 	dh_link -pclang \
-			tools/clang/tools/scan-view-$(PV_LLVM)/scan-view \
+			/usr/bin/scan-view-$(PV_LLVM) \
 			/usr/bin/scan-view
 	dh_link -pclang \
-			usr/bin/asan_symbolize-$(PV_LLVM) \
-			usr/bin/asan_symbolize
+			/usr/bin/asan_symbolize-$(PV_LLVM) \
+			/usr/bin/asan_symbolize
 
 
 nopkgs := $(foreach p, $(no_packages),-N$(p))
