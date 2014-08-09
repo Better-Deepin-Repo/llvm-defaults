@@ -1,6 +1,7 @@
 llvm-defaults (0.23) unstable; urgency=medium
 
   * Upload to unstable
+  * Fix a bad link in libllvm-ocaml-dev (Closes: #644101)
 
   [ Matthias Klose ]
   * Depend on 3.5 on ppc64el.
