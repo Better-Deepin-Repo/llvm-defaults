@@ -34,7 +34,7 @@ architecture.
 The default compiler versions for Debian GNU/Linux on amd64 are
 (minor version numbers omitted):
 
-	llvm		: llvm-3.4
+	llvm		: llvm-3.5
 
 Thanks to llvm-defaults, each architecture can choose its own
 preferred llvm version, and that preference can change without

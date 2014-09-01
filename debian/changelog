@@ -1,3 +1,9 @@
+llvm-defaults (0.24~exp1) experimental; urgency=medium
+
+  * Default to 3.5 (Thanks to Doko for the patch)
+
+ -- Sylvestre Ledru <sylvestre@debian.org>  Sun, 31 Aug 2014 10:34:39 +0200
+
 llvm-defaults (0.23) unstable; urgency=medium
 
   * Upload to unstable
