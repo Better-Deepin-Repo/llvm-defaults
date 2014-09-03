@@ -1,6 +1,6 @@
 llvm-defaults (0.24~exp3) UNRELEASED; urgency=medium
 
-  * Also breaks again clang 3.2 (just in case)
+  * Also breaks against clang 3.2 (just in case)
 
  -- Sylvestre Ledru <sylvestre@debian.org>  Wed, 03 Sep 2014 11:15:33 +0200
 
