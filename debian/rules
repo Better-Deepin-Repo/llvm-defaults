@@ -34,7 +34,7 @@ REL_NO_33	:= $(shell expr $(VMINOR) - 0)$(REL_EXT)
 # llvm-defaults 0.22 is the first version for 3.4.
 REL_NO_34	:= $(shell expr $(VMINOR) - 0)$(REL_EXT)
 
-# For now, only ppc64el is using 3.5
+# llvm-defaults 0.24 is the first version for 3.5.
 REL_NO_35	:= $(shell expr $(VMINOR) - 0)$(REL_EXT)
 
 # minimum required version
@@ -51,9 +51,11 @@ CV_LLVM		:= 1:$(CURRENT_VERSION)-$(REL_NO_35)
 
 distribution := $(shell lsb_release -is)
 all_packages   := llvm llvm-runtime llvm-dev libllvm-ocaml-dev clang libclang1 libclang-dev
-# ifneq (,$(filter $(DEB_HOST_ARCH),i386 amd64))
-#     all_packages += lldb
-# endif
+
+LLDB_SUPPORTED=amd64 armel armhf i386  kfreebsd-amd64 kfreebsd-i386 s390 s390x sparc alpha hppa m68k powerpcspe ppc64 sh4 sparc64 x32 powerpc mips mipsel
+ifneq (,$(filter $(DEB_HOST_ARCH),$(LLDB_SUPPORTED)))
+    all_packages += lldb
+endif
 no_packages	   := llvm-gcc # must be built?
 
 packages := $(filter-out $(no_packages), $(all_packages))
@@ -204,6 +206,9 @@ install: build README substvars
 	dh_link -pclang \
 			/usr/bin/asan_symbolize-$(PV_LLVM) \
 			/usr/bin/asan_symbolize
+	dh_link -plldb \
+			/usr/bin/lldb-$(PV_LLVM) \
+			/usr/bin/lldb
 
 
 nopkgs := $(foreach p, $(no_packages),-N$(p))

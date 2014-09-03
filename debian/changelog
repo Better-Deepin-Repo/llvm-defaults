@@ -1,3 +1,10 @@
+llvm-defaults (0.24~exp2) experimental; urgency=medium
+
+  * Also manages lldb
+  * Also breaks/replaces with clang-3.3 (Closes: #758325)
+
+ -- Sylvestre Ledru <sylvestre@debian.org>  Mon, 01 Sep 2014 11:33:45 +0200
+
 llvm-defaults (0.24~exp1) experimental; urgency=medium
 
   * Default to 3.5 (Thanks to Doko for the patch)
