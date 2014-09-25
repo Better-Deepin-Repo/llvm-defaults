@@ -1,8 +1,10 @@
-llvm-defaults (0.24~exp3) UNRELEASED; urgency=medium
+llvm-defaults (0.24) unstable; urgency=medium
 
+  * Upload in unstable
+  * Note that lldb is not yet co instalable
   * Also breaks against clang 3.2 (just in case)
 
- -- Sylvestre Ledru <sylvestre@debian.org>  Wed, 03 Sep 2014 11:15:33 +0200
+ -- Sylvestre Ledru <sylvestre@debian.org>  Wed, 24 Sep 2014 18:38:55 +0200
 
 llvm-defaults (0.24~exp2) experimental; urgency=medium
 
