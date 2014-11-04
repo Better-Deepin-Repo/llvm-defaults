@@ -51,12 +51,14 @@ CV_LLVM		:= 1:$(CURRENT_VERSION)-$(REL_NO_35)
 
 distribution := $(shell lsb_release -is)
 all_packages   := llvm llvm-runtime llvm-dev libllvm-ocaml-dev clang libclang1 libclang-dev
+no_packages    := llvm-gcc # must be built?
 
 LLDB_SUPPORTED=amd64 armel armhf i386  kfreebsd-amd64 kfreebsd-i386 s390 s390x sparc alpha hppa m68k powerpcspe ppc64 sh4 sparc64 x32 powerpc mips mipsel
 ifneq (,$(filter $(DEB_HOST_ARCH),$(LLDB_SUPPORTED)))
     all_packages += lldb
+else
+    no_packages += lldb
 endif
-no_packages	   := llvm-gcc # must be built?
 
 packages := $(filter-out $(no_packages), $(all_packages))
 

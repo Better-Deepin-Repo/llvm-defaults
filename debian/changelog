@@ -1,3 +1,9 @@
+llvm-defaults (0.25) unstable; urgency=medium
+
+  * Fix FTBFS on ppc64el/arm64 (Closes: #765354)
+
+ -- Sylvestre Ledru <sylvestre@debian.org>  Mon, 03 Nov 2014 13:56:35 +0100
+
 llvm-defaults (0.24) unstable; urgency=medium
 
   * Upload in unstable
