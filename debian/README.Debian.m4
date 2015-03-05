@@ -47,10 +47,10 @@ requiring a complete rebuild of both llvm packages for all
 architectures.
 
 
-llvm-ld/... are not handled using alternatives
+llvm-*/... are not handled using alternatives
 ----------------------------------------------
 
-The symlinks in /usr/bin (llvm-ld, ...) are not handled using the Debian
+The symlinks in /usr/bin (llvm-*, ...) are not handled using the Debian
 alternative mechanism. There are differences in the architecture specific
 ABI on some architectures. Having the symlinks managed by alternatives
 doesn't allow reliable builds with the same major/minor version of the
@@ -73,4 +73,3 @@ Matthias Klose <doko@debian.org>
 Sylvestre Ledru <sylvestre@debian.org>
 
 ===============================================================================
-
