@@ -37,7 +37,7 @@ REL_NO_34	:= $(shell expr $(VMINOR) - 0)$(REL_EXT)
 # llvm-defaults 0.24 is the first version for 3.5.
 REL_NO_35	:= $(shell expr $(VMINOR) - 0)$(REL_EXT)
 
-# llvm-defaults 0.26 is the first version for 3.6.
+# llvm-defaults 0.27 is the first version for 3.6.
 REL_NO_36	:= $(shell expr $(VMINOR) - 0)$(REL_EXT)
 
 # minimum required version
@@ -131,7 +131,7 @@ install: build README substvars
 	for bin in \
 		bugpoint llc llvm-ar llvm-as llvm-bcanalyzer llvm-config \
 		llvm-cov llvm-diff llvm-dis llvm-dwarfdump llvm-extract \
-		llvm-ld llvm-link llvm-mc llvm-nm llvm-objdump llvm-prof \
+		llvm-link llvm-mc llvm-nm llvm-objdump \
 		llvm-ranlib llvm-rtdyld llvm-size llvm-tblgen \
 		macho-dump opt ; do \
 		dh_link -pllvm \
@@ -151,7 +151,7 @@ install: build README substvars
 	for man in \
 		bugpoint lit llc llvm-ar llvm-as llvm-bcanalyzer llvm-config \
 		llvm-diff llvm-dis llvm-extract llvm-link llvm-nm \
-		llvm-prof llvm-ranlib opt tblgen ; do \
+		llvm-ranlib opt tblgen ; do \
 		dh_link -pllvm \
 			/usr/share/man/man1/$$man-$(PV_LLVM).1.gz \
 			/usr/share/man/man1/$$man.1.gz ; \

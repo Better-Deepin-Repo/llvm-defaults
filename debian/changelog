@@ -1,8 +1,11 @@
 llvm-defaults (0.27~exp1) experimental; urgency=medium
 
   * Default to clang 3.6
+  * Remove llvm-ld & llvm-prof symlink as they have been removed upstream
+    (Closes: #779671)
+  * Standards-Version updated to 3.9.6
 
- -- Sylvestre Ledru <sylvestre@debian.org>  Thu, 05 Mar 2015 09:43:01 +0100
+ -- Sylvestre Ledru <sylvestre@debian.org>  Thu, 05 Mar 2015 10:01:43 +0100
 
 llvm-defaults (0.26) unstable; urgency=medium
 
