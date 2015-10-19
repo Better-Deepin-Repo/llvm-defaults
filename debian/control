@@ -66,6 +66,45 @@ Description: C, C++ and Objective-C compiler (LLVM based)
  .
  This is a dependency package providing the default clang compiler.
 
+Package: clang-modernize
+Architecture: any
+Depends: clang-modernize-${pv:llvm} ${reqv:llvm}, ${misc:Depends}
+Description: Tool to convert C++98 and C++03 code to C++11
+ The purpose of the C++11 Migrator is to do source-to-source translation to
+ migrate existing C++ code to use C++11 features to enhance
+ maintainability, readability, runtime performance, and compile-time
+ performance. Development is still early and transforms fall mostly into
+ the first two categories. The migrator is based on Clang's LibTooling and
+ the AST Matching library.
+ .
+ This is a dependency package providing the clang modernize tool.
+
+Package: clang-tidy
+Architecture: any
+Depends: clang-tidy-${pv:llvm} ${reqv:llvm}, ${misc:Depends}
+Description: clang-based C++ linter tool
+ Provide an extensible framework for diagnosing and fixing typical programming
+ errors, like style violations, interface misuse, or bugs that can be deduced
+ via static analysis. clang-tidy is modular and provides a convenient interface
+ for writing new checks.
+ .
+ This is a dependency package providing the clang tidy tool.
+
+Package: clang-format
+Architecture: any
+Depends: clang-format-${pv:llvm} ${reqv:llvm}, ${misc:Depends}
+Description: Tool to format C/C++/Obj-C code
+ Clang-format is both a library and a stand-alone tool with the goal of
+ automatically reformatting C++ sources files according to configurable
+ style guides. To do so, clang-format uses Clang's Lexer to transform an
+ input file into a token stream and then changes all the whitespace around
+ those tokens. The goal is for clang-format to both serve both as a user
+ tool (ideally with powerful IDE integrations) and part of other
+ refactoring tools, e.g. to do a reformatting of all the lines changed
+ during a renaming.
+ .
+ This is a dependency package providing the clang format tool.
+
 Package: libclang1
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}, ${dep:devlibs}, libclang1-${pv:llvm} ${reqv:llvm}

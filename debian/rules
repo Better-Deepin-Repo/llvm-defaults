@@ -53,7 +53,7 @@ DEB_HOST_GNU_TYPE	:= $(shell dpkg-architecture -qDEB_HOST_GNU_TYPE)
 CV_LLVM		:= 1:$(CURRENT_VERSION)-$(REL_NO_36)
 
 distribution := $(shell lsb_release -is)
-all_packages   := llvm llvm-runtime llvm-dev libllvm-ocaml-dev clang libclang1 libclang-dev
+all_packages   := llvm llvm-runtime llvm-dev libllvm-ocaml-dev clang libclang1 libclang-dev clang-format clang-modernize clang-tidy
 no_packages    := llvm-gcc # must be built?
 
 LLDB_SUPPORTED=amd64 armel armhf i386  kfreebsd-amd64 kfreebsd-i386 s390 s390x sparc alpha hppa m68k powerpcspe ppc64 sh4 sparc64 x32 powerpc mips mipsel
@@ -199,6 +199,20 @@ install: build README substvars
 		clang-apply-replacements clang-tidy pp-trace clang-query \
 		; do \
 		dh_link -pclang \
+			/usr/lib/llvm-$(PV_LLVM)/bin/$$bin \
+			/usr/bin/$$bin ; \
+	done
+	for bin in \
+		clang-modernize \
+		; do \
+		dh_link -pclang-modernize \
+			/usr/lib/llvm-$(PV_LLVM)/bin/$$bin \
+			/usr/bin/$$bin ; \
+	done
+	for bin in \
+		clang-format \
+		; do \
+		dh_link -pclang-format \
 			/usr/lib/llvm-$(PV_LLVM)/bin/$$bin \
 			/usr/bin/$$bin ; \
 	done
