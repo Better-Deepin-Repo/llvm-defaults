@@ -209,13 +209,18 @@ install: build README substvars
 			/usr/lib/llvm-$(PV_LLVM)/bin/$$bin \
 			/usr/bin/$$bin ; \
 	done
-	for bin in \
-		clang-format \
-		; do \
+    : # clang-format
+	dh_link -pclang-format \
+		/usr/bin/clang-format-$(PV_LLVM) \
+		/usr/bin/clang-format
+	if test $(CURRENT_VERSION) -ge 3.6; then \
 		dh_link -pclang-format \
-			/usr/lib/llvm-$(PV_LLVM)/bin/$$bin \
-			/usr/bin/$$bin ; \
-	done
+			/usr/bin/clang-format-diff-$(PV_LLVM) \
+			/usr/bin/clang-format-diff ; \
+		dh_link -pclang-format \
+			/usr/share/vim/addons/syntax/clang-format-$(PV_LLVM).py \
+			/usr/share/vim/addons/syntax/clang-format.py ; \
+       fi
 	dh_link -pclang \
 			/usr/bin/scan-build-$(PV_LLVM) \
 			/usr/bin/scan-build
