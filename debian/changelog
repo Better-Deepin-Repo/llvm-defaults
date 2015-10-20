@@ -2,6 +2,8 @@ llvm-defaults (0.29) unstable; urgency=medium
 
   * Improve the clang-format management, including the vim plugin.
     Thanks to Mathieu Malaterre (Closes: #802444)
+  * Also add the clang-tidy link.
+    Thanks to Daniel Serpell (Closes: #802496)
 
  -- Sylvestre Ledru <sylvestre@debian.org>  Tue, 20 Oct 2015 09:19:18 +0200
 

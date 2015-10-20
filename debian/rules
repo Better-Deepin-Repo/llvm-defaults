@@ -196,12 +196,21 @@ install: build README substvars
 		usr/bin usr/share/man/man1
 	for bin in \
 		clang clang++ clang-check clang-tblgen c-index-test \
-		clang-apply-replacements clang-tidy pp-trace clang-query \
+		clang-apply-replacements pp-trace clang-query \
 		; do \
 		dh_link -pclang \
 			/usr/lib/llvm-$(PV_LLVM)/bin/$$bin \
 			/usr/bin/$$bin ; \
 	done
+
+	for bin in \
+		clang-tidy \
+		; do \
+		dh_link -pclang-tidy \
+			/usr/lib/llvm-$(PV_LLVM)/bin/$$bin \
+			/usr/bin/$$bin ; \
+	done
+
 	for bin in \
 		clang-modernize \
 		; do \
