@@ -1,3 +1,9 @@
+llvm-defaults (0.30) unstable; urgency=medium
+
+  * Dedicated branch for llvm.org/apt/
+
+ -- Sylvestre Ledru <sylvestre@debian.org>  Wed, 21 Oct 2015 15:07:01 +0200
+
 llvm-defaults (0.29) unstable; urgency=medium
 
   * Improve the clang-format management, including the vim plugin.
