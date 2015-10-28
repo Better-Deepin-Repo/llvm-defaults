@@ -144,16 +144,13 @@ install: build README substvars
 			/usr/lib/llvm-$(PV_LLVM)/bin/$$bin \
 			/usr/bin/$$bin ; \
 	done
-	: # From LLVM 3.6
-	if test $(CURRENT_VERSION) -ge 3.6; then \
-		for bin in \
-			yaml2obj, obj2yaml, verify-uselistorder \
-			; do \
-			dh_link -pllvm \
-				/usr/lib/llvm-$(PV_LLVM)/bin/$$bin \
-				/usr/bin/$$bin ; \
-		done; \
-	fi
+	for bin in \
+		yaml2obj, obj2yaml, verify-uselistorder \
+		; do \
+		dh_link -pllvm \
+			/usr/lib/llvm-$(PV_LLVM)/bin/$$bin \
+			/usr/bin/$$bin ; \
+	done
 	for man in \
 		bugpoint lit llc llvm-ar llvm-as llvm-bcanalyzer llvm-config \
 		llvm-diff llvm-dis llvm-extract llvm-link llvm-nm \
@@ -224,18 +221,16 @@ install: build README substvars
 			/usr/lib/llvm-$(PV_LLVM)/bin/$$bin \
 			/usr/bin/$$bin ; \
 	done
-    : # clang-format
+
 	dh_link -pclang-format \
 		/usr/bin/clang-format-$(PV_LLVM) \
 		/usr/bin/clang-format
-	if test $(CURRENT_VERSION) -ge 3.6; then \
-		dh_link -pclang-format \
-			/usr/bin/clang-format-diff-$(PV_LLVM) \
-			/usr/bin/clang-format-diff ; \
-		dh_link -pclang-format \
-			/usr/share/vim/addons/syntax/clang-format-$(PV_LLVM).py \
-			/usr/share/vim/addons/syntax/clang-format.py ; \
-       fi
+	dh_link -pclang-format \
+		/usr/bin/clang-format-diff-$(PV_LLVM) \
+		/usr/bin/clang-format-diff
+	dh_link -pclang-format \
+		/usr/share/vim/addons/syntax/clang-format-$(PV_LLVM).py \
+		/usr/share/vim/addons/syntax/clang-format.py
 	dh_link -pclang \
 			/usr/bin/scan-build-$(PV_LLVM) \
 			/usr/bin/scan-build
