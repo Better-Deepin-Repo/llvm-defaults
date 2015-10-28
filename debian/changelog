@@ -1,3 +1,10 @@
+llvm-defaults (0.30) unstable; urgency=medium
+
+  * Fix the clang-format & clang-format-diff install (Closes: #802569)
+  * Remove checks on the 3.6 version as we don't support older version
+
+ -- Sylvestre Ledru <sylvestre@debian.org>  Wed, 28 Oct 2015 10:39:27 +0100
+
 llvm-defaults (0.29) unstable; urgency=medium
 
   * Improve the clang-format management, including the vim plugin.
