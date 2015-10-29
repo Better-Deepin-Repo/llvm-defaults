@@ -1,3 +1,9 @@
+llvm-defaults (0.31) unstable; urgency=medium
+
+  * Fix incorrect symlink with obj2yaml, yaml2obj (Closes: #803376)
+
+ -- Sylvestre Ledru <sylvestre@debian.org>  Thu, 29 Oct 2015 13:35:25 +0100
+
 llvm-defaults (0.30) unstable; urgency=medium
 
   * Fix the clang-format & clang-format-diff install (Closes: #802569)
