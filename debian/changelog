@@ -1,3 +1,10 @@
+llvm-defaults (0.33) unstable; urgency=medium
+
+  * Fix for real bug #803558 by using 1:3.6-28 instead of << 0.28
+    (Closes: #803558)
+
+ -- Sylvestre Ledru <sylvestre@debian.org>  Fri, 01 Jan 2016 21:14:51 +0100
+
 llvm-defaults (0.32) unstable; urgency=medium
 
   * Fix the upgrade from 'testing'
