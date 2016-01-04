@@ -145,7 +145,7 @@ install: build README substvars
 			/usr/bin/$$bin ; \
 	done
 	for bin in \
-		yaml2obj, obj2yaml, verify-uselistorder \
+		yaml2obj obj2yaml verify-uselistorder \
 		; do \
 		dh_link -pllvm \
 			/usr/lib/llvm-$(PV_LLVM)/bin/$$bin \
