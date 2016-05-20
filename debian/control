@@ -5,7 +5,7 @@ Maintainer: LLVM Packaging Team <pkg-llvm-team@lists.alioth.debian.org>
 Uploaders: Matthias Klose <doko@debian.org>, Sylvestre Ledru <sylvestre@debian.org>
 Standards-Version: 3.9.6
 Build-Depends: debhelper (>= 5.0.0), dpkg-dev (>= 1.13.9), lsb-release,
- llvm-3.6-dev, libllvm-3.6-ocaml-dev, m4,
+ llvm-3.9-dev, libllvm-3.9-ocaml-dev, m4,
 Vcs-Svn: svn://svn.debian.org/svn/pkg-llvm/llvm-defaults/trunk/
 Vcs-Browser: http://svn.debian.org/viewsvn/pkg-llvm/llvm-defaults/trunk/
 
