@@ -3,7 +3,7 @@ Section: devel
 Priority: optional
 Maintainer: LLVM Packaging Team <pkg-llvm-team@lists.alioth.debian.org>
 Uploaders: Matthias Klose <doko@debian.org>, Sylvestre Ledru <sylvestre@debian.org>
-Standards-Version: 3.9.6
+Standards-Version: 3.9.8
 Build-Depends: debhelper (>= 5.0.0), dpkg-dev (>= 1.13.9), lsb-release,
  llvm-3.9-dev, libllvm-3.9-ocaml-dev, m4,
 Vcs-Svn: svn://svn.debian.org/svn/pkg-llvm/llvm-defaults/trunk/
@@ -66,21 +66,6 @@ Description: C, C++ and Objective-C compiler (LLVM based)
  .
  This is a dependency package providing the default clang compiler.
 
-Package: clang-modernize
-Architecture: any
-Depends: clang-modernize-${pv:llvm} ${reqv:llvm}, ${misc:Depends}
-Breaks: clang (<< 1:3.6-28)
-Replaces: clang (<< 1:3.6-28)
-Description: Tool to convert C++98 and C++03 code to C++11
- The purpose of the C++11 Migrator is to do source-to-source translation to
- migrate existing C++ code to use C++11 features to enhance
- maintainability, readability, runtime performance, and compile-time
- performance. Development is still early and transforms fall mostly into
- the first two categories. The migrator is based on Clang's LibTooling and
- the AST Matching library.
- .
- This is a dependency package providing the clang modernize tool.
-
 Package: clang-tidy
 Architecture: any
 Depends: clang-tidy-${pv:llvm} ${reqv:llvm}, ${misc:Depends}
@@ -91,6 +76,8 @@ Description: clang-based C++ linter tool
  errors, like style violations, interface misuse, or bugs that can be deduced
  via static analysis. clang-tidy is modular and provides a convenient interface
  for writing new checks.
+ .
+ clang-tidy replaces clang-modernize
  .
  This is a dependency package providing the clang tidy tool.
 
