@@ -1,3 +1,13 @@
+llvm-defaults (0.34~exp4) experimental; urgency=medium
+
+  * Sync from Ubuntu (thanks Doko):
+    - lldb-argdumper, lldb-server, lldb-mi provided as new binaries
+      (LP: #1585928)
+    - Don't build lldb on powerpc.
+    - lldb is not supported on s390x
+
+ -- Sylvestre Ledru <sylvestre@debian.org>  Mon, 27 Jun 2016 16:48:37 +0200
+
 llvm-defaults (0.34~exp3) experimental; urgency=medium
 
   * Really change to 3.8
