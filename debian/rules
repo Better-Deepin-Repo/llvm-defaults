@@ -62,10 +62,10 @@ DEB_HOST_GNU_TYPE	:= $(shell dpkg-architecture -qDEB_HOST_GNU_TYPE)
 CV_LLVM		:= 1:$(CURRENT_VERSION)-$(REL_NO_39)
 
 distribution := $(shell lsb_release -is)
-all_packages   := llvm llvm-runtime llvm-dev libllvm-ocaml-dev clang libclang1 libclang-dev clang-format clang-modernize clang-tidy
+all_packages   := llvm llvm-runtime llvm-dev libllvm-ocaml-dev clang libclang1 libclang-dev clang-format clang-tidy
 no_packages    := llvm-gcc # must be built?
 
-LLDB_SUPPORTED=amd64 armel armhf i386  kfreebsd-amd64 kfreebsd-i386 s390 s390x sparc alpha hppa m68k powerpcspe ppc64 sh4 sparc64 x32 powerpc mips mipsel
+LLDB_SUPPORTED=amd64 armel armhf i386  kfreebsd-amd64 kfreebsd-i386 s390 sparc alpha hppa m68k powerpcspe ppc64 sh4 sparc64 x32 mips mipsel
 ifneq (,$(filter $(DEB_HOST_ARCH),$(LLDB_SUPPORTED)))
     all_packages += lldb
 else
@@ -217,14 +217,6 @@ install: build README substvars
 			/usr/bin/$$bin ; \
 	done
 
-	for bin in \
-		clang-modernize \
-		; do \
-		dh_link -pclang-modernize \
-			/usr/lib/llvm-$(PV_LLVM)/bin/$$bin \
-			/usr/bin/$$bin ; \
-	done
-
 	dh_link -pclang-format \
 		/usr/bin/clang-format-$(PV_LLVM) \
 		/usr/bin/clang-format
@@ -246,6 +238,15 @@ install: build README substvars
 	dh_link -plldb \
 			/usr/bin/lldb-$(PV_LLVM) \
 			/usr/bin/lldb
+	dh_link -plldb \
+			/usr/bin/lldb-argdumper-$(PV_LLVM) \
+			/usr/bin/lldb-argdumper
+	dh_link -plldb \
+			/usr/bin/lldb-mi-$(PV_LLVM) \
+			/usr/bin/lldb-mi
+	dh_link -plldb \
+			/usr/bin/lldb-server-$(PV_LLVM) \
+			/usr/bin/lldb-server
 
 
 nopkgs := $(foreach p, $(no_packages),-N$(p))

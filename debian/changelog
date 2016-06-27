@@ -1,14 +1,25 @@
-llvm-defaults (0.33+2) unstable; urgency=medium
+llvm-defaults (0.34) unstable; urgency=medium
 
   * Default to 3.9
-
- -- Sylvestre Ledru <sylvestre@debian.org>  Fri, 20 May 2016 15:53:20 +0200
-
-llvm-defaults (0.33+1) unstable; urgency=medium
-
   * Dedicated branch for llvm.org/apt/
 
  -- Sylvestre Ledru <sylvestre@debian.org>  Wed, 21 Oct 2015 15:07:01 +0200
+
+llvm-defaults (0.34~exp4) experimental; urgency=medium
+
+  * Sync from Ubuntu (thanks Doko):
+    - lldb-argdumper, lldb-server, lldb-mi provided as new binaries
+      (LP: #1585928)
+    - Don't build lldb on powerpc.
+    - lldb is not supported on s390x
+
+ -- Sylvestre Ledru <sylvestre@debian.org>  Mon, 27 Jun 2016 16:48:37 +0200
+
+llvm-defaults (0.34~exp3) experimental; urgency=medium
+
+  * Really change to 3.8
+
+ -- Sylvestre Ledru <sylvestre@debian.org>  Mon, 27 Jun 2016 16:36:27 +0200
 
 llvm-defaults (0.34~exp2) experimental; urgency=medium
 
