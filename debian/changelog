@@ -1,3 +1,12 @@
+llvm-defaults (0.34~exp2) experimental; urgency=medium
+
+  * Default to 3.8
+    - Yes, that means that we are skipping 3.7 as transition
+  * Remove clang-modernize (replaced by clang-tidy)
+  * Standards-Version updated to 3.9.8
+
+ -- Sylvestre Ledru <sylvestre@debian.org>  Tue, 26 Jan 2016 14:44:44 +0100
+
 llvm-defaults (0.34~exp1) experimental; urgency=medium
 
   * Default to 3.7
