@@ -1,8 +1,9 @@
-llvm-defaults (0.34~exp5) experimental; urgency=medium
+llvm-defaults (0.34) unstable; urgency=medium
 
+  * Upload to unstable
   * Add arm64 to the list of supported arch for lldb (Closes: #836591)
 
- --
+ -- Sylvestre Ledru <sylvestre@debian.org>  Tue, 04 Oct 2016 19:15:35 +0200
 
 llvm-defaults (0.34~exp4) experimental; urgency=medium
 
