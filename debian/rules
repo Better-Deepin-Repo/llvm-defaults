@@ -65,7 +65,7 @@ distribution := $(shell lsb_release -is)
 all_packages   := llvm llvm-runtime llvm-dev libllvm-ocaml-dev clang libclang1 libclang-dev clang-format clang-tidy
 no_packages    := llvm-gcc # must be built?
 
-LLDB_SUPPORTED=amd64 armel armhf i386  kfreebsd-amd64 kfreebsd-i386 s390 sparc alpha hppa m68k powerpcspe ppc64 sh4 sparc64 x32 mips mipsel
+LLDB_SUPPORTED=amd64 armel armhf i386  kfreebsd-amd64 kfreebsd-i386 s390 sparc alpha hppa m68k powerpcspe ppc64 sh4 sparc64 x32 mips mipsel arm64
 ifneq (,$(filter $(DEB_HOST_ARCH),$(LLDB_SUPPORTED)))
     all_packages += lldb
 else
@@ -141,7 +141,7 @@ install: build README substvars
 		bugpoint llc llvm-ar llvm-as llvm-bcanalyzer llvm-config \
 		llvm-cov llvm-diff llvm-dis llvm-dwarfdump llvm-extract \
 		llvm-link llvm-mc llvm-nm llvm-objdump \
-		llvm-ranlib llvm-rtdyld llvm-size llvm-tblgen \
+		llvm-ranlib llvm-rtdyld llvm-size llvm-tblgen llvm-profdata \
 		macho-dump opt ; do \
 		dh_link -pllvm \
 			/usr/lib/llvm-$(PV_LLVM)/bin/$$bin \
@@ -156,7 +156,7 @@ install: build README substvars
 	done
 	for man in \
 		bugpoint lit llc llvm-ar llvm-as llvm-bcanalyzer llvm-config \
-		llvm-diff llvm-dis llvm-extract llvm-link llvm-nm \
+		llvm-diff llvm-dis llvm-extract llvm-link llvm-nm llvm-profdata \
 		llvm-ranlib opt tblgen ; do \
 		dh_link -pllvm \
 			/usr/share/man/man1/$$man-$(PV_LLVM).1.gz \
