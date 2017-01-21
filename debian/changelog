@@ -1,6 +1,6 @@
 llvm-defaults (0.35~exp1) UNRELEASED; urgency=medium
 
-  * Default to 4.0
+  * Default to 5.0
   * Add llvm-profdata in the list of binaries
   * Dedicated branch for llvm.org/apt/
 
