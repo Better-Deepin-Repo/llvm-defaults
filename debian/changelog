@@ -2,6 +2,7 @@ llvm-defaults (0.35~exp1) UNRELEASED; urgency=medium
 
   * Default to 5.0
   * Add llvm-profdata in the list of binaries
+  * Add lld as a new dependency package
   * Dedicated branch for llvm.org/apt/
 
  -- Sylvestre Ledru <sylvestre@debian.org>  Wed, 21 Dec 2016 15:56:16 +0100
