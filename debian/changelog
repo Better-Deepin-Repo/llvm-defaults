@@ -1,6 +1,6 @@
 llvm-defaults (0.35) UNRELEASED; urgency=medium
 
-  * Add llvm-profdata in the list of binaries
+  * Add llvm-profdata and llvm-symbolizer in the list of binaries
 
  -- Sylvestre Ledru <sylvestre@debian.org>  Wed, 21 Dec 2016 15:56:16 +0100
 
