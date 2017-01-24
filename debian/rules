@@ -148,7 +148,7 @@ install: build README substvars
 		llvm-cov llvm-diff llvm-dis llvm-dwarfdump llvm-extract \
 		llvm-link llvm-mc llvm-nm llvm-objdump \
 		llvm-ranlib llvm-rtdyld llvm-size llvm-tblgen llvm-profdata \
-		macho-dump opt ; do \
+		macho-dump opt llvm-symbolizer ; do \
 		dh_link -pllvm \
 			/usr/lib/llvm-$(PV_LLVM)/bin/$$bin \
 			/usr/bin/$$bin ; \
@@ -163,7 +163,7 @@ install: build README substvars
 	for man in \
 		bugpoint lit llc llvm-ar llvm-as llvm-bcanalyzer llvm-config \
 		llvm-diff llvm-dis llvm-extract llvm-link llvm-nm llvm-profdata \
-		llvm-ranlib opt tblgen ; do \
+		llvm-ranlib opt tblgen llvm-symbolizer ; do \
 		dh_link -pllvm \
 			/usr/share/man/man1/$$man-$(PV_LLVM).1.gz \
 			/usr/share/man/man1/$$man.1.gz ; \
