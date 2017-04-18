@@ -1,6 +1,8 @@
 llvm-defaults (0.35) unstable; urgency=medium
 
   * Add llvm-profdata and llvm-symbolizer in the list of binaries
+  * Following the change on llvm-toolchain-3.{8,9}, restrict the list of archs
+    for libllvm-ocaml-dev to arm & intel cpus
 
  -- Sylvestre Ledru <sylvestre@debian.org>  Tue, 18 Apr 2017 12:01:50 +0200
 
