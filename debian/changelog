@@ -1,3 +1,9 @@
+llvm-defaults (0.36) unstable; urgency=medium
+
+  * Also remove libllvm-3.8-ocaml-dev from the build dep
+
+ -- Sylvestre Ledru <sylvestre@debian.org>  Tue, 18 Apr 2017 14:08:37 +0200
+
 llvm-defaults (0.35) unstable; urgency=medium
 
   * Add llvm-profdata and llvm-symbolizer in the list of binaries
