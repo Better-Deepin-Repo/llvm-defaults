@@ -1,8 +1,10 @@
-llvm-defaults (0.35) UNRELEASED; urgency=medium
+llvm-defaults (0.34+nmu1) unstable; urgency=medium
 
-  * Add llvm-profdata and llvm-symbolizer in the list of binaries
+  * Non-maintainer upload.
+  * Remove obsolete symlink /usr/bin/pp-trace. (Closes: #839909)
+  * Remove obsolete symlink /usr/bin/macho-dump. (Closes: #839906)
 
- -- Sylvestre Ledru <sylvestre@debian.org>  Wed, 21 Dec 2016 15:56:16 +0100
+ -- Anton Gladky <gladk@debian.org>  Sat, 11 Mar 2017 20:23:49 +0100
 
 llvm-defaults (0.34) unstable; urgency=medium
 

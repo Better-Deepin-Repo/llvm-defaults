@@ -138,8 +138,8 @@ install: build README substvars
 		bugpoint llc llvm-ar llvm-as llvm-bcanalyzer llvm-config \
 		llvm-cov llvm-diff llvm-dis llvm-dwarfdump llvm-extract \
 		llvm-link llvm-mc llvm-nm llvm-objdump \
-		llvm-ranlib llvm-rtdyld llvm-size llvm-tblgen llvm-profdata \
-		macho-dump opt llvm-symbolizer; do \
+		llvm-ranlib llvm-rtdyld llvm-size llvm-tblgen \
+		opt ; do \
 		dh_link -pllvm \
 			/usr/lib/llvm-$(PV_LLVM)/bin/$$bin \
 			/usr/bin/$$bin ; \
@@ -153,8 +153,8 @@ install: build README substvars
 	done
 	for man in \
 		bugpoint lit llc llvm-ar llvm-as llvm-bcanalyzer llvm-config \
-		llvm-diff llvm-dis llvm-extract llvm-link llvm-nm llvm-profdata \
-		llvm-ranlib opt tblgen llvm-symbolizer; do \
+		llvm-diff llvm-dis llvm-extract llvm-link llvm-nm \
+		llvm-ranlib opt tblgen ; do \
 		dh_link -pllvm \
 			/usr/share/man/man1/$$man-$(PV_LLVM).1.gz \
 			/usr/share/man/man1/$$man.1.gz ; \
@@ -199,7 +199,7 @@ install: build README substvars
 		usr/bin usr/share/man/man1
 	for bin in \
 		clang clang++ clang-check clang-tblgen c-index-test \
-		clang-apply-replacements pp-trace clang-query \
+		clang-apply-replacements clang-query \
 		; do \
 		dh_link -pclang \
 			/usr/lib/llvm-$(PV_LLVM)/bin/$$bin \
