@@ -1,9 +1,21 @@
-llvm-defaults (0.35~exp1) UNRELEASED; urgency=medium
+llvm-defaults (0.37~exp1) UNRELEASED; urgency=medium
 
   * Default to 5.0
   * Add llvm-profdata and llvm-symbolizer in the list of binaries
   * Add lld as a new dependency package
   * Dedicated branch for llvm.org/apt/
+
+ -- Sylvestre Ledru <sylvestre@debian.org>  Wed, 21 Dec 2016 15:56:16 +0100
+
+llvm-defaults (0.36) unstable; urgency=medium
+
+  * Also remove libllvm-3.8-ocaml-dev from the build dep
+
+ -- Sylvestre Ledru <sylvestre@debian.org>  Tue, 18 Apr 2017 14:08:37 +0200
+
+llvm-defaults (0.35) unstable; urgency=medium
+
+  * Add llvm-profdata and llvm-symbolizer in the list of binaries
 
  -- Sylvestre Ledru <sylvestre@debian.org>  Wed, 21 Dec 2016 15:56:16 +0100
 
