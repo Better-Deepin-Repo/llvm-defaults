@@ -15,6 +15,11 @@ Versions of LLVM present in Debian Squeeze
 
 - LLVM 3.4 is the default version for all architectures.
 
+Versions of LLVM present in Debian stretch
+-----------------------------------------
+
+- LLVM 3.8 is the default version for all architectures.
+
 How are the default compilers selected?
 ---------------------------------------
 
@@ -34,7 +39,7 @@ architecture.
 The default compiler versions for Debian GNU/Linux on amd64 are
 (minor version numbers omitted):
 
-	llvm		: llvm-3.8
+	llvm		: llvm-4.0
 
 Thanks to llvm-defaults, each architecture can choose its own
 preferred llvm version, and that preference can change without
@@ -65,3 +70,5 @@ Matthias Klose <doko@debian.org>
 Sylvestre Ledru <sylvestre@debian.org>
 
 ===============================================================================
+
+ -- Sylvestre Ledru <sylvestre@debian.org>, Sun, 18 Jun 2017 22:01:55 +0200

@@ -46,27 +46,36 @@ REL_NO_37	:= $(shell expr $(VMINOR) - 0)$(REL_EXT)
 # llvm-defaults 0.34 is the first version for 3.8.
 REL_NO_38       := $(shell expr $(VMINOR) - 0)$(REL_EXT)
 
-# minimum required version
-REQV            := (>= 3.8~)
+# llvm-defaults 0.XX is the first version for 3.9.
+REL_NO_39	:= $(shell expr $(VMINOR) - 0)$(REL_EXT)
 
-CURRENT_VERSION := 3.8
+# llvm-defaults 0.XX is the first version for 4.0.
+REL_NO_40	:= $(shell expr $(VMINOR) - 0)$(REL_EXT)
+
+# llvm-defaults 0.XX is the first version for 5.0.
+REL_NO_50	:= $(shell expr $(VMINOR) - 0)$(REL_EXT)
+
+# minimum required version
+REQV            := (>= 4.0~)
+
+CURRENT_VERSION := 4.0
 
 # architecture dependent variables
 DEB_HOST_ARCH		:= $(shell dpkg-architecture -qDEB_HOST_ARCH)
 DEB_HOST_GNU_TYPE	:= $(shell dpkg-architecture -qDEB_HOST_GNU_TYPE)
 
 # complete version number, including the release
-CV_LLVM		:= 1:$(CURRENT_VERSION)-$(REL_NO_38)
+CV_LLVM		:= 1:$(CURRENT_VERSION)-$(REL_NO_40)
 
 distribution := $(shell lsb_release -is)
 all_packages   := llvm llvm-runtime llvm-dev libllvm-ocaml-dev clang libclang1 libclang-dev clang-format clang-tidy
 no_packages    := llvm-gcc # must be built?
 
-LLDB_SUPPORTED=amd64 armel armhf i386  kfreebsd-amd64 kfreebsd-i386 s390 sparc alpha hppa m68k powerpcspe ppc64 sh4 sparc64 x32 mips mipsel arm64
-ifneq (,$(filter $(DEB_HOST_ARCH),$(LLDB_SUPPORTED)))
-    all_packages += lldb
+EXTRA_SUPPORTED=amd64 armel armhf i386  kfreebsd-amd64 kfreebsd-i386 s390 sparc alpha hppa m68k powerpcspe ppc64 sh4 sparc64 x32 mips mipsel arm64
+ifneq (,$(filter $(DEB_HOST_ARCH),$(EXTRA_SUPPORTED)))
+    all_packages += lldb lld
 else
-    no_packages += lldb
+    no_packages += lldb lld
 endif
 
 packages := $(filter-out $(no_packages), $(all_packages))
@@ -245,6 +254,9 @@ install: build README substvars
 	dh_link -plldb \
 			/usr/bin/lldb-server-$(PV_LLVM) \
 			/usr/bin/lldb-server
+	dh_link -plld \
+			/usr/bin/lld-$(PV_LLVM) \
+			/usr/bin/lld
 
 
 nopkgs := $(foreach p, $(no_packages),-N$(p))
