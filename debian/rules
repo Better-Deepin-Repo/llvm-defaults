@@ -165,7 +165,7 @@ install: build README substvars
 		bugpoint lit llc llvm-ar llvm-as llvm-bcanalyzer llvm-config \
 		llvm-diff llvm-dis llvm-extract llvm-link llvm-nm llvm-profdata \
 		llvm-ranlib opt tblgen llvm-symbolizer llvm-cov llvm-dwarfdump \
-		llvm-objdump llvm-rtdyld llvm-size; do \
+		llvm-objdump llvm-rtdyld llvm-size llvm-mc; do \
 		dh_link -pllvm \
 			/usr/share/man/man1/$$man-$(PV_LLVM).1.gz \
 			/usr/share/man/man1/$$man.1.gz ; \
@@ -195,7 +195,7 @@ install: build README substvars
 
 	for man in \
 		lldb lldb-mi; do \
-		dh_link -pclang-format \
+		dh_link -plldb \
 			/usr/share/man/man1/$$man-$(PV_LLVM).1.gz \
 			/usr/share/man/man1/$$man.1.gz ; \
 	done
@@ -301,12 +301,6 @@ binary-arch: build install
 	dh_lintian
 	dh_installchangelogs -a $(nopkgs)
 	dh_installdocs -a $(nopkgs) debian/README.Debian
-	for p in $(packages) ; do \
-		if [ -f debian/$$p/usr/share/doc/$$p/changelog ]; then \
-		  mv debian/$$p/usr/share/doc/$$p/changelog \
-	    	debian/$$p/usr/share/doc/$$p/changelog.Debian; \
-		fi; \
-	done
 
 	dh_compress -a $(nopkgs) -X README.Debian
 	dh_fixperms -a $(nopkgs)
