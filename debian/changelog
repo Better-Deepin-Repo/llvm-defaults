@@ -1,11 +1,17 @@
-llvm-defaults (0.37~exp1) UNRELEASED; urgency=medium
+llvm-defaults (0.37~exp1) experimental; urgency=medium
 
   * Default to 5.0
   * Add llvm-profdata and llvm-symbolizer in the list of binaries
   * Add lld as a new dependency package
-  * Dedicated branch for llvm.org/apt/
+  * Add manpages for llvm-cov llvm-dwarfdump llvm-mc clang-format
+    clang-format-diff clang-tidy lldb lldb-mi clang llvm-objdump
+    llvm-rtdyld llvm-size clang-apply-replacements clang-check
+    clang-query scan-build scan-view in their respective packages
+  * Standards-Version updated to 4.0.0
+  * Compat mode bump to 9
+  * Fix wrong-name-for-changelog-of-native-package
 
- -- Sylvestre Ledru <sylvestre@debian.org>  Wed, 21 Dec 2016 15:56:16 +0100
+ -- Sylvestre Ledru <sylvestre@debian.org>  Sun, 18 Jun 2017 23:07:45 +0200
 
 llvm-defaults (0.36) unstable; urgency=medium
 
@@ -16,8 +22,18 @@ llvm-defaults (0.36) unstable; urgency=medium
 llvm-defaults (0.35) unstable; urgency=medium
 
   * Add llvm-profdata and llvm-symbolizer in the list of binaries
+  * Following the change on llvm-toolchain-3.{8,9}, restrict the list of archs
+    for libllvm-ocaml-dev to arm & intel cpus
 
- -- Sylvestre Ledru <sylvestre@debian.org>  Wed, 21 Dec 2016 15:56:16 +0100
+ -- Sylvestre Ledru <sylvestre@debian.org>  Tue, 18 Apr 2017 12:01:50 +0200
+
+llvm-defaults (0.34+nmu1) unstable; urgency=medium
+
+  * Non-maintainer upload.
+  * Remove obsolete symlink /usr/bin/pp-trace. (Closes: #839909)
+  * Remove obsolete symlink /usr/bin/macho-dump. (Closes: #839906)
+
+ -- Anton Gladky <gladk@debian.org>  Sat, 11 Mar 2017 20:23:49 +0100
 
 llvm-defaults (0.34) unstable; urgency=medium
 

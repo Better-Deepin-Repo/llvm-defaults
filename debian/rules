@@ -40,16 +40,16 @@ REL_NO_35	:= $(shell expr $(VMINOR) - 0)$(REL_EXT)
 # llvm-defaults 0.27 is the first version for 3.6.
 REL_NO_36	:= $(shell expr $(VMINOR) - 0)$(REL_EXT)
 
-# llvm-defaults 0.XX is the first version for 3.7.
+# llvm-defaults (not in debian) is the first version for 3.7.
 REL_NO_37	:= $(shell expr $(VMINOR) - 0)$(REL_EXT)
 
-# llvm-defaults 0.XX is the first version for 3.8.
+# llvm-defaults 0.34 is the first version for 3.8.
 REL_NO_38	:= $(shell expr $(VMINOR) - 0)$(REL_EXT)
 
-# llvm-defaults 0.XX is the first version for 3.9.
+# llvm-defaults (not in debian) is the first version for 3.9.
 REL_NO_39	:= $(shell expr $(VMINOR) - 0)$(REL_EXT)
 
-# llvm-defaults 0.XX is the first version for 4.0.
+# llvm-defaults 0.37 is the first version for 4.0.
 REL_NO_40	:= $(shell expr $(VMINOR) - 0)$(REL_EXT)
 
 # llvm-defaults 0.XX is the first version for 5.0.
@@ -71,7 +71,7 @@ distribution := $(shell lsb_release -is)
 all_packages   := llvm llvm-runtime llvm-dev libllvm-ocaml-dev clang libclang1 libclang-dev clang-format clang-tidy
 no_packages    := llvm-gcc # must be built?
 
-EXTRA_SUPPORTED=amd64 armel armhf i386 kfreebsd-amd64 kfreebsd-i386 s390 sparc alpha hppa m68k powerpcspe ppc64 sh4 sparc64 x32 mips mipsel arm64
+EXTRA_SUPPORTED=amd64 armel armhf i386  kfreebsd-amd64 kfreebsd-i386 s390 sparc alpha hppa m68k powerpcspe ppc64 sh4 sparc64 x32 mips mipsel arm64
 ifneq (,$(filter $(DEB_HOST_ARCH),$(EXTRA_SUPPORTED)))
     all_packages += lldb lld
 else
@@ -148,7 +148,8 @@ install: build README substvars
 		llvm-cov llvm-diff llvm-dis llvm-dwarfdump llvm-extract \
 		llvm-link llvm-mc llvm-nm llvm-objdump \
 		llvm-ranlib llvm-rtdyld llvm-size llvm-tblgen llvm-profdata \
-		macho-dump opt llvm-symbolizer ; do \
+		llvm-symbolizer \
+		opt; do \
 		dh_link -pllvm \
 			/usr/lib/llvm-$(PV_LLVM)/bin/$$bin \
 			/usr/bin/$$bin ; \
@@ -163,8 +164,38 @@ install: build README substvars
 	for man in \
 		bugpoint lit llc llvm-ar llvm-as llvm-bcanalyzer llvm-config \
 		llvm-diff llvm-dis llvm-extract llvm-link llvm-nm llvm-profdata \
-		llvm-ranlib opt tblgen llvm-symbolizer ; do \
+		llvm-ranlib opt tblgen llvm-symbolizer llvm-cov llvm-dwarfdump \
+		llvm-objdump llvm-rtdyld llvm-size llvm-mc; do \
 		dh_link -pllvm \
+			/usr/share/man/man1/$$man-$(PV_LLVM).1.gz \
+			/usr/share/man/man1/$$man.1.gz ; \
+	done
+
+	for man in \
+		clang clang-apply-replacements clang-check clang-query \
+		scan-build scan-view; do \
+		dh_link -pclang \
+			/usr/share/man/man1/$$man-$(PV_LLVM).1.gz \
+			/usr/share/man/man1/$$man.1.gz ; \
+	done
+
+	for man in \
+		clang-format clang-format-diff; do \
+		dh_link -pclang-format \
+			/usr/share/man/man1/$$man-$(PV_LLVM).1.gz \
+			/usr/share/man/man1/$$man.1.gz ; \
+	done
+
+	for man in \
+		clang-tidy; do \
+		dh_link -pclang-tidy \
+			/usr/share/man/man1/$$man-$(PV_LLVM).1.gz \
+			/usr/share/man/man1/$$man.1.gz ; \
+	done
+
+	for man in \
+		lldb lldb-mi; do \
+		dh_link -plldb \
 			/usr/share/man/man1/$$man-$(PV_LLVM).1.gz \
 			/usr/share/man/man1/$$man.1.gz ; \
 	done
@@ -208,7 +239,7 @@ install: build README substvars
 		usr/bin usr/share/man/man1
 	for bin in \
 		clang clang++ clang-check clang-tblgen c-index-test \
-		clang-apply-replacements pp-trace clang-query \
+		clang-apply-replacements clang-query \
 		; do \
 		dh_link -pclang \
 			/usr/lib/llvm-$(PV_LLVM)/bin/$$bin \
@@ -270,12 +301,6 @@ binary-arch: build install
 	dh_lintian
 	dh_installchangelogs -a $(nopkgs)
 	dh_installdocs -a $(nopkgs) debian/README.Debian
-	for p in $(packages) ; do \
-		if [ -f debian/$$p/usr/share/doc/$$p/changelog ]; then \
-		  mv debian/$$p/usr/share/doc/$$p/changelog \
-	    	debian/$$p/usr/share/doc/$$p/changelog.Debian; \
-		fi; \
-	done
 
 	dh_compress -a $(nopkgs) -X README.Debian
 	dh_fixperms -a $(nopkgs)
