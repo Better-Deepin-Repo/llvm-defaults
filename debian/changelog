@@ -3,6 +3,10 @@ llvm-defaults (0.37~exp1) experimental; urgency=medium
   * Default to 4.0
   * Add llvm-profdata and llvm-symbolizer in the list of binaries
   * Add lld as a new dependency package
+  * Add manpages for llvm-cov llvm-dwarfdump lvm-mc clang-format
+    clang-format-diff clang-tidy lldb lldb-mi clang llvm-objdump 
+    llvm-rtdyld llvm-size clang-apply-replacements clang-check
+    clang-query scan-build scan-view
 
  -- Sylvestre Ledru <sylvestre@debian.org>  Wed, 21 Dec 2016 15:56:16 +0100
 

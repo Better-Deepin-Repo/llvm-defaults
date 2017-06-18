@@ -164,7 +164,10 @@ install: build README substvars
 	for man in \
 		bugpoint lit llc llvm-ar llvm-as llvm-bcanalyzer llvm-config \
 		llvm-diff llvm-dis llvm-extract llvm-link llvm-nm llvm-profdata \
-		llvm-ranlib opt tblgen llvm-symbolizer; do \
+		llvm-ranlib opt tblgen llvm-symbolizer llvm-cov llvm-dwarfdump \
+		llvm-mc clang-format clang-format-diff clang-tidy lldb lldb-mi \
+		clang llvm-objdump llvm-rtdyld llvm-size clang-apply-replacements
+		clang-check clang-query scan-build scan-view; do \
 		dh_link -pllvm \
 			/usr/share/man/man1/$$man-$(PV_LLVM).1.gz \
 			/usr/share/man/man1/$$man.1.gz ; \
