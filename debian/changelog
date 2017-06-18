@@ -1,4 +1,4 @@
-llvm-defaults (0.37~exp1) unstable; urgency=medium
+llvm-defaults (0.37~exp1) experimental; urgency=medium
 
   * Default to 4.0
   * Add llvm-profdata and llvm-symbolizer in the list of binaries

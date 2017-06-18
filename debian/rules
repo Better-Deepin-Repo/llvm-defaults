@@ -40,16 +40,16 @@ REL_NO_35	:= $(shell expr $(VMINOR) - 0)$(REL_EXT)
 # llvm-defaults 0.27 is the first version for 3.6.
 REL_NO_36	:= $(shell expr $(VMINOR) - 0)$(REL_EXT)
 
-# llvm-defaults 0.34 is the first version for 3.7.
+# llvm-defaults (not in debian) is the first version for 3.7.
 REL_NO_37	:= $(shell expr $(VMINOR) - 0)$(REL_EXT)
 
 # llvm-defaults 0.34 is the first version for 3.8.
-REL_NO_38       := $(shell expr $(VMINOR) - 0)$(REL_EXT)
+REL_NO_38	:= $(shell expr $(VMINOR) - 0)$(REL_EXT)
 
-# llvm-defaults 0.XX is the first version for 3.9.
+# llvm-defaults (not in debian) is the first version for 3.9.
 REL_NO_39	:= $(shell expr $(VMINOR) - 0)$(REL_EXT)
 
-# llvm-defaults 0.XX is the first version for 4.0.
+# llvm-defaults 0.37 is the first version for 4.0.
 REL_NO_40	:= $(shell expr $(VMINOR) - 0)$(REL_EXT)
 
 # llvm-defaults 0.XX is the first version for 5.0.
@@ -149,7 +149,7 @@ install: build README substvars
 		llvm-link llvm-mc llvm-nm llvm-objdump \
 		llvm-ranlib llvm-rtdyld llvm-size llvm-tblgen llvm-profdata \
 		llvm-symbolizer \
-		opt ; do \
+		opt; do \
 		dh_link -pllvm \
 			/usr/lib/llvm-$(PV_LLVM)/bin/$$bin \
 			/usr/bin/$$bin ; \
