@@ -7,8 +7,10 @@ llvm-defaults (0.37~exp1) experimental; urgency=medium
     clang-format-diff clang-tidy lldb lldb-mi clang llvm-objdump
     llvm-rtdyld llvm-size clang-apply-replacements clang-check
     clang-query scan-build scan-view in their respective packages
+  * Standards-Version updated to 4.0.0
+  * Compat mode bump to 9
 
- -- Sylvestre Ledru <sylvestre@debian.org>  Wed, 21 Dec 2016 15:56:16 +0100
+ -- Sylvestre Ledru <sylvestre@debian.org>  Sun, 18 Jun 2017 23:07:45 +0200
 
 llvm-defaults (0.36) unstable; urgency=medium
 
