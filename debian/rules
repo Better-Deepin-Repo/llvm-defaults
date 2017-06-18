@@ -165,10 +165,37 @@ install: build README substvars
 		bugpoint lit llc llvm-ar llvm-as llvm-bcanalyzer llvm-config \
 		llvm-diff llvm-dis llvm-extract llvm-link llvm-nm llvm-profdata \
 		llvm-ranlib opt tblgen llvm-symbolizer llvm-cov llvm-dwarfdump \
-		llvm-mc clang-format clang-format-diff clang-tidy lldb lldb-mi \
-		clang llvm-objdump llvm-rtdyld llvm-size clang-apply-replacements \
-		clang-check clang-query scan-build scan-view; do \
+		llvm-objdump llvm-rtdyld llvm-size; do \
 		dh_link -pllvm \
+			/usr/share/man/man1/$$man-$(PV_LLVM).1.gz \
+			/usr/share/man/man1/$$man.1.gz ; \
+	done
+
+	for man in \
+		clang clang-apply-replacements clang-check clang-query \
+		scan-build scan-view; do \
+		dh_link -pclang \
+			/usr/share/man/man1/$$man-$(PV_LLVM).1.gz \
+			/usr/share/man/man1/$$man.1.gz ; \
+	done
+
+	for man in \
+		clang-format clang-format-diff; do \
+		dh_link -pclang-format \
+			/usr/share/man/man1/$$man-$(PV_LLVM).1.gz \
+			/usr/share/man/man1/$$man.1.gz ; \
+	done
+
+	for man in \
+		clang-tidy; do \
+		dh_link -pclang-tidy \
+			/usr/share/man/man1/$$man-$(PV_LLVM).1.gz \
+			/usr/share/man/man1/$$man.1.gz ; \
+	done
+
+	for man in \
+		lldb lldb-mi; do \
+		dh_link -pclang-format \
 			/usr/share/man/man1/$$man-$(PV_LLVM).1.gz \
 			/usr/share/man/man1/$$man.1.gz ; \
 	done
