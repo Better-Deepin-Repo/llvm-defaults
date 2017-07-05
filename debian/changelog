@@ -1,3 +1,10 @@
+llvm-defaults (0.37~exp2) experimental; urgency=medium
+
+  * No longer create /usr/lib/ocaml/llvm
+    Done by libllvm-X.Y-ocaml-dev (Closes: #866725)
+
+ -- Sylvestre Ledru <sylvestre@debian.org>  Wed, 05 Jul 2017 18:23:07 +0200
+
 llvm-defaults (0.37~exp1) experimental; urgency=medium
 
   * Default to 4.0
