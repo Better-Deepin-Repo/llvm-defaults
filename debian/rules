@@ -231,8 +231,7 @@ install: build README substvars
 	dh_installdirs -plibllvm-ocaml-dev \
 		/usr/lib/ocaml/METAS
 	dh_link -plibllvm-ocaml-dev \
-		/usr/lib/ocaml/llvm-$(CURRENT_VERSION)/META.llvm /usr/lib/ocaml/METAS/META.llvm \
-		/usr/lib/ocaml/llvm-$(CURRENT_VERSION) /usr/lib/ocaml/llvm
+		/usr/lib/ocaml/llvm-$(CURRENT_VERSION)/META.llvm /usr/lib/ocaml/METAS/META.llvm
 
 	: # clang
 	dh_installdirs -pclang \
