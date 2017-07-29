@@ -286,6 +286,9 @@ install: build README substvars
 	dh_link -plld \
 			/usr/bin/lld-$(PV_LLVM) \
 			/usr/bin/lld
+	dh_link -plld \
+			/usr/bin/ld.lld-$(PV_LLVM) \
+			/usr/bin/ld.lld
 
 
 nopkgs := $(foreach p, $(no_packages),-N$(p))

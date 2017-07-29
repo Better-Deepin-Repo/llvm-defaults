@@ -4,6 +4,13 @@ llvm-defaults (0.38~exp1) UNRELEASED; urgency=medium
 
  -- Sylvestre Ledru <sylvestre@debian.org>  Sun, 18 Jun 2017 23:21:14 +0200
 
+llvm-defaults (0.37~exp3) experimental; urgency=medium
+
+  * Also ship ld.lld as part of the lld package
+  * Fix clang: maintainer-script-without-set-e
+
+ -- Sylvestre Ledru <sylvestre@debian.org>  Wed, 26 Jul 2017 07:15:37 +0200
+
 llvm-defaults (0.37~exp2) experimental; urgency=medium
 
   * No longer create /usr/lib/ocaml/llvm
