@@ -252,6 +252,12 @@ install: build README substvars
 			/usr/lib/llvm-$(PV_LLVM)/bin/$$bin \
 			/usr/bin/$$bin ; \
 	done
+	dh_link -pclang-tidy \
+		/usr/bin/run-clang-tidy-$(PV_LLVM).py  \
+		/usr/bin/run-clang-tidy
+	dh_link -pclang-tidy \
+		/usr/bin/clang-tidy-diff-$(PV_LLVM).py  \
+		/usr/bin/clang-tidy-diff
 
 	dh_link -pclang-format \
 		/usr/bin/clang-format-$(PV_LLVM) \
