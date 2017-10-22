@@ -173,7 +173,7 @@ install: build README substvars
 
 	for man in \
 		clang clang-apply-replacements clang-check clang-query \
-		scan-build scan-view; do \
+		scan-build scan-view sancov; do \
 		dh_link -pclang \
 			/usr/share/man/man1/$$man-$(PV_LLVM).1.gz \
 			/usr/share/man/man1/$$man.1.gz ; \
@@ -238,7 +238,7 @@ install: build README substvars
 		usr/bin usr/share/man/man1
 	for bin in \
 		clang clang++ clang-check clang-tblgen c-index-test \
-		clang-apply-replacements clang-query \
+		clang-apply-replacements clang-query sancov \
 		; do \
 		dh_link -pclang \
 			/usr/lib/llvm-$(PV_LLVM)/bin/$$bin \
