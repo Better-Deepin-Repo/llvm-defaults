@@ -39,16 +39,16 @@ Description: Low-Level Virtual Machine (LLVM), libraries and headers
  .
  This is a dependency package providing the default libraries and headers.
 
-Package: libllvm-ocaml-dev
-Architecture: amd64 arm64 armel armhf i386
-Section: ocaml
-Depends: llvm-runtime (= ${binary:Version}), libllvm-${pv:llvm}-ocaml-dev ${reqv:llvm}, ${misc:Depends}
-Description: Low-Level Virtual Machine (LLVM), bindings for OCaml
- The Low-Level Virtual Machine (LLVM) is a collection of libraries and
- tools that make it easy to build compilers, optimizers, Just-In-Time
- code generators, and many other compiler-related programs.
- .
- This is a dependency package providing the default bindings for OCaml.
+# Package: libllvm-ocaml-dev
+# Architecture: amd64 arm64 armel armhf i386
+# Section: ocaml
+# Depends: llvm-runtime (= ${binary:Version}), libllvm-${pv:llvm}-ocaml-dev ${reqv:llvm}, ${misc:Depends}
+# Description: Low-Level Virtual Machine (LLVM), bindings for OCaml
+#  The Low-Level Virtual Machine (LLVM) is a collection of libraries and
+#  tools that make it easy to build compilers, optimizers, Just-In-Time
+#  code generators, and many other compiler-related programs.
+#  .
+#  This is a dependency package providing the default bindings for OCaml.
 
 Package: clang
 Architecture: any

@@ -68,7 +68,7 @@ DEB_HOST_GNU_TYPE	:= $(shell dpkg-architecture -qDEB_HOST_GNU_TYPE)
 CV_LLVM		:= 1:$(CURRENT_VERSION)-$(REL_NO_40)
 
 distribution := $(shell lsb_release -is)
-all_packages   := llvm llvm-runtime llvm-dev libllvm-ocaml-dev clang libclang1 libclang-dev clang-format clang-tidy
+all_packages   := llvm llvm-runtime llvm-dev clang libclang1 libclang-dev clang-format clang-tidy # libllvm-ocaml-dev 
 no_packages    := # llvm-gcc # must be built?
 
 EXTRA_SUPPORTED=amd64 armel armhf i386  kfreebsd-amd64 kfreebsd-i386 s390 sparc alpha hppa m68k powerpcspe ppc64 sh4 sparc64 x32 mips mipsel arm64
@@ -200,6 +200,13 @@ install: build README substvars
 			/usr/share/man/man1/$$man.1.gz ; \
 	done
 
+	for man in \
+		ld.lld lld; do \
+		dh_link -plld \
+			/usr/share/man/man1/$$man-$(PV_LLVM).1.gz \
+			/usr/share/man/man1/$$man.1.gz ; \
+	done
+
 	: # llvm-runtime
 	dh_installdirs -pllvm-runtime \
 		usr/bin usr/share/man/man1
@@ -228,10 +235,10 @@ install: build README substvars
 
 
 	: # libllvm-ocaml-dev
-	dh_installdirs -plibllvm-ocaml-dev \
-		/usr/lib/ocaml/METAS
-	dh_link -plibllvm-ocaml-dev \
-		/usr/lib/ocaml/llvm-$(CURRENT_VERSION)/META.llvm /usr/lib/ocaml/METAS/META.llvm
+	# dh_installdirs -plibllvm-ocaml-dev \
+	# 	/usr/lib/ocaml/METAS
+	# dh_link -plibllvm-ocaml-dev \
+	# 	/usr/lib/ocaml/llvm-$(CURRENT_VERSION)/META.llvm /usr/lib/ocaml/METAS/META.llvm
 
 	: # clang
 	dh_installdirs -pclang \
