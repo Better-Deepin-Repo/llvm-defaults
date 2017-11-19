@@ -1,3 +1,9 @@
+llvm-defaults (0.38) unstable; urgency=medium
+
+  * Upload to unstable. Default to 4.0
+
+ -- Sylvestre Ledru <sylvestre@debian.org>  Sun, 19 Nov 2017 20:55:28 +0100
+
 llvm-defaults (0.38~exp1) experimental; urgency=medium
 
   * Bump version to match the upload in unstable
