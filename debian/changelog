@@ -1,6 +1,7 @@
 llvm-defaults (0.38) unstable; urgency=medium
 
   * Upload to unstable. Default to 4.0
+  * Fix the debian-rules-sets-dpkg-architecture-variable warning
 
  -- Sylvestre Ledru <sylvestre@debian.org>  Sun, 19 Nov 2017 20:55:28 +0100
 

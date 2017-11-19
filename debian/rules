@@ -61,8 +61,8 @@ REQV            := (>= 4.0~)
 CURRENT_VERSION := 4.0
 
 # architecture dependent variables
-DEB_HOST_ARCH		:= $(shell dpkg-architecture -qDEB_HOST_ARCH)
-DEB_HOST_GNU_TYPE	:= $(shell dpkg-architecture -qDEB_HOST_GNU_TYPE)
+DEB_HOST_ARCH		?= $(shell dpkg-architecture -qDEB_HOST_ARCH)
+DEB_HOST_GNU_TYPE	?= $(shell dpkg-architecture -qDEB_HOST_GNU_TYPE)
 
 # complete version number, including the release
 CV_LLVM		:= 1:$(CURRENT_VERSION)-$(REL_NO_40)
