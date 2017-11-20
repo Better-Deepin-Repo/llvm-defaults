@@ -244,7 +244,7 @@ install: build README substvars
 	dh_installdirs -pclang \
 		usr/bin usr/share/man/man1
 	for bin in \
-		clang clang++ clang-check clang-tblgen c-index-test \
+		clang clang++ clang-check c-index-test \
 		clang-apply-replacements clang-query sancov \
 		; do \
 		dh_link -pclang \

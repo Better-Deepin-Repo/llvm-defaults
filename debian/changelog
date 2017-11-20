@@ -1,3 +1,10 @@
+llvm-defaults (0.39) unstable; urgency=medium
+
+  * Remove clang-tblgen as it has been removed in 4.0.1~+rc2-1
+    (Closes: #877203)
+
+ -- Sylvestre Ledru <sylvestre@debian.org>  Mon, 20 Nov 2017 10:24:25 +0100
+
 llvm-defaults (0.38) unstable; urgency=medium
 
   * Upload to unstable. Default to 4.0
