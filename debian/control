@@ -61,8 +61,8 @@ Description: C, C++ and Objective-C compiler (LLVM based)
  for the LLVM compiler. Its goal is to offer a replacement to the GNU Compiler
  Collection (GCC).
  .
- Clang implements all of the ISO C++ 1998, 2011 and 2014 standards and also provides
- a partial support of C++17.
+ Clang implements all of the ISO C++ 1998, 11 and 14 standards and also
+ provides most of the support of C++17.
  .
  This is a dependency package providing the default clang compiler.
 
@@ -109,8 +109,8 @@ Description: C, C++ and Objective-C compiler (LLVM based)
  for the LLVM compiler. Its goal is to offer a replacement to the GNU Compiler
  Collection (GCC).
  .
- Clang implements all of the ISO C++ 1998, 2011 and 2014 standards and also provides
- a partial support of C++17.
+ Clang implements all of the ISO C++ 1998, 11 and 14 standards and also
+ provides most of the support of C++17.
  .
  This is a dependency package providing the default clang libraries.
  .
@@ -130,8 +130,8 @@ Description: clang library - Development package
  for the LLVM compiler. Its goal is to offer a replacement to the GNU Compiler
  Collection (GCC).
  .
- Clang implements all of the ISO C++ 1998, 2011 and 2014 standards and also provides
- a partial support of C++17.
+ Clang implements all of the ISO C++ 1998, 11 and 14 standards and also
+ provides most of the support of C++17.
  .
  This is a dependency package providing the default libclang libraries and
  headers.
