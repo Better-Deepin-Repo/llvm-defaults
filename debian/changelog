@@ -1,3 +1,10 @@
+llvm-defaults (0.40) unstable; urgency=medium
+
+  * Drop lld from architectures where lld is not built
+    (Closes: #883477)
+
+ -- Sylvestre Ledru <sylvestre@debian.org>  Mon, 04 Dec 2017 14:34:27 +0100
+
 llvm-defaults (0.39) unstable; urgency=medium
 
   * Remove clang-tblgen as it has been removed in 4.0.1~+rc2-1
