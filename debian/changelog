@@ -1,4 +1,4 @@
-llvm-defaults (0.41) unstable; urgency=medium
+llvm-defaults (0.41~exp1) experimental; urgency=medium
 
   * Default to 5.0
   * Add more documentations in the README.debian file
