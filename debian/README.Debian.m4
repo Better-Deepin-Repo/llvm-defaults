@@ -15,11 +15,6 @@ of LLVM to coexist on the same system, and selects the default version
 by means of the llvm-defaults package, which creates symbolic links as
 appropriate.
 
-Versions of LLVM present in Debian Squeeze
------------------------------------------
-
-- LLVM 3.4 is the default version for all architectures.
-
 How are the default compilers selected?
 ---------------------------------------
 
@@ -45,6 +40,17 @@ Thanks to llvm-defaults, each architecture can choose its own
 preferred llvm version, and that preference can change without
 requiring a complete rebuild of both llvm packages for all
 architectures.
+
+How to build with a specific version of clang?
+----------------------------------------------
+
+Please give the CC or CXX variables to the build system.
+For example, to build with clang-PV_LLVM, the following command should
+do the work:
+
+CC=clang-PV_LLVM CXX=clang++-PV_LLVM make
+or
+CC=clang-PV_LLVM CXX=clang++-PV_LLVM ./configure
 
 
 llvm-*/... are not handled using alternatives
