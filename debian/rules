@@ -68,7 +68,7 @@ DEB_HOST_GNU_TYPE	?= $(shell dpkg-architecture -qDEB_HOST_GNU_TYPE)
 CV_LLVM		:= 1:$(CURRENT_VERSION)-$(REL_NO_50)
 
 distribution := $(shell lsb_release -is)
-all_packages   := llvm llvm-runtime llvm-dev clang libclang1 libclang-dev clang-format clang-tidy # libllvm-ocaml-dev 
+all_packages   := llvm llvm-runtime llvm-dev clang clang-tools libclang1 libclang-dev clang-format clang-tidy # libllvm-ocaml-dev
 no_packages    := # llvm-gcc # must be built?
 
 EXTRA_SUPPORTED=amd64 armel armhf i386  kfreebsd-amd64 kfreebsd-i386 s390 sparc alpha hppa m68k powerpcspe ppc64 sh4 sparc64 x32 mips mipsel arm64
@@ -172,9 +172,16 @@ install: build README substvars
 	done
 
 	for man in \
-		clang clang-apply-replacements clang-check clang-query \
-		scan-build scan-view sancov; do \
+		clang; do \
 		dh_link -pclang \
+			/usr/share/man/man1/$$man-$(PV_LLVM).1.gz \
+			/usr/share/man/man1/$$man.1.gz ; \
+	done
+
+	for man in \
+		clang-apply-replacements clang-check clang-query \
+		scan-build scan-view sancov; do \
+		dh_link -pclang-tools \
 			/usr/share/man/man1/$$man-$(PV_LLVM).1.gz \
 			/usr/share/man/man1/$$man.1.gz ; \
 	done
@@ -244,10 +251,21 @@ install: build README substvars
 	dh_installdirs -pclang \
 		usr/bin usr/share/man/man1
 	for bin in \
-		clang clang++ clang-check c-index-test \
-		clang-apply-replacements clang-query sancov \
+		clang clang++ \
 		; do \
 		dh_link -pclang \
+			/usr/lib/llvm-$(PV_LLVM)/bin/$$bin \
+			/usr/bin/$$bin ; \
+	done
+
+    : # clang-tools
+	dh_installdirs -pclang-tools \
+		usr/bin usr/share/man/man1
+	for bin in \
+		clang-check c-index-test \
+		clang-apply-replacements clang-query sancov \
+		; do \
+		dh_link -pclang-tools \
 			/usr/lib/llvm-$(PV_LLVM)/bin/$$bin \
 			/usr/bin/$$bin ; \
 	done
@@ -275,10 +293,10 @@ install: build README substvars
 	dh_link -pclang-format \
 		/usr/share/vim/addons/syntax/clang-format-$(PV_LLVM).py \
 		/usr/share/vim/addons/syntax/clang-format.py
-	dh_link -pclang \
+	dh_link -pclang-tools \
 			/usr/bin/scan-build-$(PV_LLVM) \
 			/usr/bin/scan-build
-	dh_link -pclang \
+	dh_link -pclang-tools \
 			/usr/bin/scan-view-$(PV_LLVM) \
 			/usr/bin/scan-view
 	dh_link -pclang \
