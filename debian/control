@@ -3,7 +3,7 @@ Section: devel
 Priority: optional
 Maintainer: LLVM Packaging Team <pkg-llvm-team@lists.alioth.debian.org>
 Uploaders: Matthias Klose <doko@debian.org>, Sylvestre Ledru <sylvestre@debian.org>
-Standards-Version: 4.0.0
+Standards-Version: 4.1.3
 Build-Depends: debhelper (>= 9), dpkg-dev (>= 1.13.9), lsb-release,
  m4
 Vcs-Svn: svn://svn.debian.org/svn/pkg-llvm/llvm-defaults/trunk/
@@ -39,16 +39,16 @@ Description: Low-Level Virtual Machine (LLVM), libraries and headers
  .
  This is a dependency package providing the default libraries and headers.
 
-Package: libllvm-ocaml-dev
-Architecture: amd64 arm64 armel armhf i386
-Section: ocaml
-Depends: llvm-runtime (= ${binary:Version}), libllvm-${pv:llvm}-ocaml-dev ${reqv:llvm}, ${misc:Depends}
-Description: Low-Level Virtual Machine (LLVM), bindings for OCaml
- The Low-Level Virtual Machine (LLVM) is a collection of libraries and
- tools that make it easy to build compilers, optimizers, Just-In-Time
- code generators, and many other compiler-related programs.
- .
- This is a dependency package providing the default bindings for OCaml.
+# Package: libllvm-ocaml-dev
+# Architecture: amd64 arm64 armel armhf i386
+# Section: ocaml
+# Depends: llvm-runtime (= ${binary:Version}), libllvm-${pv:llvm}-ocaml-dev ${reqv:llvm}, ${misc:Depends}
+# Description: Low-Level Virtual Machine (LLVM), bindings for OCaml
+#  The Low-Level Virtual Machine (LLVM) is a collection of libraries and
+#  tools that make it easy to build compilers, optimizers, Just-In-Time
+#  code generators, and many other compiler-related programs.
+#  .
+#  This is a dependency package providing the default bindings for OCaml.
 
 Package: clang
 Architecture: any
@@ -61,10 +61,23 @@ Description: C, C++ and Objective-C compiler (LLVM based)
  for the LLVM compiler. Its goal is to offer a replacement to the GNU Compiler
  Collection (GCC).
  .
- Clang implements all of the ISO C++ 1998 and 2001 standards and also provides
- a partial support of C++1y.
+ Clang implements all of the ISO C++ 1998, 11 and 14 standards and also
+ provides most of the support of C++17.
  .
  This is a dependency package providing the default clang compiler.
+
+Package: clang-tools
+Architecture: any
+Depends: clang ${reqv:llvm}, ${misc:Depends}
+Description: clang-based tools
+ Clang project is a C, C++, Objective C and Objective C++ front-end
+ for the LLVM compiler. Its goal is to offer a replacement to the GNU Compiler
+ Collection (GCC).
+ .
+ Clang implements all of the ISO C++ 1998, 11 and 14 standards and also
+ provides most of the support of C++17.
+ .
+ This is a dependency package providing the clang tools package.
 
 Package: clang-tidy
 Architecture: any
@@ -99,6 +112,7 @@ Description: Tool to format C/C++/Obj-C code
  This is a dependency package providing the clang format tool.
 
 Package: libclang1
+Section: libs
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}, ${dep:devlibs}, libclang1-${pv:llvm} ${reqv:llvm}
 Pre-Depends: ${misc:Pre-Depends}
@@ -108,8 +122,8 @@ Description: C, C++ and Objective-C compiler (LLVM based)
  for the LLVM compiler. Its goal is to offer a replacement to the GNU Compiler
  Collection (GCC).
  .
- Clang implements all of the ISO C++ 1998 and 2001 standards and also provides
- a partial support of C++1y.
+ Clang implements all of the ISO C++ 1998, 11 and 14 standards and also
+ provides most of the support of C++17.
  .
  This is a dependency package providing the default clang libraries.
  .
@@ -129,8 +143,8 @@ Description: clang library - Development package
  for the LLVM compiler. Its goal is to offer a replacement to the GNU Compiler
  Collection (GCC).
  .
- Clang implements all of the ISO C++ 1998 and 2001 standards and also provides
- a partial support of C++1y.
+ Clang implements all of the ISO C++ 1998, 11 and 14 standards and also
+ provides most of the support of C++17.
  .
  This is a dependency package providing the default libclang libraries and
  headers.
@@ -147,7 +161,7 @@ Description: Next generation, high-performance debugger
  This is a dependency package providing the default version of lldb.
 
 Package: lld
-Architecture: any
+Architecture: amd64 armel armhf i386  kfreebsd-amd64 kfreebsd-i386 s390 sparc alpha hppa m68k powerpcspe ppc64 sh4 sparc64 x32 mips mipsel
 Depends: lld-${pv:llvm} ${reqv:llvm}, ${misc:Depends}
 Pre-Depends: ${misc:Pre-Depends}
 Description: LLVM-based linker
