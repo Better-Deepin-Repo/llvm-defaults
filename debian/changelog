@@ -1,7 +1,7 @@
-llvm-defaults (0.38~exp1) UNRELEASED; urgency=medium
+llvm-defaults (0.42~exp1) UNRELEASED; urgency=medium
 
   * Force a new version for apt.llvm.org
-  * Default to 6.0
+  * Default to 7.0
 
  -- Sylvestre Ledru <sylvestre@debian.org>  Sun, 18 Jun 2017 23:21:14 +0200
 
