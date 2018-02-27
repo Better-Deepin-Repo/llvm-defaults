@@ -13,10 +13,12 @@ llvm-defaults (0.42~exp1) UNRELEASED; urgency=medium
 
 llvm-defaults (0.41~exp3) experimental; urgency=medium
 
+  * clang-tools: Pull the right package (clang-tools-X)
+    (Closes: #890747)
   * Move the VCS to git.
     Many thanks to James Clarke for doing the conversion
 
- -- Sylvestre Ledru <sylvestre@debian.org>  Sat, 24 Feb 2018 21:36:58 +0100
+ -- Sylvestre Ledru <sylvestre@debian.org>  Mon, 26 Feb 2018 16:16:02 +0100
 
 llvm-defaults (0.41~exp2) experimental; urgency=medium
 
