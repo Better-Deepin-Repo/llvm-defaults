@@ -55,17 +55,20 @@ REL_NO_40	:= $(shell expr $(VMINOR) - 0)$(REL_EXT)
 # llvm-defaults 0.41 is the first version for 5.0.
 REL_NO_50	:= $(shell expr $(VMINOR) - 0)$(REL_EXT)
 
-# minimum required version
-REQV            := (>= 5.0~)
+# llvm-defaults 0.41 is the first version for 6.0.
+REL_NO_60       := $(shell expr $(VMINOR) - 0)$(REL_EXT)
 
-CURRENT_VERSION := 5.0
+# minimum required version
+REQV            := (>= 6.0~)
+
+CURRENT_VERSION := 6.0
 
 # architecture dependent variables
 DEB_HOST_ARCH		?= $(shell dpkg-architecture -qDEB_HOST_ARCH)
 DEB_HOST_GNU_TYPE	?= $(shell dpkg-architecture -qDEB_HOST_GNU_TYPE)
 
 # complete version number, including the release
-CV_LLVM		:= 1:$(CURRENT_VERSION)-$(REL_NO_50)
+CV_LLVM		:= 1:$(CURRENT_VERSION)-$(REL_NO_60)
 
 distribution := $(shell lsb_release -is)
 all_packages   := llvm llvm-runtime llvm-dev clang clang-tools libclang1 libclang-dev clang-format clang-tidy # libllvm-ocaml-dev
