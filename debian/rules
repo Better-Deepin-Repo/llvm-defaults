@@ -250,7 +250,8 @@ install: build README substvars
 	# dh_link -plibllvm-ocaml-dev \
 	# 	/usr/lib/ocaml/llvm-$(CURRENT_VERSION)/META.llvm /usr/lib/ocaml/METAS/META.llvm
 
-	: # clang
+#  clang
+
 	dh_installdirs -pclang \
 		usr/bin usr/share/man/man1
 	for bin in \
@@ -261,7 +262,7 @@ install: build README substvars
 			/usr/bin/$$bin ; \
 	done
 
-    : # clang-tools
+# clang-tools
 	dh_installdirs -pclang-tools \
 		usr/bin usr/share/man/man1
 	for bin in \
@@ -273,7 +274,7 @@ install: build README substvars
 			/usr/bin/$$bin ; \
 	done
 
-    : # clang-tidy
+# clang-tidy
 	for bin in \
 		clang-tidy \
 		; do \
@@ -288,7 +289,7 @@ install: build README substvars
 		/usr/bin/clang-tidy-diff-$(PV_LLVM).py  \
 		/usr/bin/clang-tidy-diff
 
-	: # clang-format
+#  clang-format
 	dh_link -pclang-format \
 		/usr/bin/clang-format-$(PV_LLVM) \
 		/usr/bin/clang-format
@@ -299,7 +300,7 @@ install: build README substvars
 		/usr/share/vim/addons/syntax/clang-format-$(PV_LLVM).py \
 		/usr/share/vim/addons/syntax/clang-format.py
 
-	: # clang-tools
+#  clang-tools
 	dh_link -pclang-tools \
 			/usr/bin/scan-build-$(PV_LLVM) \
 			/usr/bin/scan-build
@@ -307,12 +308,12 @@ install: build README substvars
 			/usr/bin/scan-view-$(PV_LLVM) \
 			/usr/bin/scan-view
 
-	: # clang
+#  clang
 	dh_link -pclang \
 			/usr/bin/asan_symbolize-$(PV_LLVM) \
 			/usr/bin/asan_symbolize
 
-	: # lldb
+#  lldb
 	dh_link -plldb \
 			/usr/bin/lldb-$(PV_LLVM) \
 			/usr/bin/lldb
@@ -326,7 +327,7 @@ install: build README substvars
 			/usr/bin/lldb-server-$(PV_LLVM) \
 			/usr/bin/lldb-server
 
-	: # lld
+#  lld
 	dh_link -plld \
 			/usr/bin/lld-$(PV_LLVM) \
 			/usr/bin/lld

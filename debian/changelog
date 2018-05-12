@@ -1,3 +1,9 @@
+llvm-defaults (0.41~exp5) experimental; urgency=medium
+
+  * Unbreak the creation of symlink (caused by comments?!). (LP: #1769737)
+
+ -- Sylvestre Ledru <sylvestre@debian.org>  Sat, 12 May 2018 12:26:41 +0200
+
 llvm-defaults (0.41~exp4) experimental; urgency=medium
 
   * Default to 6.0 (meaning we will skip the 5.0 transition)
