@@ -17,6 +17,14 @@ llvm-defaults (0.42~exp1) UNRELEASED; urgency=medium
 
  -- Sylvestre Ledru <sylvestre@debian.org>  Sun, 18 Jun 2017 23:21:14 +0200
 
+llvm-defaults (0.41) unstable; urgency=medium
+
+  * Upload to unstable. Ready for the transition. See #893189
+    Transition to 6.0
+  * Standards-Version: 4.1.5
+
+ -- Sylvestre Ledru <sylvestre@debian.org>  Sat, 07 Jul 2018 22:24:33 +0200
+
 llvm-defaults (0.41~exp5) experimental; urgency=medium
 
   * Unbreak the creation of symlink (caused by comments?!). (LP: #1769737)
