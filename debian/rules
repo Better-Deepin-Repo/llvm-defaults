@@ -74,7 +74,7 @@ distribution := $(shell lsb_release -is)
 all_packages   := llvm llvm-runtime llvm-dev clang clang-tools libclang1 libclang-dev clang-format clang-tidy # libllvm-ocaml-dev
 no_packages    := # llvm-gcc # must be built?
 
-EXTRA_SUPPORTED=amd64 armel armhf i386  kfreebsd-amd64 kfreebsd-i386 s390 sparc alpha hppa m68k powerpcspe ppc64 sh4 sparc64 x32 mips mipsel arm64
+EXTRA_SUPPORTED=amd64 armel armhf i386  kfreebsd-amd64 kfreebsd-i386 s390 sparc alpha hppa m68k powerpcspe ppc64 ppc64el sh4 sparc64 x32 mips mipsel arm64
 ifneq (,$(filter $(DEB_HOST_ARCH),$(EXTRA_SUPPORTED)))
     all_packages += lldb lld
 else

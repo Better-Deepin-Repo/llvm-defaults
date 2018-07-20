@@ -1,3 +1,10 @@
+llvm-defaults (0.42) UNRELEASED; urgency=medium
+
+  [ Dimitri John Ledkov <xnox@ubuntu.com> ]
+  * Enable lldb on ppc64el. LP: #1777136
+
+ -- Gianfranco Costamagna <locutusofborg@debian.org>  Fri, 20 Jul 2018 10:30:58 +0200
+
 llvm-defaults (0.41) unstable; urgency=medium
 
   * Upload to unstable. Ready for the transition. See #893189
