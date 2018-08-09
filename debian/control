@@ -69,6 +69,8 @@ Description: C, C++ and Objective-C compiler (LLVM based)
 Package: clang-tools
 Architecture: any
 Depends: clang-tools-${pv:llvm} ${reqv:llvm}, ${misc:Depends}
+Breaks: clang (<< 1:4.0-42)
+Replaces: clang (<< 1:4.0-42)
 Description: clang-based tools
  Clang project is a C, C++, Objective C and Objective C++ front-end
  for the LLVM compiler. Its goal is to offer a replacement to the GNU Compiler

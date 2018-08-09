@@ -1,7 +1,10 @@
-llvm-defaults (0.42) UNRELEASED; urgency=medium
+llvm-defaults (0.42) unstable; urgency=medium
 
   [ Dimitri John Ledkov <xnox@ubuntu.com> ]
   * Enable lldb on ppc64el. LP: #1777136
+
+  [ Gianfranco Costamagna ]
+  * Break/Replace for clang-tools newly owned packages (Closes: #888555)
 
  -- Gianfranco Costamagna <locutusofborg@debian.org>  Fri, 20 Jul 2018 10:30:58 +0200
 
