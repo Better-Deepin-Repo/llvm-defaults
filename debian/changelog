@@ -2,7 +2,7 @@ llvm-defaults (0.42exp1) experimental; urgency=medium
 
   * Team upload
   * Add new python-clang and python-lldb packages (Closes: #807704)
-    - Add two lintian overrides for python packages
+  * Add two lintian overrides for python packages
   * Add new liblldb-dev package (Closes: #904282)
   * Add liblldb-dev binaries/links
 
