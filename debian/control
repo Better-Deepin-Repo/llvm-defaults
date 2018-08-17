@@ -184,6 +184,7 @@ Description: LLVM-based linker
  Project.
 
 Package: python-clang
+Section: python
 Architecture: any
 Depends: python-clang-${pv:llvm} ${reqv:llvm}, ${misc:Depends}
 Description: Clang Python Bindings
@@ -197,6 +198,7 @@ Description: Clang Python Bindings
  This binding package provides access to the Clang compiler and libraries.
 
 Package: python-lldb
+Section: python
 Architecture: any
 Depends: python-lldb-${pv:llvm} ${reqv:llvm}, ${misc:Depends}
 Description: Next generation, high-performance debugger, python lib
