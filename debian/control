@@ -151,6 +151,18 @@ Description: clang library - Development package
  This is a dependency package providing the default libclang libraries and
  headers.
 
+Package: liblldb-dev
+Architecture: any
+Section: libdevel
+Depends: ${shlibs:Depends}, ${misc:Depends}, ${dep:devlibs},
+ liblldb-${pv:llvm}-dev ${reqv:llvm}
+Description: Next generation, high-performance debugger, header files
+ LLDB is a next generation, high-performance debugger. It is built as a set of
+ reusable components which highly leverage existing libraries in the larger LLVM
+ Project, such as the Clang expression parser and LLVM disassembler.
+ .
+ This package provides the header files to build extension over lldb.
+
 Package: lldb
 Architecture: any
 Depends: lldb-${pv:llvm} ${reqv:llvm}, ${misc:Depends}
@@ -163,7 +175,7 @@ Description: Next generation, high-performance debugger
  This is a dependency package providing the default version of lldb.
 
 Package: lld
-Architecture: amd64 arm64 armel armhf i386 mips mipsel mips64el kfreebsd-amd64 kfreebsd-i386 s390 sparc alpha hppa m68k powerpcspe ppc64 sh4 sparc64 x32
+Architecture: any
 Depends: lld-${pv:llvm} ${reqv:llvm}, ${misc:Depends}
 Pre-Depends: ${misc:Pre-Depends}
 Description: LLVM-based linker

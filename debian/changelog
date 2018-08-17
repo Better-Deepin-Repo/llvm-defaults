@@ -1,3 +1,10 @@
+llvm-defaults (0.42exp1) experimental; urgency=medium
+
+  * Add new python-clang and python-lldb packages (Closes: #807704)
+  * Add new liblldb-dev package (Closes: #904282)
+
+ -- Gianfranco Costamagna <locutusofborg@debian.org>  Fri, 17 Aug 2018 17:39:41 +0200
+
 llvm-defaults (0.42) unstable; urgency=medium
 
   [ Dimitri John Ledkov <xnox@ubuntu.com> ]
