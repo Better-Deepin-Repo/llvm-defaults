@@ -185,7 +185,7 @@ Description: LLVM-based linker
 
 Package: python-clang
 Architecture: any
-Depends: python-clang-${pv:llvm} ${reqv:llvm}
+Depends: python-clang-${pv:llvm} ${reqv:llvm}, ${misc:Depends}
 Description: Clang Python Bindings
  Clang project is a C, C++, Objective C and Objective C++ front-end
  based on the LLVM compiler. Its goal is to offer a replacement to the
@@ -198,7 +198,7 @@ Description: Clang Python Bindings
 
 Package: python-lldb
 Architecture: any
-Depends: python-lldb-${pv:llvm} ${reqv:llvm}
+Depends: python-lldb-${pv:llvm} ${reqv:llvm}, ${misc:Depends}
 Description: Next generation, high-performance debugger, python lib
  LLDB is a next generation, high-performance debugger. It is built as a set of
  reusable components which highly leverage existing libraries in the larger LLVM
