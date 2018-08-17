@@ -1,0 +1,2 @@
+# This is just a meta-package, forcing installation of the current python-clang-X.Y package
+python-clang: empty-binary-package
