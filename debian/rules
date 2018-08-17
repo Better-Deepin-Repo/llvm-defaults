@@ -243,6 +243,19 @@ install: build README substvars
 		/usr/lib/llvm-$(CURRENT_VERSION)/lib/$$lib /usr/lib/$$lib; \
 	done
 
+	: # lldb-dev
+	dh_installdirs -plldb-dev \
+		/usr/include \
+		/usr/lib
+	dh_link -plldb-dev \
+		/usr/lib/llvm-$(CURRENT_VERSION)/include/lldb /usr/include/lldb \
+
+	for lib in \
+		liblldb.so; do \
+		dh_link -plldb-dev \
+		/usr/lib/llvm-$(CURRENT_VERSION)/lib/$$lib /usr/lib/$$lib; \
+	done
+
 
 	: # libllvm-ocaml-dev
 	# dh_installdirs -plibllvm-ocaml-dev \
