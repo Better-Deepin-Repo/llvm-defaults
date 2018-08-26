@@ -1,21 +1,36 @@
-llvm-defaults (0.42~exp3) unstable; urgency=medium
+llvm-defaults (0.44~exp1) unstable; urgency=medium
 
-  * Bump the version number to force a rebuild
+  * Default to 8
+  * Force a new version for apt.llvm.org
 
  -- Sylvestre Ledru <sylvestre@debian.org>  Fri, 02 Mar 2018 12:58:32 +0100
 
-llvm-defaults (0.42~exp2) unstable; urgency=medium
+llvm-defaults (0.43) unstable; urgency=medium
 
-  * Fix the path (7 instead of 7.0)
+  * Team upload
+  * Upload to unstable
 
- -- Sylvestre Ledru <sylvestre@debian.org>  Fri, 26 Jan 2018 10:10:55 +0100
+ -- Gianfranco Costamagna <locutusofborg@debian.org>  Wed, 22 Aug 2018 11:32:01 +0200
 
-llvm-defaults (0.42~exp1) UNRELEASED; urgency=medium
+llvm-defaults (0.42exp1) experimental; urgency=medium
 
-  * Force a new version for apt.llvm.org
-  * Default to 7.0
+  * Team upload
+  * Add new python-clang and python-lldb packages (Closes: #807704)
+  * Add two lintian overrides for python packages
+  * Add new liblldb-dev package (Closes: #904282)
+  * Add liblldb-dev binaries/links
 
- -- Sylvestre Ledru <sylvestre@debian.org>  Sun, 18 Jun 2017 23:21:14 +0200
+ -- Gianfranco Costamagna <locutusofborg@debian.org>  Fri, 17 Aug 2018 17:39:41 +0200
+
+llvm-defaults (0.42) unstable; urgency=medium
+
+  [ Dimitri John Ledkov <xnox@ubuntu.com> ]
+  * Enable lldb on ppc64el. LP: #1777136
+
+  [ Gianfranco Costamagna ]
+  * Break/Replace for clang-tools newly owned packages (Closes: #888555)
+
+ -- Gianfranco Costamagna <locutusofborg@debian.org>  Fri, 20 Jul 2018 10:30:58 +0200
 
 llvm-defaults (0.41) unstable; urgency=medium
 
@@ -534,4 +549,3 @@ llvm-defaults (0.1) unstable; urgency=low
   * Initial Release.
 
  -- Arthur Loiret <aloiret@debian.org>  Sun, 15 Aug 2010 20:15:37 +0000
-

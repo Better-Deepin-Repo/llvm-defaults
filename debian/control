@@ -69,6 +69,8 @@ Description: C, C++ and Objective-C compiler (LLVM based)
 Package: clang-tools
 Architecture: any
 Depends: clang-tools-${pv:llvm} ${reqv:llvm}, ${misc:Depends}
+Breaks: clang (<< 1:4.0-42)
+Replaces: clang (<< 1:4.0-42)
 Description: clang-based tools
  Clang project is a C, C++, Objective C and Objective C++ front-end
  for the LLVM compiler. Its goal is to offer a replacement to the GNU Compiler
@@ -149,6 +151,18 @@ Description: clang library - Development package
  This is a dependency package providing the default libclang libraries and
  headers.
 
+Package: liblldb-dev
+Architecture: any
+Section: libdevel
+Depends: ${shlibs:Depends}, ${misc:Depends}, ${dep:devlibs},
+ liblldb-${pv:llvm}-dev ${reqv:llvm}
+Description: Next generation, high-performance debugger, header files
+ LLDB is a next generation, high-performance debugger. It is built as a set of
+ reusable components which highly leverage existing libraries in the larger LLVM
+ Project, such as the Clang expression parser and LLVM disassembler.
+ .
+ This package provides the header files to build extension over lldb.
+
 Package: lldb
 Architecture: any
 Depends: lldb-${pv:llvm} ${reqv:llvm}, ${misc:Depends}
@@ -161,10 +175,35 @@ Description: Next generation, high-performance debugger
  This is a dependency package providing the default version of lldb.
 
 Package: lld
-Architecture: amd64 armel armhf i386  kfreebsd-amd64 kfreebsd-i386 s390 sparc alpha hppa m68k powerpcspe ppc64 sh4 sparc64 x32 mips mipsel
+Architecture: any
 Depends: lld-${pv:llvm} ${reqv:llvm}, ${misc:Depends}
 Pre-Depends: ${misc:Pre-Depends}
 Description: LLVM-based linker
  LLD is a new, high-performance linker. It is built as a set of reusable
  components which highly leverage existing libraries in the larger LLVM
  Project.
+
+Package: python-clang
+Section: python
+Architecture: any
+Depends: python-clang-${pv:llvm} ${reqv:llvm}, ${misc:Depends}
+Description: Clang Python Bindings
+ Clang project is a C, C++, Objective C and Objective C++ front-end
+ based on the LLVM compiler. Its goal is to offer a replacement to the
+ GNU Compiler Collection (GCC).
+ .
+ Clang implements all of the ISO C++ 1998, 11 and 14 standards and also
+ provides most of the support of C++17.
+ .
+ This binding package provides access to the Clang compiler and libraries.
+
+Package: python-lldb
+Section: python
+Architecture: any
+Depends: python-lldb-${pv:llvm} ${reqv:llvm}, ${misc:Depends}
+Description: Next generation, high-performance debugger, python lib
+ LLDB is a next generation, high-performance debugger. It is built as a set of
+ reusable components which highly leverage existing libraries in the larger LLVM
+ Project, such as the Clang expression parser and LLVM disassembler.
+ .
+ This binding package provides access to lldb.

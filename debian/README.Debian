@@ -29,7 +29,7 @@ architecture.
 The default compiler versions for Debian GNU/Linux on amd64 are
 (minor version numbers omitted):
 
-	llvm		: llvm-7
+	llvm		: llvm-8
 
 Thanks to llvm-defaults, each architecture can choose its own
 preferred llvm version, and that preference can change without
@@ -40,12 +40,12 @@ How to build with a specific version of clang?
 ----------------------------------------------
 
 Please give the CC or CXX variables to the build system.
-For example, to build with clang-7, the following command should
+For example, to build with clang-8, the following command should
 do the work:
 
-CC=clang-7 CXX=clang++-7 make
+CC=clang-8 CXX=clang++-8 make
 or
-CC=clang-7 CXX=clang++-7 ./configure
+CC=clang-8 CXX=clang++-8 ./configure
 
 llvm-*/... are not handled using alternatives
 ----------------------------------------------
@@ -71,5 +71,3 @@ Matthias Klose <doko@debian.org>
 Sylvestre Ledru <sylvestre@debian.org>
 
 ===============================================================================
-
- -- Sylvestre Ledru <sylvestre@debian.org>, Thu, 19 Apr 2018 10:31:09 +0200

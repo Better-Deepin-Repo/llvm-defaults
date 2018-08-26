@@ -61,28 +61,31 @@ REL_NO_60	:= $(shell expr $(VMINOR) - 0)$(REL_EXT)
 # llvm-defaults 0.42 is the first version for 7.0.
 REL_NO_7	:= $(shell expr $(VMINOR) - 0)$(REL_EXT)
 
+# llvm-defaults 0.44 is the first version for 7.0.
+REL_NO_8	:= $(shell expr $(VMINOR) - 0)$(REL_EXT)
+
 # minimum required version
 
-REQV            := (>= 7~)
+REQV            := (>= 8~)
 
-CURRENT_VERSION := 7
+CURRENT_VERSION := 8
 
 # architecture dependent variables
 DEB_HOST_ARCH		?= $(shell dpkg-architecture -qDEB_HOST_ARCH)
 DEB_HOST_GNU_TYPE	?= $(shell dpkg-architecture -qDEB_HOST_GNU_TYPE)
 
 # complete version number, including the release
-CV_LLVM		:= 1:$(CURRENT_VERSION)-$(REL_NO_7)
+CV_LLVM		:= 1:$(CURRENT_VERSION)-$(REL_NO_8)
 
 distribution := $(shell lsb_release -is)
-all_packages   := llvm llvm-runtime llvm-dev clang clang-tools libclang1 libclang-dev clang-format clang-tidy # libllvm-ocaml-dev
+all_packages   := llvm llvm-runtime llvm-dev clang clang-tools libclang1 libclang-dev clang-format clang-tidy python-clang # libllvm-ocaml-dev
 no_packages    := # llvm-gcc # must be built?
 
-EXTRA_SUPPORTED=amd64 armel armhf i386  kfreebsd-amd64 kfreebsd-i386 s390 sparc alpha hppa m68k powerpcspe ppc64 sh4 sparc64 x32 mips mipsel arm64
+EXTRA_SUPPORTED=amd64 arm64 armel armhf i386 mips mipsel mips64el ppc64el kfreebsd-amd64 kfreebsd-i386 s390 sparc alpha hppa m68k powerpcspe ppc64 sh4 sparc64 x32
 ifneq (,$(filter $(DEB_HOST_ARCH),$(EXTRA_SUPPORTED)))
-    all_packages += lldb lld
+    all_packages += lldb lld liblldb-dev python-lldb
 else
-    no_packages += lldb lld
+    no_packages += lldb lld liblldb-dev python-lldb
 endif
 
 packages := $(filter-out $(no_packages), $(all_packages))
@@ -244,6 +247,19 @@ install: build README substvars
 	for lib in \
 		libLTO.so LLVMgold.so; do \
 		dh_link -pllvm-dev \
+		/usr/lib/llvm-$(CURRENT_VERSION)/lib/$$lib /usr/lib/$$lib; \
+	done
+
+	: # liblldb-dev
+	dh_installdirs -pliblldb-dev \
+		/usr/include \
+		/usr/lib
+	dh_link -pliblldb-dev \
+		/usr/lib/llvm-$(CURRENT_VERSION)/include/lldb /usr/include/lldb \
+
+	for lib in \
+		liblldb.so; do \
+		dh_link -pliblldb-dev \
 		/usr/lib/llvm-$(CURRENT_VERSION)/lib/$$lib /usr/lib/$$lib; \
 	done
 
