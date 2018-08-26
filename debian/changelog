@@ -1,6 +1,7 @@
 llvm-defaults (0.44~exp1) unstable; urgency=medium
 
   * Default to 8
+  * Standards-Version: 4.2.0
   * Force a new version for apt.llvm.org
 
  -- Sylvestre Ledru <sylvestre@debian.org>  Fri, 02 Mar 2018 12:58:32 +0100
