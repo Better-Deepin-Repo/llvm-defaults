@@ -1,7 +1,11 @@
 llvm-defaults (0.44~exp1) unstable; urgency=medium
 
+  [ Sylvestre Ledru ]
   * Default to 8
   * Force a new version for apt.llvm.org
+
+  [ Reshabh Sharma ]
+  * Add OpenMP and libc++ packages
 
  -- Sylvestre Ledru <sylvestre@debian.org>  Fri, 02 Mar 2018 12:58:32 +0100
 
