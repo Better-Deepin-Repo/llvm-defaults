@@ -3,7 +3,10 @@ llvm-defaults (0.44~exp1) experimental; urgency=medium
   [ Matthias Klose ]
   * Bump defaults to LLVM 7.
 
- -- Sylvestre Ledru <sylvestre@debian.org>  Thu, 20 Sep 2018 20:41:51 +0200
+  [ Reshabh Sharma ]
+  * Add OpenMP and libc++ packages
+
+ -- Sylvestre Ledru <sylvestre@debian.org>  Thu, 20 Sep 2018 20:46:03 +0200
 
 llvm-defaults (0.43) unstable; urgency=medium
 
