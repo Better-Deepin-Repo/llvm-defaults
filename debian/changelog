@@ -1,5 +1,7 @@
 llvm-defaults (0.44~exp1) experimental; urgency=medium
 
+  * Standards-Version: 4.2.1
+
   [ Matthias Klose ]
   * Bump defaults to LLVM 7.
 
