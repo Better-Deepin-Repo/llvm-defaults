@@ -1,8 +1,9 @@
-llvm-defaults (0.43ubuntu1) cosmic; urgency=medium
+llvm-defaults (0.44~exp1) experimental; urgency=medium
 
+  [ Matthias Klose ]
   * Bump defaults to LLVM 7.
 
- -- Matthias Klose <doko@ubuntu.com>  Wed, 05 Sep 2018 08:34:14 +0200
+ -- Sylvestre Ledru <sylvestre@debian.org>  Thu, 20 Sep 2018 20:41:51 +0200
 
 llvm-defaults (0.43) unstable; urgency=medium
 
