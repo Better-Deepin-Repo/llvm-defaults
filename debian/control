@@ -267,8 +267,8 @@ Description: LLVM C++ Standard library (development files)
    * ABI compatibility with gcc's libstdc++ for some low-level features such
      as exception objects, rtti and memory allocation.
    * Extensive unit tests.
- This is a dependency package providing the default LLVM C++ Standard library.
- developement files.
+ This is a dependency package providing the default LLVM C++ Standard library
+ development files.
 
 Package: libc++abi1
 Section: libs
