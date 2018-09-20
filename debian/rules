@@ -58,7 +58,7 @@ REL_NO_50	:= $(shell expr $(VMINOR) - 0)$(REL_EXT)
 # llvm-defaults 0.41 is the first version for 6.0.
 REL_NO_60       := $(shell expr $(VMINOR) - 0)$(REL_EXT)
 
-# llvm-defaults 0.43 is the first version for 7.0.
+# llvm-defaults 0.44 is the first version for 7.0.
 REL_NO_70       := $(shell expr $(VMINOR) - 0)$(REL_EXT)
 
 # minimum required version
