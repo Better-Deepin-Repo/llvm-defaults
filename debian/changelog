@@ -1,3 +1,10 @@
+llvm-defaults (0.44~exp2) experimental; urgency=medium
+
+  * Also ship clangd as part of clang-tools
+    http://lists.llvm.org/pipermail/clangd-dev/2018-September/000136.html
+
+ -- Sylvestre Ledru <sylvestre@debian.org>  Fri, 21 Sep 2018 16:21:59 +0200
+
 llvm-defaults (0.44~exp1) experimental; urgency=medium
 
   * Standards-Version: 4.2.1
