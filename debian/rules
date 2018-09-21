@@ -289,7 +289,7 @@ install: build README substvars
 	for bin in \
 		clang-check c-index-test \
 		clang-apply-replacements clang-query sancov \
-		; do \
+		clangd; do \
 		dh_link -pclang-tools \
 			/usr/lib/llvm-$(PV_LLVM)/bin/$$bin \
 			/usr/bin/$$bin ; \
