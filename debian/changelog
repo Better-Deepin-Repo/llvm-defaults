@@ -1,3 +1,9 @@
+llvm-defaults (0.44~exp2) experimental; urgency=medium
+
+  * Also ship git-clang-format as part of clang-format (Closes: #909338)
+
+ -- Sylvestre Ledru <sylvestre@debian.org>  Mon, 22 Oct 2018 21:25:50 +0200
+
 llvm-defaults (0.44~exp1) experimental; urgency=medium
 
   * Standards-Version: 4.2.1
