@@ -1,10 +1,16 @@
-llvm-defaults (0.45) unstable; urgency=medium
+llvm-defaults (0.45~exp1) unstable; urgency=medium
 
   * Default to 8
   * Standards-Version: 4.2.1
   * Force a new version for apt.llvm.org
 
  -- Sylvestre Ledru <sylvestre@debian.org>  Fri, 02 Mar 2018 12:58:32 +0100
+
+llvm-defaults (0.44~exp3) experimental; urgency=medium
+
+  * Also ship git-clang-format as part of clang-format (Closes: #909338)
+
+ -- Sylvestre Ledru <sylvestre@debian.org>  Mon, 22 Oct 2018 21:29:23 +0200
 
 llvm-defaults (0.44~exp2) experimental; urgency=medium
 
