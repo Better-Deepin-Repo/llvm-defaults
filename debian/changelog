@@ -1,3 +1,9 @@
+llvm-defaults (0.44) unstable; urgency=medium
+
+  * upload to unstable
+
+ -- Sylvestre Ledru <sylvestre@debian.org>  Wed, 31 Oct 2018 13:12:35 +0100
+
 llvm-defaults (0.44~exp3) experimental; urgency=medium
 
   * Also ship git-clang-format as part of clang-format (Closes: #909338)
