@@ -39,16 +39,16 @@ Description: Low-Level Virtual Machine (LLVM), libraries and headers
  .
  This is a dependency package providing the default libraries and headers.
 
-# Package: libllvm-ocaml-dev
-# Architecture: amd64 arm64 armel armhf i386
-# Section: ocaml
-# Depends: llvm-runtime (= ${binary:Version}), libllvm-${pv:llvm}-ocaml-dev ${reqv:llvm}, ${misc:Depends}
-# Description: Low-Level Virtual Machine (LLVM), bindings for OCaml
-#  The Low-Level Virtual Machine (LLVM) is a collection of libraries and
-#  tools that make it easy to build compilers, optimizers, Just-In-Time
-#  code generators, and many other compiler-related programs.
-#  .
-#  This is a dependency package providing the default bindings for OCaml.
+Package: libllvm-ocaml-dev
+Architecture: amd64 arm64 armel armhf i386
+Section: ocaml
+Depends: llvm-runtime (= ${binary:Version}), libllvm-${pv:llvm}-ocaml-dev ${reqv:llvm}, ${misc:Depends}
+Description: Low-Level Virtual Machine (LLVM), bindings for OCaml
+ The Low-Level Virtual Machine (LLVM) is a collection of libraries and
+ tools that make it easy to build compilers, optimizers, Just-In-Time
+ code generators, and many other compiler-related programs.
+ .
+ This is a dependency package providing the default bindings for OCaml.
 
 Package: clang
 Architecture: any
@@ -213,6 +213,8 @@ Section: libdevel
 Architecture: amd64 arm64 armhf i386 mips64el ppc64el ppc64
 Depends: ${shlibs:Depends}, ${misc:Depends}, ${dep:devlibs},
  libomp-${pv:llvm}-dev ${reqv:llvm}
+Replaces: libomp-dev (<< 7)
+Breaks: libomp-dev (<< 7)
 Description: LLVM OpenMP runtime - dev package
  The runtime is the part of the OpenMP implementation that your code is
  linked against, and that manages the multiple threads in an OpenMP program
