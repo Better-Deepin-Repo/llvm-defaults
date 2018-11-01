@@ -74,7 +74,7 @@ DEB_HOST_GNU_TYPE	?= $(shell dpkg-architecture -qDEB_HOST_GNU_TYPE)
 CV_LLVM		:= 1:$(CURRENT_VERSION)-$(REL_NO_70)
 
 distribution := $(shell lsb_release -is)
-all_packages   := llvm llvm-runtime llvm-dev clang clang-tools libclang1 libclang-dev clang-format clang-tidy python-clang libomp5 libomp-dev libc++1 libc++-dev libc++abi1 libc++abi-dev # libllvm-ocaml-dev
+all_packages   := llvm llvm-runtime llvm-dev clang clang-tools libclang1 libclang-dev clang-format clang-tidy python-clang libomp5 libomp-dev libc++1 libc++-dev libc++abi1 libc++abi-dev libllvm-ocaml-dev
 no_packages    := # llvm-gcc # must be built?
 
 EXTRA_SUPPORTED=amd64 arm64 armel armhf i386 mips mipsel mips64el ppc64el kfreebsd-amd64 kfreebsd-i386 s390 sparc alpha hppa m68k powerpcspe ppc64 sh4 sparc64 x32
@@ -260,11 +260,11 @@ install: build README substvars
 	done
 
 
-	: # libllvm-ocaml-dev
-	# dh_installdirs -plibllvm-ocaml-dev \
-	# 	/usr/lib/ocaml/METAS
-	# dh_link -plibllvm-ocaml-dev \
-	# 	/usr/lib/ocaml/llvm-$(PV_LLVM)/META.llvm /usr/lib/ocaml/METAS/META.llvm
+	: libllvm-ocaml-dev
+	dh_installdirs -plibllvm-ocaml-dev \
+	 	/usr/lib/ocaml/METAS
+	dh_link -plibllvm-ocaml-dev \
+	 	/usr/lib/ocaml/llvm-$(PV_LLVM)/META.llvm /usr/lib/ocaml/METAS/META.llvm
 
 #  clang
 
@@ -318,7 +318,9 @@ install: build README substvars
 	dh_link -pclang-format \
 		/usr/share/vim/addons/syntax/clang-format-$(PV_LLVM).py \
 		/usr/share/vim/addons/syntax/clang-format.py
-
+	dh_link -pclang-format \
+		/usr/share/emacs/site-lisp/clang-format-$(PV_LLVM) \
+		/usr/share/emacs/site-lisp/clang-format
 #  clang-tools
 	dh_link -pclang-tools \
 			/usr/bin/scan-build-$(PV_LLVM) \

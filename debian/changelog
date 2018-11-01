@@ -1,6 +1,7 @@
 llvm-defaults (0.45) unstable; urgency=medium
 
   * Bring back libllvm-ocaml-dev
+  * Add a symlink for the emacs integration (Closes: #813434)
 
  -- Sylvestre Ledru <sylvestre@debian.org>  Thu, 01 Nov 2018 11:15:49 +0100
 
