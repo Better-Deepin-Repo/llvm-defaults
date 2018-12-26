@@ -1,3 +1,41 @@
+llvm-defaults (0.47) unstable; urgency=medium
+
+  * Provide unversioned tools in llvm:
+   - dsymutil
+   - llvm-PerfectShuffle
+   - llvm-c-test
+   - llvm-cat
+   - llvm-cfi-verify
+   - llvm-cvtres
+   - llvm-cxxdump
+   - llvm-cxxfilt
+   - llvm-dlltool
+   - llvm-dwp
+   - llvm-exegesis
+   - llvm-lib
+   - llvm-lto
+   - llvm-lto2
+   - llvm-mca
+   - llvm-modextract
+   - llvm-mt
+   - llvm-objcopy
+   - llvm-opt-report
+   - llvm-pdbutil
+   - llvm-rc
+   - llvm-readelf
+   - llvm-readobj
+   - llvm-split
+   - llvm-stress
+   - llvm-strings
+   - llvm-strip
+   - llvm-undname
+   - llvm-xray
+   - sanstats
+   With the manpages when existing
+   (Closes: #917311)
+
+ -- Sylvestre Ledru <sylvestre@debian.org>  Wed, 26 Dec 2018 12:02:35 +0100
+
 llvm-defaults (0.46) unstable; urgency=medium
 
   * Remove armel support in libllvm-ocaml-dev
