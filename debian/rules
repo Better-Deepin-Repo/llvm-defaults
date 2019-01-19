@@ -79,8 +79,8 @@ DEB_HOST_GNU_TYPE	?= $(shell dpkg-architecture -qDEB_HOST_GNU_TYPE)
 CV_LLVM		:= 1:$(CURRENT_VERSION)-$(REL_NO_80)
 
 distribution := $(shell lsb_release -is)
-all_packages   := llvm llvm-runtime llvm-dev clang clang-tools libclang1 libclang-dev clang-format clang-tidy python-clang libomp5 libomp-dev libc++1 libc++-dev libc++abi1 libc++abi-dev # libllvm-ocaml-dev
-no_packages    := # llvm-gcc # must be built?
+all_packages   := llvm llvm-runtime llvm-dev clang clang-tools libclang1 libclang-dev clang-format clang-tidy python-clang libomp5 libomp-dev libc++1 libc++-dev libc++abi1 libc++abi-dev libllvm-ocaml-dev
+no_packages    :=
 
 EXTRA_SUPPORTED=amd64 arm64 armel armhf i386 mips mipsel mips64el ppc64el kfreebsd-amd64 kfreebsd-i386 s390 sparc alpha hppa m68k powerpcspe ppc64 sh4 sparc64 x32
 ifneq (,$(filter $(DEB_HOST_ARCH),$(EXTRA_SUPPORTED)))
@@ -159,8 +159,13 @@ install: build README substvars
 		llvm-cov llvm-diff llvm-dis llvm-dwarfdump llvm-extract \
 		llvm-link llvm-mc llvm-nm llvm-objdump \
 		llvm-ranlib llvm-rtdyld llvm-size llvm-tblgen llvm-profdata \
-		llvm-symbolizer \
-		opt; do \
+		llvm-symbolizer dsymutil llvm-PerfectShuffle llvm-c-test llvm-cat \
+		llvm-cfi-verify llvm-cvtres llvm-cxxdump llvm-cxxfilt llvm-dlltool \
+		llvm-dwp llvm-exegesis llvm-lib llvm-lto llvm-lto2 llvm-mca llvm-modextract \
+		llvm-mt llvm-objcopy llvm-opt-report llvm-pdbutil llvm-rc llvm-readelf \
+		llvm-readobj llvm-split llvm-stress llvm-strings llvm-strip llvm-undname \
+		llvm-xray sanstats opt \
+		; do \
 		dh_link -pllvm \
 			/usr/lib/llvm-$(PV_LLVM)/bin/$$bin \
 			/usr/bin/$$bin ; \
@@ -172,11 +177,14 @@ install: build README substvars
 			/usr/lib/llvm-$(PV_LLVM)/bin/$$bin \
 			/usr/bin/$$bin ; \
 	done
+# To know if there is a manpage or not
+# for f in $L; do if test -f /usr/share/man/man1/$f-7.1.gz; then echo $f; fi; done|tr "\n" " "
 	for man in \
 		bugpoint lit llc llvm-ar llvm-as llvm-bcanalyzer llvm-config \
 		llvm-diff llvm-dis llvm-extract llvm-link llvm-nm llvm-profdata \
 		llvm-ranlib opt tblgen llvm-symbolizer llvm-cov llvm-dwarfdump \
-		llvm-objdump llvm-rtdyld llvm-size llvm-mc; do \
+		llvm-objdump llvm-rtdyld llvm-size llvm-mc dsymutil llvm-exegesis \
+		llvm-lib llvm-mca llvm-pdbutil llvm-readobj llvm-stress; do \
 		dh_link -pllvm \
 			/usr/share/man/man1/$$man-$(PV_LLVM).1.gz \
 			/usr/share/man/man1/$$man.1.gz ; \
@@ -265,11 +273,11 @@ install: build README substvars
 	done
 
 
-	: # libllvm-ocaml-dev
-	# dh_installdirs -plibllvm-ocaml-dev \
-	# 	/usr/lib/ocaml/METAS
-	# dh_link -plibllvm-ocaml-dev \
-	# 	/usr/lib/ocaml/llvm-$(PV_LLVM)/META.llvm /usr/lib/ocaml/METAS/META.llvm
+	: libllvm-ocaml-dev
+	dh_installdirs -plibllvm-ocaml-dev \
+	 	/usr/lib/ocaml/METAS
+	dh_link -plibllvm-ocaml-dev \
+	 	/usr/lib/ocaml/llvm-$(PV_LLVM)/META.llvm /usr/lib/ocaml/METAS/META.llvm
 
 #  clang
 
@@ -323,7 +331,9 @@ install: build README substvars
 	dh_link -pclang-format \
 		/usr/share/vim/addons/syntax/clang-format-$(PV_LLVM).py \
 		/usr/share/vim/addons/syntax/clang-format.py
-
+	dh_link -pclang-format \
+		/usr/share/emacs/site-lisp/clang-format-$(PV_LLVM) \
+		/usr/share/emacs/site-lisp/clang-format
 #  clang-tools
 	dh_link -pclang-tools \
 			/usr/bin/scan-build-$(PV_LLVM) \

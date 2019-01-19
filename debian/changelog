@@ -6,6 +6,63 @@ llvm-defaults (0.45~exp1) unstable; urgency=medium
 
  -- Sylvestre Ledru <sylvestre@debian.org>  Fri, 02 Mar 2018 12:58:32 +0100
 
+llvm-defaults (0.47) unstable; urgency=medium
+
+  * Provide unversioned tools in llvm:
+   - dsymutil
+   - llvm-PerfectShuffle
+   - llvm-c-test
+   - llvm-cat
+   - llvm-cfi-verify
+   - llvm-cvtres
+   - llvm-cxxdump
+   - llvm-cxxfilt
+   - llvm-dlltool
+   - llvm-dwp
+   - llvm-exegesis
+   - llvm-lib
+   - llvm-lto
+   - llvm-lto2
+   - llvm-mca
+   - llvm-modextract
+   - llvm-mt
+   - llvm-objcopy
+   - llvm-opt-report
+   - llvm-pdbutil
+   - llvm-rc
+   - llvm-readelf
+   - llvm-readobj
+   - llvm-split
+   - llvm-stress
+   - llvm-strings
+   - llvm-strip
+   - llvm-undname
+   - llvm-xray
+   - sanstats
+   With the manpages when existing
+   (Closes: #917311)
+
+ -- Sylvestre Ledru <sylvestre@debian.org>  Wed, 26 Dec 2018 12:02:35 +0100
+
+llvm-defaults (0.46) unstable; urgency=medium
+
+  * Remove armel support in libllvm-ocaml-dev
+
+ -- Sylvestre Ledru <sylvestre@debian.org>  Sat, 17 Nov 2018 09:49:30 +0100
+
+llvm-defaults (0.45) unstable; urgency=medium
+
+  * Bring back libllvm-ocaml-dev
+  * Add a symlink for the emacs integration (Closes: #813434)
+
+ -- Sylvestre Ledru <sylvestre@debian.org>  Thu, 01 Nov 2018 11:15:49 +0100
+
+llvm-defaults (0.44) unstable; urgency=medium
+
+  * upload to unstable
+
+ -- Sylvestre Ledru <sylvestre@debian.org>  Wed, 31 Oct 2018 13:12:35 +0100
+
 llvm-defaults (0.44~exp3) experimental; urgency=medium
 
   * Also ship git-clang-format as part of clang-format (Closes: #909338)
