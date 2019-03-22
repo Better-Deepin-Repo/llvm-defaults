@@ -1,7 +1,6 @@
-llvm-defaults (0.48) unstable; urgency=medium
+llvm-defaults (0.48~exp1) experimental; urgency=medium
 
-  * Default to 9
-  * Force a new version for apt.llvm.org
+  * Default to 8 for early tester
 
  -- Sylvestre Ledru <sylvestre@debian.org>  Fri, 02 Mar 2018 12:58:32 +0100
 
