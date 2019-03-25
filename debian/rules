@@ -224,7 +224,7 @@ install: build README substvars
 	for man in \
 		ld.lld lld; do \
 		dh_link -plld \
-			/usr/share/man/man1/$$man-$(PV_LLVM).1.gz \
+			/usr/share/man/man1/ld.lld-$(PV_LLVM).1.gz \
 			/usr/share/man/man1/$$man.1.gz ; \
 	done
 
