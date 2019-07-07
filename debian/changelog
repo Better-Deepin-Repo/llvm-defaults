@@ -1,3 +1,9 @@
+llvm-defaults (0.48) unstable; urgency=medium
+
+  * Upload to unstable
+
+ --
+
 llvm-defaults (0.48~exp1) experimental; urgency=medium
 
   * Default to 8 for early tester
