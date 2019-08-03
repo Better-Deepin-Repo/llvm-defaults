@@ -1,8 +1,9 @@
 llvm-defaults (0.48) unstable; urgency=medium
 
   * Default to 10
+  * Ship clangd as a new package
 
- --
+ -- Sylvestre Ledru <sylvestre@debian.org>  Sat, 03 Aug 2019 16:00:11 +0200
 
 llvm-defaults (0.48~exp1) experimental; urgency=medium
 

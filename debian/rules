@@ -85,7 +85,7 @@ DEB_HOST_GNU_TYPE	?= $(shell dpkg-architecture -qDEB_HOST_GNU_TYPE)
 CV_LLVM		:= 1:$(CURRENT_VERSION)-$(REL_NO_100)
 
 distribution := $(shell lsb_release -is)
-all_packages   := llvm llvm-runtime llvm-dev clang clang-tools libclang1 libclang-dev clang-format clang-tidy python-clang libomp5 libomp-dev libc++1 libc++-dev libc++abi1 libc++abi-dev libllvm-ocaml-dev
+all_packages   := llvm llvm-runtime llvm-dev clang clang-tools libclang1 libclang-dev clang-format clang-tidy clangd python-clang libomp5 libomp-dev libc++1 libc++-dev libc++abi1 libc++abi-dev libllvm-ocaml-dev
 no_packages    :=
 
 EXTRA_SUPPORTED=amd64 arm64 armel armhf i386 mips mipsel mips64el ppc64el kfreebsd-amd64 kfreebsd-i386 s390 sparc alpha hppa m68k powerpcspe ppc64 sh4 sparc64 x32
@@ -219,6 +219,13 @@ install: build README substvars
 	done
 
 	for man in \
+		clangd; do \
+		dh_link -pclangd \
+			/usr/share/man/man1/$$man-$(PV_LLVM).1.gz \
+			/usr/share/man/man1/$$man.1.gz ; \
+	done
+
+	for man in \
 		clang-tidy; do \
 		dh_link -pclang-tidy \
 			/usr/share/man/man1/$$man-$(PV_LLVM).1.gz \
@@ -340,6 +347,12 @@ install: build README substvars
 	dh_link -pclang-format \
 		/usr/share/emacs/site-lisp/clang-format-$(PV_LLVM) \
 		/usr/share/emacs/site-lisp/clang-format
+
+#  clangd
+	dh_link -pclangd \
+			/usr/bin/clangd-$(PV_LLVM) \
+			/usr/bin/clangd
+
 #  clang-tools
 	dh_link -pclang-tools \
 			/usr/bin/scan-build-$(PV_LLVM) \

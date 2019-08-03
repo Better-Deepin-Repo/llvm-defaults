@@ -96,6 +96,21 @@ Description: clang-based C++ linter tool
  .
  This is a dependency package providing the clang tidy tool.
 
+Package: clangd
+Architecture: any
+Depends: clangd-${pv:llvm} ${reqv:llvm}, ${misc:Depends}
+Description: Language server that provides IDE-like features to editors
+ clangd understands your C++ code and adds smart features to your editor:
+  - code completion
+  - compile errors
+  - go-to-definition
+  - and more.
+ .
+ clangd is a language server that implements the Language Server Protocol;
+ it can work with many editors through a plugin.
+ .
+ This is a dependency package providing clangd.
+
 Package: clang-format
 Architecture: any
 Depends: clang-format-${pv:llvm} ${reqv:llvm}, ${misc:Depends}
