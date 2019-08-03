@@ -1,6 +1,6 @@
 llvm-defaults (0.48) unstable; urgency=medium
 
-  * Upload to unstable
+  * Default to 10
 
  --
 
