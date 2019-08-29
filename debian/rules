@@ -306,8 +306,7 @@ install: build README substvars
 		usr/bin usr/share/man/man1
 	for bin in \
 		clang-check c-index-test \
-		clang-apply-replacements clang-query sancov \
-		clangd; do \
+		clang-apply-replacements clang-query sancov; do \
 		dh_link -pclang-tools \
 			/usr/lib/llvm-$(PV_LLVM)/bin/$$bin \
 			/usr/bin/$$bin ; \
