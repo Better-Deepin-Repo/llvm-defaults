@@ -1,3 +1,9 @@
+llvm-defaults (0.48.2) unstable; urgency=medium
+
+  * Fix breaks/replaces for clangd (Closes: #939267)
+
+ -- Sylvestre Ledru <sylvestre@debian.org>  Sun, 08 Sep 2019 21:25:12 +0200
+
 llvm-defaults (0.48.1) unstable; urgency=medium
 
   * Source upload (oh, this is a waste of time)
