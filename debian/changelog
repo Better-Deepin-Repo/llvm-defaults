@@ -1,4 +1,4 @@
-llvm-defaults (0.49) experimental; urgency=low
+llvm-defaults (0.49~exp1) experimental; urgency=low
 
   * Team upload
   * Default to 9 for early testers
