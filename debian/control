@@ -99,8 +99,8 @@ Description: clang-based C++ linter tool
 Package: clangd
 Architecture: any
 Depends: clangd-${pv:llvm} ${reqv:llvm}, ${misc:Depends}
-Breaks: clang-tools (<< 1:9.0-48), clang-tools (<< 1:8.0-48)
-Replaces: clang-tools (<< 1:9.0-48), clang-tools (<< 1:8.0-48)
+Breaks: clang-tools (<< 1:9.0-48), clang-tools (<< 1:8-48)
+Replaces: clang-tools (<< 1:9.0-48), clang-tools (<< 1:8-48)
 Description: Language server that provides IDE-like features to editors
  clangd understands your C++ code and adds smart features to your editor:
   - code completion
