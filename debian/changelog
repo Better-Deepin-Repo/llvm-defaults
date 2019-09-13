@@ -1,3 +1,10 @@
+llvm-defaults (0.48.3) unstable; urgency=medium
+
+  * Also break clang-tools version 9, the one defaulted in Ubuntu before clangd
+    introduction
+
+ -- Gianfranco Costamagna <locutusofborg@debian.org>  Fri, 13 Sep 2019 10:19:33 +0200
+
 llvm-defaults (0.48.2) unstable; urgency=medium
 
   * Fix breaks/replaces for clangd (Closes: #939267)
