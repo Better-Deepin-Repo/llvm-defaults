@@ -1,3 +1,9 @@
+llvm-defaults (0.49) unstable; urgency=medium
+
+  * Bump the version for apt.llvm.org
+
+ -- Sylvestre Ledru <sylvestre@debian.org>  Thu, 31 Oct 2019 09:13:06 +0100
+
 llvm-defaults (0.48.3) unstable; urgency=medium
 
   * Also break clang-tools version 9, the one defaulted in Ubuntu before clangd
