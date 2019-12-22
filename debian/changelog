@@ -1,3 +1,11 @@
+llvm-defaults (0.49~exp2) experimental; urgency=medium
+
+  * Change Python depedencies to python 3 (Closes: #945660)
+    python-clang-9 is already dpeending on python3
+    Update python-lldb-9
+
+ -- Sylvestre Ledru <sylvestre@debian.org>  Sun, 22 Dec 2019 12:02:55 +0100
+
 llvm-defaults (0.49~exp1) experimental; urgency=low
 
   * Team upload

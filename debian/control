@@ -217,7 +217,7 @@ Description: Clang Python Bindings
 Package: python-lldb
 Section: python
 Architecture: any
-Depends: python-lldb-${pv:llvm} ${reqv:llvm}, ${misc:Depends}
+Depends: python3-lldb-${pv:llvm} ${reqv:llvm}, ${misc:Depends}
 Description: Next generation, high-performance debugger, python lib
  LLDB is a next generation, high-performance debugger. It is built as a set of
  reusable components which highly leverage existing libraries in the larger LLVM
