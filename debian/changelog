@@ -1,3 +1,13 @@
+llvm-defaults (0.49~exp3) UNRELEASED; urgency=medium
+
+  [ Sylvestre Ledru ]
+  * fix build
+
+  [ Gianfranco Costamagna ]
+  * Revert "enable lldb on s390x too, it builds fine now there"
+
+ -- Gianfranco Costamagna <locutusofborg@debian.org>  Fri, 03 Jan 2020 01:39:47 +0100
+
 llvm-defaults (0.49~exp2) experimental; urgency=medium
 
   * Introduce python 3 packages (Closes: #945660)
