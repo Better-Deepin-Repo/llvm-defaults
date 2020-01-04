@@ -1,10 +1,13 @@
-llvm-defaults (0.49~exp3) UNRELEASED; urgency=medium
+llvm-defaults (0.49~exp3) experimental; urgency=medium
 
   [ Sylvestre Ledru ]
   * fix build
 
   [ Gianfranco Costamagna ]
   * Revert "enable lldb on s390x too, it builds fine now there"
+    - this has a bad side effect, also enabling lld on s390x, but it isn't
+      built there, so Britney doesn't allow migration
+  * Split instead the configuration into EXTRA_SUPPORTED and LLD_SUPPORTED
 
  -- Gianfranco Costamagna <locutusofborg@debian.org>  Fri, 03 Jan 2020 01:39:47 +0100
 
