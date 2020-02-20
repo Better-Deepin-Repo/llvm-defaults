@@ -1,6 +1,7 @@
 llvm-defaults (0.50) UNRELEASED; urgency=medium
 
   * Bump debhelper from old 9 to 12.
+  * Set debhelper-compat version in Build-Depends.
 
  -- Sylvestre Ledru <sylvestre@debian.org>  Thu, 20 Feb 2020 09:03:45 +0100
 
