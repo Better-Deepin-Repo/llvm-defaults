@@ -75,8 +75,7 @@ CURRENT_VERSION := 9.0
 
 
 # architecture dependent variables
-DEB_HOST_ARCH		?= $(shell dpkg-architecture -qDEB_HOST_ARCH)
-DEB_HOST_GNU_TYPE	?= $(shell dpkg-architecture -qDEB_HOST_GNU_TYPE)
+include /usr/share/dpkg/architecture.mk
 
 # complete version number, including the release
 CV_LLVM		:= 1:$(CURRENT_VERSION)-$(REL_NO_90)
