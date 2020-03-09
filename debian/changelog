@@ -1,3 +1,10 @@
+llvm-defaults (0.50) unstable; urgency=medium
+
+  * python3-clang: Depend on python3-clang-10.
+    Thanks to doko for the patch
+
+ -- Sylvestre Ledru <sylvestre@debian.org>  Mon, 09 Mar 2020 15:09:51 +0100
+
 llvm-defaults (0.49) unstable; urgency=medium
 
   * Upload to unstable for the 9 transition.
