@@ -203,7 +203,7 @@ Description: LLVM-based linker
 Package: python3-clang
 Section: python
 Architecture: any
-Depends: python-clang-${pv:llvm} ${reqv:llvm}, ${misc:Depends}
+Depends: python3-clang-${pv:llvm} ${reqv:llvm}, ${misc:Depends}
 Replaces: python-clang (<< 0.49~exp2)
 Breaks: python-clang (<< 0.49~exp2)
 Description: Clang Python Bindings
@@ -232,7 +232,6 @@ Description: Next generation, high-performance debugger, python lib
 Package: python-clang
 Depends: python3-clang, ${misc:Depends}
 Architecture: any
-Priority: optional
 Section: oldlibs
 Description: transitional package to python3-clang
  This is a transitional package. It can safely be removed.
@@ -240,7 +239,6 @@ Description: transitional package to python3-clang
 Package: python-lldb
 Depends: python3-lldb, ${misc:Depends}
 Architecture: any
-Priority: optional
 Section: oldlibs
 Description: transitional package to python3-lldb
  This is a transitional package. It can safely be removed.
