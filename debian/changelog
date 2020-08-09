@@ -22,7 +22,6 @@ llvm-defaults (0.49) unstable; urgency=medium
   * Rely on pre-initialized dpkg-architecture variables.
 
  -- Sylvestre Ledru <sylvestre@debian.org>  Thu, 20 Feb 2020 09:01:34 +0100
->>>>>>> origin/master
 
 llvm-defaults (0.49~exp3) experimental; urgency=medium
 
