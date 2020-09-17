@@ -3,6 +3,19 @@ llvm-defaults (0.51~exp1) experimental; urgency=medium
   * Disable ocaml binding on i386, the architecture is dying in Ubuntu,
     and makes little sense in Debian too, to support ocaml here
   * Bump default llvm-version to 11
+  * Add R^3 no
+  * Bump std-version to 4.5.0
+  * Bump compat level to 12
+  * Drop asterisks from NEWS file
+  * Add myself to uploaders
+  * Fix typo in lintian override
+  * Fix duplicate long description for libc++abi-dev
+  * Fix some duplicate short/long descriptions
+  * Move libomp5 to libs section
+  * Update copyright years and license path, to fix lintian warning
+  * drop dh_testroot from rules file
+  * Use pkg-info.mk to detect the changelog version,
+    instead of parsing with dpkg-parsechangelog
 
  -- Gianfranco Costamagna <locutusofborg@debian.org>  Thu, 17 Sep 2020 09:34:28 +0200
 
