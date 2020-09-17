@@ -70,18 +70,21 @@ REL_NO_90   := $(shell expr $(VMINOR) - 0)$(REL_EXT)
 # llvm-defaults 0.50 is the first version for 10.
 REL_NO_100   := $(shell expr $(VMINOR) - 0)$(REL_EXT)
 
+# llvm-defaults 0.51 is the first version for 11.
+REL_NO_110   := $(shell expr $(VMINOR) - 0)$(REL_EXT)
+
 # minimum required version
 
-REQV            := (>= 10~)
+REQV            := (>= 11~)
 
-CURRENT_VERSION := 10.0
+CURRENT_VERSION := 11.0
 
 
 # architecture dependent variables
 include /usr/share/dpkg/architecture.mk
 
 # complete version number, including the release
-CV_LLVM		:= 1:$(CURRENT_VERSION)-$(REL_NO_100)
+CV_LLVM		:= 1:$(CURRENT_VERSION)-$(REL_NO_110)
 
 distribution := $(shell lsb_release -is)
 all_packages   := llvm llvm-runtime llvm-dev clang clang-tools libclang1 libclang-dev clang-format clang-tidy clangd python3-clang libomp5 libomp-dev libc++1 libc++-dev libc++abi1 libc++abi-dev libllvm-ocaml-dev python-clang
