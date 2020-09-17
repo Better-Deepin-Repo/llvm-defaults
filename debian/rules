@@ -4,11 +4,11 @@
 #export DH_VERBOSE=1
 
 # version number of the defaults package
-VDEF	:= $(strip $(shell dpkg-parsechangelog | awk -F: '/^Version:/ {print $$NF}'))
+include /usr/share/dpkg/pkg-info.mk
 
-VMAJOR	:= $(shell echo $(VDEF) | awk -F. '{print $$1}')
-VMINOR	:= $(shell echo $(VDEF) | awk -F. '{print $$2}' | sed -e 's/\([0-9]*\).*/\1/')
-REL_EXT	:= $(shell echo $(VDEF) | sed -e 's/^$(VMAJOR)\.$(VMINOR)//')
+VMAJOR	:= $(shell echo $(DEB_VERSION) | awk -F. '{print $$1}')
+VMINOR	:= $(shell echo $(DEB_VERSION) | awk -F. '{print $$2}' | sed -e 's/\([0-9]*\).*/\1/')
+REL_EXT	:= $(shell echo $(DEB_VERSION) | sed -e 's/^$(VMAJOR)\.$(VMINOR)//')
 
 # llvm-defaults 0.1 is the first version for 2.7.
 REL_NO_27	:= $(shell expr $(VMINOR) - 0)$(REL_EXT)
