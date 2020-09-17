@@ -263,6 +263,7 @@ Description: LLVM OpenMP runtime - dev package
 
 Package: libomp5
 Multi-Arch: same
+Section: libs
 Architecture: amd64 arm64 armhf i386 mips64el ppc64el ppc64
 Depends: libomp5-${pv:llvm} ${reqv:llvm}, ${shlibs:Depends}, ${misc:Depends}
 Description: LLVM OpenMP runtime
