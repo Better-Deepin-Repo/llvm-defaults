@@ -153,14 +153,12 @@ build-stamp:
 
 clean:
 	dh_testdir
-	dh_testroot
 	rm -f *-stamp
 	rm -f debian/substvars.local
 	dh_clean
 
 install: build README substvars
 	dh_testdir
-	dh_testroot
 	dh_prep
 
 	for p in $(packages); do \
@@ -405,7 +403,6 @@ binary-indep: build install
 
 binary-arch: build install
 	dh_testdir
-	dh_testroot
 
 	dh_lintian
 	dh_installchangelogs -a $(nopkgs)
