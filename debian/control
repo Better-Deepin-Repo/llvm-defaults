@@ -339,5 +339,5 @@ Description: LLVM low level support for a standard C++ library (development file
  .
    * Correctness as defined by the C++ standards.
    * Provide a portable sublayer to ease the porting of libc++
- This is a dependency package providing low level support to
+ This is the development package providing low level support to
  LLVM C++ Standard library.
