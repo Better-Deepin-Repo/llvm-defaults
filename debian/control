@@ -2,7 +2,8 @@ Source: llvm-defaults
 Section: devel
 Priority: optional
 Maintainer: LLVM Packaging Team <pkg-llvm-team@lists.alioth.debian.org>
-Uploaders: Matthias Klose <doko@debian.org>, Sylvestre Ledru <sylvestre@debian.org>
+Uploaders: Matthias Klose <doko@debian.org>, Sylvestre Ledru <sylvestre@debian.org>,
+ Gianfranco Costamagna <locutusofborg@debian.org>
 Standards-Version: 4.5.0
 Rules-Requires-Root: no
 Build-Depends: debhelper-compat (= 12), dpkg-dev (>= 1.13.9), lsb-release,
