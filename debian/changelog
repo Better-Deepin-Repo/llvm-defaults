@@ -1,3 +1,11 @@
+llvm-defaults (0.51~exp1) experimental; urgency=medium
+
+  * Disable ocaml binding on i386, the architecture is dying in Ubuntu,
+    and makes little sense in Debian too, to support ocaml here
+  * Bump default llvm-version to 11
+
+ -- Gianfranco Costamagna <locutusofborg@debian.org>  Thu, 17 Sep 2020 09:34:28 +0200
+
 llvm-defaults (0.50~exp1) experimental; urgency=medium
 
   * Bump defaults to llvm-toolchain-10
