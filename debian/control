@@ -58,7 +58,7 @@ Depends: clang-${pv:llvm} ${reqv:llvm}, ${misc:Depends}
 Replaces: clang (<< 3.2-1~exp2), clang-3.2, clang-3.3, clang-3.4 (<< 1:3.4.2-7~exp1),
  clang-3.5 (<< 1:3.5~+rc1-3~exp1)
 Breaks: clang-3.2, clang-3.3, clang-3.4 (<< 1:3.4.2-7~exp1), clang-3.5 (<< 1:3.5~+rc1-3~exp1)
-Description: C, C++ and Objective-C compiler (LLVM based)
+Description: C, C++ and Objective-C compiler (LLVM based), clang binary
  Clang project is a C, C++, Objective C and Objective C++ front-end
  for the LLVM compiler. Its goal is to offer a replacement to the GNU Compiler
  Collection (GCC).
@@ -236,14 +236,16 @@ Depends: python3-clang, ${misc:Depends}
 Architecture: any
 Section: oldlibs
 Description: transitional package to python3-clang
- This is a transitional package. It can safely be removed.
+ This is a transitional package for python3-clang.
+ It can safely be removed.
 
 Package: python-lldb
 Depends: python3-lldb, ${misc:Depends}
 Architecture: any
 Section: oldlibs
 Description: transitional package to python3-lldb
- This is a transitional package. It can safely be removed.
+ This is a transitional package for python3-lldb.
+ It can safely be removed.
 
 Package: libomp-dev
 Section: libdevel
