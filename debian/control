@@ -22,6 +22,7 @@ Description: Low-Level Virtual Machine (LLVM)
 Package: llvm-runtime
 Architecture: any
 Depends: llvm-${pv:llvm}-runtime ${reqv:llvm}, ${misc:Depends}
+Multi-Arch: same
 Description: Low-Level Virtual Machine (LLVM), bytecode interpreter
  The Low-Level Virtual Machine (LLVM) is a collection of libraries and
  tools that make it easy to build compilers, optimizers, Just-In-Time
@@ -71,6 +72,7 @@ Architecture: any
 Depends: clang-tools-${pv:llvm} ${reqv:llvm}, ${misc:Depends}
 Breaks: clang (<< 1:4.0-42)
 Replaces: clang (<< 1:4.0-42)
+Multi-Arch: same
 Description: clang-based tools
  Clang project is a C, C++, Objective C and Objective C++ front-end
  for the LLVM compiler. Its goal is to offer a replacement to the GNU Compiler
@@ -86,6 +88,7 @@ Architecture: any
 Depends: clang-tidy-${pv:llvm} ${reqv:llvm}, ${misc:Depends}
 Breaks: clang (<< 1:3.6-28)
 Replaces: clang (<< 1:3.6-28)
+Multi-Arch: same
 Description: clang-based C++ linter tool
  Provide an extensible framework for diagnosing and fixing typical programming
  errors, like style violations, interface misuse, or bugs that can be deduced
@@ -101,6 +104,7 @@ Architecture: any
 Depends: clangd-${pv:llvm} ${reqv:llvm}, ${misc:Depends}
 Breaks: clang-tools (<< 1:9.0-48), clang-tools (<< 1:8-48)
 Replaces: clang-tools (<< 1:9.0-48), clang-tools (<< 1:8-48)
+Multi-Arch: same
 Description: Language server that provides IDE-like features to editors
  clangd understands your C++ code and adds smart features to your editor:
   - code completion
@@ -118,6 +122,7 @@ Architecture: any
 Depends: clang-format-${pv:llvm} ${reqv:llvm}, ${misc:Depends}
 Breaks: clang (<< 1:3.6-28)
 Replaces: clang (<< 1:3.6-28)
+Multi-Arch: same
 Description: Tool to format C/C++/Obj-C code
  Clang-format is both a library and a stand-alone tool with the goal of
  automatically reformatting C++ sources files according to configurable
@@ -157,6 +162,7 @@ Architecture: any
 Section: libdevel
 Depends: ${shlibs:Depends}, ${misc:Depends}, ${dep:devlibs},
  libclang-${pv:llvm}-dev ${reqv:llvm}
+Multi-Arch: same
 Description: clang library - Development package
  Clang project is a C, C++, Objective C and Objective C++ front-end
  for the LLVM compiler. Its goal is to offer a replacement to the GNU Compiler
@@ -173,6 +179,7 @@ Architecture: any
 Section: libdevel
 Depends: ${shlibs:Depends}, ${misc:Depends}, ${dep:devlibs},
  liblldb-${pv:llvm}-dev ${reqv:llvm}
+Multi-Arch: same
 Description: Next generation, high-performance debugger, header files
  LLDB is a next generation, high-performance debugger. It is built as a set of
  reusable components which highly leverage existing libraries in the larger LLVM
@@ -184,6 +191,7 @@ Package: lldb
 Architecture: any
 Depends: lldb-${pv:llvm} ${reqv:llvm}, ${misc:Depends}
 Pre-Depends: ${misc:Pre-Depends}
+Multi-Arch: same
 Description: Next generation, high-performance debugger
  LLDB is a next generation, high-performance debugger. It is built as a set of
  reusable components which highly leverage existing libraries in the larger LLVM
@@ -195,6 +203,7 @@ Package: lld
 Architecture: any
 Depends: lld-${pv:llvm} ${reqv:llvm}, ${misc:Depends}
 Pre-Depends: ${misc:Pre-Depends}
+Multi-Arch: same
 Description: LLVM-based linker
  LLD is a new, high-performance linker. It is built as a set of reusable
  components which highly leverage existing libraries in the larger LLVM
@@ -206,6 +215,7 @@ Architecture: any
 Depends: python3-clang-${pv:llvm} ${reqv:llvm}, ${misc:Depends}
 Replaces: python-clang (<< 0.49~exp2)
 Breaks: python-clang (<< 0.49~exp2)
+Multi-Arch: same
 Description: Clang Python Bindings
  Clang project is a C, C++, Objective C and Objective C++ front-end
  based on the LLVM compiler. Its goal is to offer a replacement to the
@@ -222,6 +232,7 @@ Architecture: any
 Depends: python3-lldb-${pv:llvm} ${reqv:llvm}, ${misc:Depends}
 Replaces: python-lldb (<< 0.49~exp2)
 Breaks: python-lldb (<< 0.49~exp2)
+Multi-Arch: same
 Description: Next generation, high-performance debugger, python lib
  LLDB is a next generation, high-performance debugger. It is built as a set of
  reusable components which highly leverage existing libraries in the larger LLVM
@@ -233,6 +244,7 @@ Package: python-clang
 Depends: python3-clang, ${misc:Depends}
 Architecture: any
 Section: oldlibs
+Multi-Arch: same
 Description: transitional package to python3-clang
  This is a transitional package. It can safely be removed.
 
@@ -240,6 +252,7 @@ Package: python-lldb
 Depends: python3-lldb, ${misc:Depends}
 Architecture: any
 Section: oldlibs
+Multi-Arch: same
 Description: transitional package to python3-lldb
  This is a transitional package. It can safely be removed.
 
@@ -250,6 +263,7 @@ Depends: ${shlibs:Depends}, ${misc:Depends}, ${dep:devlibs},
  libomp-${pv:llvm}-dev ${reqv:llvm}
 Replaces: libomp-dev (<< 7)
 Breaks: libomp-dev (<< 7)
+Multi-Arch: same
 Description: LLVM OpenMP runtime - dev package
  The runtime is the part of the OpenMP implementation that your code is
  linked against, and that manages the multiple threads in an OpenMP program
