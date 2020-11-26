@@ -132,6 +132,21 @@ Description: Tool to format C/C++/Obj-C code
  .
  This is a dependency package providing the clang format tool.
 
+Package: libclang-cpp-dev
+Architecture: any
+Section: libdevel
+Depends: ${shlibs:Depends}, ${misc:Depends}, ${dep:devlibs},
+ libclang-cpp${pv:llvm}-dev ${reqv:llvm}
+Description: C++ interface to the clang library
+ Clang project is a C, C++, Objective C and Objective C++ front-end
+ for the LLVM compiler. Its goal is to offer a replacement to the GNU Compiler
+ Collection (GCC).
+ .
+ Clang implements all of the ISO C++ 1998, 11 and 14 standards and also
+ provides most of the support of C++17.
+ .
+ This is a dependency package providing the default Clang C++ library.
+
 Package: libclang1
 Section: libs
 Architecture: any
