@@ -1,3 +1,42 @@
+llvm-defaults (0.51+nmu4) unstable; urgency=medium
+
+  * Non-maintainer upload.
+
+  * really fix relax breaks+replaces;
+    closes: bug#979817, thanks (again) to Andreas Beckmann
+
+ -- Jonas Smedegaard <dr@jones.dk>  Thu, 14 Jan 2021 16:39:00 +0100
+
+llvm-defaults (0.51+nmu3) unstable; urgency=medium
+
+  * Non-maintainer upload.
+
+  * add note documenting need for Breaks+Replaces
+  * fix relax breaks+replaces;
+    closes: bug#979817, thanks to Andreas Beckmann and Sylvestre Ledru
+
+ -- Jonas Smedegaard <dr@jones.dk>  Mon, 11 Jan 2021 15:49:22 +0100
+
+llvm-defaults (0.51+nmu2) unstable; urgency=medium
+
+  * Non-maintainer upload.
+
+  * fix provide unversioned wasm-ld in lld
+    (not broken symlink in llvm),
+    and replace + break broken package;
+    thanks to Paul Wise and Sylvestre Ledru
+
+ -- Jonas Smedegaard <dr@jones.dk>  Sat, 09 Jan 2021 18:25:49 +0100
+
+llvm-defaults (0.51+nmu1) unstable; urgency=medium
+
+  * Non-maintainer upload.
+
+  * Provide unversioned wasm-ld in llvm;
+    closes: bug#976431
+
+ -- Jonas Smedegaard <dr@jones.dk>  Sat, 19 Dec 2020 17:10:28 +0100
+
 llvm-defaults (0.51) unstable; urgency=medium
 
   * Upload to unstable
