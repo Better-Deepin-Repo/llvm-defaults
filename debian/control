@@ -212,10 +212,6 @@ Package: lld
 Architecture: any
 Depends: lld-${pv:llvm} ${reqv:llvm}, ${misc:Depends}
 Pre-Depends: ${misc:Pre-Depends}
-# TODO: drop when 0.51+nmu1 with broken symlink is in no Debian suite
-# (see release 0.51+nmu2)
-Replaces: llvm (<< 1:11.0-51+nmu2)
-Breaks: llvm (<< 1:11.0-51+nmu2)
 Description: LLVM-based linker
  LLD is a new, high-performance linker. It is built as a set of reusable
  components which highly leverage existing libraries in the larger LLVM
