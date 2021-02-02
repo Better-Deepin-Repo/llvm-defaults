@@ -4,11 +4,11 @@
 #export DH_VERBOSE=1
 
 # version number of the defaults package
-VDEF	:= $(strip $(shell dpkg-parsechangelog | awk -F: '/^Version:/ {print $$NF}'))
+include /usr/share/dpkg/pkg-info.mk
 
-VMAJOR	:= $(shell echo $(VDEF) | awk -F. '{print $$1}')
-VMINOR	:= $(shell echo $(VDEF) | awk -F. '{print $$2}' | sed -e 's/\([0-9]*\).*/\1/')
-REL_EXT	:= $(shell echo $(VDEF) | sed -e 's/^$(VMAJOR)\.$(VMINOR)//')
+VMAJOR	:= $(shell echo $(DEB_VERSION) | awk -F. '{print $$1}')
+VMINOR	:= $(shell echo $(DEB_VERSION) | awk -F. '{print $$2}' | sed -e 's/\([0-9]*\).*/\1/')
+REL_EXT	:= $(shell echo $(DEB_VERSION) | sed -e 's/^$(VMAJOR)\.$(VMINOR)//')
 
 # llvm-defaults 0.1 is the first version for 2.7.
 REL_NO_27	:= $(shell expr $(VMINOR) - 0)$(REL_EXT)
@@ -67,10 +67,10 @@ REL_NO_80	:= $(shell expr $(VMINOR) - 0)$(REL_EXT)
 # llvm-defaults 0.49 is the first version for 9.0.
 REL_NO_90   := $(shell expr $(VMINOR) - 0)$(REL_EXT)
 
-# llvm-defaults 0.49 is the first version for 10.0.
+# llvm-defaults 0.50 is the first version for 10.
 REL_NO_100   := $(shell expr $(VMINOR) - 0)$(REL_EXT)
 
-# llvm-defaults 0.50 is the first version for 11.0.
+# llvm-defaults 0.51 is the first version for 11.
 REL_NO_110   := $(shell expr $(VMINOR) - 0)$(REL_EXT)
 
 # llvm-defaults 0.52 is the first version for 12.0.
@@ -89,7 +89,7 @@ include /usr/share/dpkg/architecture.mk
 CV_LLVM		:= 1:$(CURRENT_VERSION)-$(REL_NO_120)
 
 distribution := $(shell lsb_release -is)
-all_packages   := llvm llvm-runtime llvm-dev clang clang-tools libclang1 libclang-dev clang-format clang-tidy clangd python3-clang libomp5 libomp-dev libc++1 libc++-dev libc++abi1 libc++abi-dev libllvm-ocaml-dev python-clang
+all_packages   := llvm llvm-runtime llvm-dev clang clang-tools libclang-cpp-dev libclang1 libclang-dev clang-format clang-tidy clangd python3-clang libomp5 libomp-dev libc++1 libc++-dev libc++abi1 libc++abi-dev libllvm-ocaml-dev python-clang
 no_packages    :=
 
 EXTRA_SUPPORTED=amd64 arm64 armel armhf i386 mips mipsel mips64el ppc64el kfreebsd-amd64 kfreebsd-i386 s390 s390x sparc alpha hppa m68k powerpcspe ppc64 sh4 sparc64 x32
@@ -155,14 +155,12 @@ build-stamp:
 
 clean:
 	dh_testdir
-	dh_testroot
 	rm -f *-stamp
 	rm -f debian/substvars.local
 	dh_clean
 
 install: build README substvars
 	dh_testdir
-	dh_testroot
 	dh_prep
 
 	for p in $(packages); do \
@@ -398,6 +396,9 @@ install: build README substvars
 	dh_link -plld \
 			/usr/bin/ld.lld-$(PV_LLVM) \
 			/usr/bin/ld.lld
+	dh_link -plld \
+			/usr/bin/wasm-ld-$(PV_LLVM) \
+			/usr/bin/wasm-ld
 
 
 nopkgs := $(foreach p, $(no_packages),-N$(p))
@@ -407,7 +408,6 @@ binary-indep: build install
 
 binary-arch: build install
 	dh_testdir
-	dh_testroot
 
 	dh_lintian
 	dh_installchangelogs -a $(nopkgs)

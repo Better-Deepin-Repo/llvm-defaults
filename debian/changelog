@@ -21,7 +21,86 @@ llvm-defaults (0.51) unstable; urgency=medium
 
  -- Sylvestre Ledru <sylvestre@debian.org>  Mon, 09 Mar 2020 15:11:52 +0100
 
-llvm-defaults (0.50) unstable; urgency=medium
+llvm-defaults (0.51+nmu4) unstable; urgency=medium
+
+  * Non-maintainer upload.
+
+  * really fix relax breaks+replaces;
+    closes: bug#979817, thanks (again) to Andreas Beckmann
+
+ -- Jonas Smedegaard <dr@jones.dk>  Thu, 14 Jan 2021 16:39:00 +0100
+
+llvm-defaults (0.51+nmu3) unstable; urgency=medium
+
+  * Non-maintainer upload.
+
+  * add note documenting need for Breaks+Replaces
+  * fix relax breaks+replaces;
+    closes: bug#979817, thanks to Andreas Beckmann and Sylvestre Ledru
+
+ -- Jonas Smedegaard <dr@jones.dk>  Mon, 11 Jan 2021 15:49:22 +0100
+
+llvm-defaults (0.51+nmu2) unstable; urgency=medium
+
+  * Non-maintainer upload.
+
+  * fix provide unversioned wasm-ld in lld
+    (not broken symlink in llvm),
+    and replace + break broken package;
+    thanks to Paul Wise and Sylvestre Ledru
+
+ -- Jonas Smedegaard <dr@jones.dk>  Sat, 09 Jan 2021 18:25:49 +0100
+
+llvm-defaults (0.51+nmu1) unstable; urgency=medium
+
+  * Non-maintainer upload.
+
+  * Provide unversioned wasm-ld in llvm;
+    closes: bug#976431
+
+ -- Jonas Smedegaard <dr@jones.dk>  Sat, 19 Dec 2020 17:10:28 +0100
+
+llvm-defaults (0.51) unstable; urgency=medium
+
+  * Upload to unstable
+
+ -- Gianfranco Costamagna <locutusofborg@debian.org>  Fri, 04 Dec 2020 23:43:26 +0100
+
+llvm-defaults (0.51~exp2) experimental; urgency=medium
+
+  [ Alexander Volkov ]
+  * Add libclang-cpp-dev package
+
+ -- Gianfranco Costamagna <locutusofborg@debian.org>  Fri, 04 Dec 2020 21:05:39 +0100
+
+llvm-defaults (0.51~exp1) experimental; urgency=medium
+
+  * Disable ocaml binding on i386, the architecture is dying in Ubuntu,
+    and makes little sense in Debian too, to support ocaml here
+  * Bump default llvm-version to 11
+  * Add R^3 no
+  * Bump std-version to 4.5.0
+  * Bump compat level to 12
+  * Drop asterisks from NEWS file
+  * Add myself to uploaders
+  * Fix typo in lintian override
+  * Fix duplicate long description for libc++abi-dev
+  * Fix some duplicate short/long descriptions
+  * Move libomp5 to libs section
+  * Update copyright years and license path, to fix lintian warning
+  * drop dh_testroot from rules file
+  * Use pkg-info.mk to detect the changelog version,
+    instead of parsing with dpkg-parsechangelog
+
+ -- Gianfranco Costamagna <locutusofborg@debian.org>  Thu, 17 Sep 2020 09:34:28 +0200
+
+llvm-defaults (0.50~exp1) experimental; urgency=medium
+
+  * Bump defaults to llvm-toolchain-10
+
+ -- Gianfranco Costamagna <locutusofborg@debian.org>  Fri, 20 Mar 2020 20:51:08 +0100
+
+llvm-defaults (0.49.1) unstable; urgency=medium
 
   * python3-clang: Depend on python3-clang-10.
     Thanks to doko for the patch
