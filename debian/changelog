@@ -1,11 +1,16 @@
 llvm-defaults (0.53) UNRELEASED; urgency=medium
 
+  [ Debian Janitor ]
   * Apply multi-arch hints.
     + clang-format, clang-tidy, clang-tools, clangd, libclang-dev, liblldb-dev,
       libomp-dev, lld, lldb, llvm-runtime, python-clang, python-lldb,
       python3-clang, python3-lldb: Add Multi-Arch: same.
 
- -- Debian Janitor <janitor@jelmer.uk>  Wed, 28 Oct 2020 21:33:05 -0000
+  [ Sylvestre Ledru ]
+  * Bump the version for apt.llvm.org
+    default to 13
+
+ -- Sylvestre Ledru <sylvestre@debian.org>  Tue, 02 Feb 2021 22:17:19 +0100
 
 llvm-defaults (0.52) unstable; urgency=medium
 

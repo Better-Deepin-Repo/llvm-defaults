@@ -76,11 +76,15 @@ REL_NO_110   := $(shell expr $(VMINOR) - 0)$(REL_EXT)
 # llvm-defaults 0.52 is the first version for 12.0.
 REL_NO_120   := $(shell expr $(VMINOR) - 0)$(REL_EXT)
 
+# llvm-defaults 0.53 is the first version for 13.0.
+REL_NO_130   := $(shell expr $(VMINOR) - 0)$(REL_EXT)
+
+
 # minimum required version
 
-REQV            := (>= 12~)
+REQV            := (>= 13~)
 
-CURRENT_VERSION := 12.0
+CURRENT_VERSION := 13.0
 
 # architecture dependent variables
 include /usr/share/dpkg/architecture.mk
