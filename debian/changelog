@@ -2,6 +2,7 @@ llvm-defaults (0.52~exp1) experimental; urgency=medium
 
   * Drop TODO and Breaks/Replaces
   * Bump defaults to llvm-12
+  * Drop double breaks/replaces for clang-tools
 
  -- Gianfranco Costamagna <locutusofborg@debian.org>  Mon, 15 Mar 2021 11:26:07 +0100
 
