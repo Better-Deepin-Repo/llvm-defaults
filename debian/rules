@@ -197,11 +197,9 @@ install: build README substvars
 # To know if there is a manpage or not
 # for f in $L; do if test -f /usr/share/man/man1/$f-7.1.gz; then echo $f; fi; done|tr "\n" " "
 	for man in \
-		bugpoint lit llc llvm-ar llvm-as llvm-bcanalyzer llvm-config \
-		llvm-diff llvm-dis llvm-extract llvm-link llvm-nm llvm-profdata \
-		llvm-ranlib opt tblgen llvm-symbolizer llvm-cov llvm-dwarfdump \
-		llvm-objdump llvm-rtdyld llvm-size llvm-mc dsymutil llvm-exegesis \
-		llvm-lib llvm-mca llvm-pdbutil llvm-readobj llvm-stress; do \
+		llvm-ranlib llvm-dwarfdump \
+		llvm-objdump llvm-rtdyld llvm-size llvm-mc \
+		; do \
 		dh_link -pllvm \
 			/usr/share/man/man1/$$man-$(PV_LLVM).1.gz \
 			/usr/share/man/man1/$$man.1.gz ; \
@@ -244,7 +242,7 @@ install: build README substvars
 	done
 
 	for man in \
-		lldb lldb-mi; do \
+		lldb; do \
 		dh_link -plldb \
 			/usr/share/man/man1/$$man-$(PV_LLVM).1.gz \
 			/usr/share/man/man1/$$man.1.gz ; \
@@ -301,7 +299,7 @@ install: build README substvars
 	dh_installdirs -plibllvm-ocaml-dev \
 	 	/usr/lib/ocaml/METAS
 	dh_link -plibllvm-ocaml-dev \
-	 	/usr/lib/ocaml/llvm-$(PV_LLVM)/META.llvm /usr/lib/ocaml/METAS/META.llvm
+	 	/usr/lib/ocaml/META.llvm /usr/lib/ocaml/METAS/META.llvm
 
 #  clang
 
@@ -383,9 +381,6 @@ install: build README substvars
 	dh_link -plldb \
 			/usr/bin/lldb-argdumper-$(PV_LLVM) \
 			/usr/bin/lldb-argdumper
-	dh_link -plldb \
-			/usr/bin/lldb-mi-$(PV_LLVM) \
-			/usr/bin/lldb-mi
 	dh_link -plldb \
 			/usr/bin/lldb-server-$(PV_LLVM) \
 			/usr/bin/lldb-server

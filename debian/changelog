@@ -6,6 +6,17 @@ llvm-defaults (0.52~exp1) experimental; urgency=medium
 
  -- Gianfranco Costamagna <locutusofborg@debian.org>  Mon, 15 Mar 2021 11:26:07 +0100
 
+llvm-defaults (0.51+nmu5) unstable; urgency=medium
+
+  * Non-maintainer upload.
+  * llvm: Drop broken manpage symlinks, targets removed since llvm-9.
+    (Closes: #952533)
+  * lldb: Drop lldb-mi symlink, target removed since lldb-10.
+  * libllvm-ocaml-dev: Fix /usr/lib/ocaml/METAS/META.llvm symlink.
+    (Closes: #857768)
+
+ -- Andreas Beckmann <anbe@debian.org>  Wed, 12 May 2021 18:30:33 +0200
+
 llvm-defaults (0.51+nmu4) unstable; urgency=medium
 
   * Non-maintainer upload.
