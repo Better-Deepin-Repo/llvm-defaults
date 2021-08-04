@@ -1,3 +1,10 @@
+llvm-defaults (0.54) unstable; urgency=medium
+
+  * Bump the version for apt.llvm.org
+    default to 14
+
+ -- Sylvestre Ledru <sylvestre@debian.org>  Wed, 04 Aug 2021 11:17:24 +0200
+
 llvm-defaults (0.53) UNRELEASED; urgency=medium
 
   [ Debian Janitor ]
