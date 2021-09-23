@@ -3,7 +3,24 @@ llvm-defaults (0.54) unstable; urgency=medium
   * Bump the version for apt.llvm.org
     default to 14
 
- -- Sylvestre Ledru <sylvestre@debian.org>  Wed, 04 Aug 2021 11:17:24 +0200
+  [ Debian Janitor ]
+  * Remove constraints unnecessary since buster:
+    + Build-Depends: Drop versioned constraint on dpkg-dev.
+    + clang: Drop versioned constraint on clang in Replaces.
+    + clang-tools: Drop versioned constraint on clang in Replaces.
+    + clang-tools: Drop versioned constraint on clang in Breaks.
+    + clang-tidy: Drop versioned constraint on clang in Replaces.
+    + clang-tidy: Drop versioned constraint on clang in Breaks.
+    + clang-format: Drop versioned constraint on clang in Replaces.
+    + clang-format: Drop versioned constraint on clang in Breaks.
+    + python3-clang: Drop versioned constraint on python-clang in Replaces.
+    + python3-clang: Drop versioned constraint on python-clang in Breaks.
+    + python3-lldb: Drop versioned constraint on python-lldb in Replaces.
+    + python3-lldb: Drop versioned constraint on python-lldb in Breaks.
+    + libomp-dev: Drop versioned constraint on libomp-dev in Replaces.
+    + libomp-dev: Drop versioned constraint on libomp-dev in Breaks.
+
+ -- Sylvestre Ledru <sylvestre@debian.org>  Thu, 23 Sep 2021 23:15:19 +0200
 
 llvm-defaults (0.53) UNRELEASED; urgency=medium
 
