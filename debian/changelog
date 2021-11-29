@@ -1,3 +1,12 @@
+llvm-defaults (0.55) unstable; urgency=medium
+
+  [ Kasper Kantz ]
+  * Add riscv64 architecture in control
+    enable liblldb, libomp and others which are
+    currently unavailable in riscv64 repository.
+
+ -- Sylvestre Ledru <sylvestre@debian.org>  Thu, 03 Feb 2022 21:15:32 +0100
+
 llvm-defaults (0.54) unstable; urgency=medium
 
   * Disable lldb on mips*. it was done in 13.0.0-8

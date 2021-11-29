@@ -43,7 +43,7 @@ Description: Low-Level Virtual Machine (LLVM), libraries and headers
  This is a dependency package providing the default libraries and headers.
 
 Package: libllvm-ocaml-dev
-Architecture: amd64 arm64 armhf
+Architecture: amd64 arm64 armhf riscv64
 Section: ocaml
 Depends: llvm-runtime (= ${binary:Version}), libllvm-${pv:llvm}-ocaml-dev ${reqv:llvm}, ${misc:Depends}
 Description: Low-Level Virtual Machine (LLVM), bindings for OCaml
@@ -256,7 +256,7 @@ Description: Next generation, high-performance debugger, python lib
 
 Package: libomp-dev
 Section: libdevel
-Architecture: amd64 arm64 armhf i386 mips64el ppc64el ppc64
+Architecture: amd64 arm64 armhf i386 mips64el ppc64el ppc64 riscv64
 Depends: ${shlibs:Depends}, ${misc:Depends}, ${dep:devlibs},
  libomp-${pv:llvm}-dev ${reqv:llvm}
 Multi-Arch: same
@@ -270,7 +270,7 @@ Description: LLVM OpenMP runtime - dev package
 Package: libomp5
 Multi-Arch: same
 Section: libs
-Architecture: amd64 arm64 armhf i386 mips64el ppc64el ppc64
+Architecture: amd64 arm64 armhf i386 mips64el ppc64el ppc64 riscv64
 Depends: libomp5-${pv:llvm} ${reqv:llvm}, ${shlibs:Depends}, ${misc:Depends}
 Description: LLVM OpenMP runtime
  The runtime is the part of the OpenMP implementation that your code is
