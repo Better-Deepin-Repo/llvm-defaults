@@ -1,7 +1,6 @@
-llvm-defaults (0.54) unstable; urgency=medium
+llvm-defaults (0.53) unstable; urgency=medium
 
-  * Bump the version for apt.llvm.org
-    default to 14
+  * Upload to unstable to default to 13
 
   [ Debian Janitor ]
   * Remove constraints unnecessary since buster:
@@ -19,36 +18,19 @@ llvm-defaults (0.54) unstable; urgency=medium
     + python3-lldb: Drop versioned constraint on python-lldb in Breaks.
     + libomp-dev: Drop versioned constraint on libomp-dev in Replaces.
     + libomp-dev: Drop versioned constraint on libomp-dev in Breaks.
-
- -- Sylvestre Ledru <sylvestre@debian.org>  Thu, 23 Sep 2021 23:15:19 +0200
-
-llvm-defaults (0.53) UNRELEASED; urgency=medium
-
-  [ Debian Janitor ]
   * Apply multi-arch hints.
     + clang-format, clang-tidy, clang-tools, clangd, libclang-dev, liblldb-dev,
       libomp-dev, lld, lldb, llvm-runtime, python-clang, python-lldb,
       python3-clang, python3-lldb: Add Multi-Arch: same.
 
-  [ Sylvestre Ledru ]
-  * Bump the version for apt.llvm.org
-    default to 13
-
  -- Sylvestre Ledru <sylvestre@debian.org>  Tue, 02 Feb 2021 22:17:19 +0100
 
-llvm-defaults (0.52) unstable; urgency=medium
+llvm-defaults (0.53~exp1) experimental; urgency=medium
 
-  * Bump the version for apt.llvm.org
-    default to 12
+  [ Matthias Klose ]
+  * Default to llvm-13.
 
- -- Sylvestre Ledru <sylvestre@debian.org>  Sun, 09 Aug 2020 20:28:41 +0200
-
-llvm-defaults (0.51) unstable; urgency=medium
-
-  * Bump the version for apt.llvm.org
-    default to 11
-
- -- Sylvestre Ledru <sylvestre@debian.org>  Mon, 09 Mar 2020 15:11:52 +0100
+ -- Gianfranco Costamagna <locutusofborg@debian.org>  Tue, 28 Sep 2021 12:13:47 +0200
 
 llvm-defaults (0.52~exp2) experimental; urgency=medium
 

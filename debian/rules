@@ -79,21 +79,18 @@ REL_NO_120   := $(shell expr $(VMINOR) - 0)$(REL_EXT)
 # llvm-defaults 0.53 is the first version for 13.0.
 REL_NO_130   := $(shell expr $(VMINOR) - 0)$(REL_EXT)
 
-# llvm-defaults 0.54 is the first version for 14.0.
-REL_NO_140   := $(shell expr $(VMINOR) - 0)$(REL_EXT)
-
 
 # minimum required version
 
-REQV            := (>= 14~)
+REQV            := (>= 13~)
 
-CURRENT_VERSION := 14.0
+CURRENT_VERSION := 13.0
 
 # architecture dependent variables
 include /usr/share/dpkg/architecture.mk
 
 # complete version number, including the release
-CV_LLVM		:= 1:$(CURRENT_VERSION)-$(REL_NO_140)
+CV_LLVM		:= 1:$(CURRENT_VERSION)-$(REL_NO_120)
 
 distribution := $(shell lsb_release -is)
 all_packages   := llvm llvm-runtime llvm-dev clang clang-tools libclang-cpp-dev libclang1 libclang-dev clang-format clang-tidy clangd python3-clang libomp5 libomp-dev libc++1 libc++-dev libc++abi1 libc++abi-dev libllvm-ocaml-dev python-clang
