@@ -277,8 +277,6 @@ Section: libdevel
 Architecture: amd64 arm64 armhf i386 mips64el ppc64el ppc64
 Depends: ${shlibs:Depends}, ${misc:Depends}, ${dep:devlibs},
  libomp-${pv:llvm}-dev ${reqv:llvm}
-Replaces: libomp-dev (<< 7)
-Breaks: libomp-dev (<< 7)
 Multi-Arch: same
 Description: LLVM OpenMP runtime - dev package
  The runtime is the part of the OpenMP implementation that your code is
