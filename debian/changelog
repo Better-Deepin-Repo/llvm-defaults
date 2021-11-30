@@ -1,7 +1,8 @@
 llvm-defaults (0.53) unstable; urgency=medium
 
   * Upload to unstable to default to 13
-  * Remove old libomp-dev
+  * Remove old libomp-dev dep
+  * Remove python-lldb & python-clang
 
   [ Debian Janitor ]
   * Remove constraints unnecessary since buster:

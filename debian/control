@@ -254,24 +254,6 @@ Description: Next generation, high-performance debugger, python lib
  .
  This binding package provides access to lldb.
 
-Package: python-clang
-Depends: python3-clang, ${misc:Depends}
-Architecture: any
-Section: oldlibs
-Multi-Arch: same
-Description: transitional package to python3-clang
- This is a transitional package for python3-clang.
- It can safely be removed.
-
-Package: python-lldb
-Depends: python3-lldb, ${misc:Depends}
-Architecture: any
-Section: oldlibs
-Multi-Arch: same
-Description: transitional package to python3-lldb
- This is a transitional package for python3-lldb.
- It can safely be removed.
-
 Package: libomp-dev
 Section: libdevel
 Architecture: amd64 arm64 armhf i386 mips64el ppc64el ppc64
