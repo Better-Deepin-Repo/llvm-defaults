@@ -300,9 +300,9 @@ install: build README substvars
 
 	: libllvm-ocaml-dev
 	dh_installdirs -plibllvm-ocaml-dev \
-	 	/usr/lib/ocaml/METAS
+		/usr/lib/ocaml/METAS
 	dh_link -plibllvm-ocaml-dev \
-	 	/usr/lib/ocaml/META.llvm /usr/lib/ocaml/METAS/META.llvm
+		/usr/lib/ocaml/META.llvm /usr/lib/ocaml/METAS/META.llvm
 
 #  clang
 
