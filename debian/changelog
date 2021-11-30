@@ -1,6 +1,7 @@
 llvm-defaults (0.54) UNRELEASED; urgency=medium
 
   * Avoid setting debhelper compat version in debian/rules and debian/compat.
+  * Bump debhelper from old 12 to 13.
 
  -- Sylvestre Ledru <sylvestre@debian.org>  Tue, 30 Nov 2021 22:12:01 -0000
 

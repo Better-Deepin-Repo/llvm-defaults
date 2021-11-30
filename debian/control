@@ -6,7 +6,7 @@ Uploaders: Matthias Klose <doko@debian.org>, Sylvestre Ledru <sylvestre@debian.o
  Gianfranco Costamagna <locutusofborg@debian.org>
 Standards-Version: 4.5.0
 Rules-Requires-Root: no
-Build-Depends: debhelper-compat (= 12), dpkg-dev (>= 1.13.9), lsb-release,
+Build-Depends: debhelper-compat (= 13), dpkg-dev (>= 1.13.9), lsb-release,
  m4
 Vcs-Git: https://salsa.debian.org/pkg-llvm-team/llvm-defaults.git -b snapshot
 Vcs-Browser: https://salsa.debian.org/pkg-llvm-team/llvm-defaults/
