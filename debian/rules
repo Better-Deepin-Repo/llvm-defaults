@@ -73,10 +73,10 @@ REL_NO_100   := $(shell expr $(VMINOR) - 0)$(REL_EXT)
 # llvm-defaults 0.51 is the first version for 11.
 REL_NO_110   := $(shell expr $(VMINOR) - 0)$(REL_EXT)
 
-# llvm-defaults 0.52 is the first version for 12.0.
+# llvm-defaults 0.52 is the first version for 12.
 REL_NO_120   := $(shell expr $(VMINOR) - 0)$(REL_EXT)
 
-# llvm-defaults 0.53 is the first version for 13.0.
+# llvm-defaults 0.53 is the first version for 13.
 REL_NO_130   := $(shell expr $(VMINOR) - 0)$(REL_EXT)
 
 
