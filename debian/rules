@@ -396,6 +396,9 @@ install: build README substvars
 			/usr/bin/ld.lld-$(PV_LLVM) \
 			/usr/bin/ld.lld
 	dh_link -plld \
+			/usr/bin/lld-link-$(PV_LLVM) \
+			/usr/bin/lld-link
+	dh_link -plld \
 			/usr/bin/wasm-ld-$(PV_LLVM) \
 			/usr/bin/wasm-ld
 

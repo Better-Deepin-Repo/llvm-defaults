@@ -1,6 +1,7 @@
 llvm-defaults (0.54) unstable; urgency=medium
 
   * Disable lldb on mips*. it was done in 13.0.0-8
+  * Provide a symlink from lld-link-X => lld-link (Closes: #990088)
 
  -- Sylvestre Ledru <sylvestre@debian.org>  Fri, 24 Dec 2021 17:48:07 +0100
 
