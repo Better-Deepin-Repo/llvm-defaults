@@ -1,4 +1,4 @@
-llvm-defaults (0.55) unstable; urgency=medium
+llvm-defaults (0.55) UNRELEASED; urgency=medium
 
   [ Kasper Kantz ]
   * Add riscv64 architecture in control
