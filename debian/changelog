@@ -1,16 +1,134 @@
-llvm-defaults (0.51~exp3) UNRELEASED; urgency=medium
+llvm-defaults (0.55) UNRELEASED; urgency=medium
 
   [ Kasper Kantz ]
   * Add riscv64 architecture in control
     enable liblldb, libomp and others which are
     currently unavailable in riscv64 repository.
 
-llvm-defaults (0.51~exp2) UNRELEASED; urgency=medium
+ -- Sylvestre Ledru <sylvestre@debian.org>  Thu, 03 Feb 2022 21:15:32 +0100
+
+llvm-defaults (0.54) unstable; urgency=medium
+
+  * Disable lldb on mips*. it was done in 13.0.0-8
+  * Provide a symlink from lld-link-X => lld-link (Closes: #990088)
+
+ -- Sylvestre Ledru <sylvestre@debian.org>  Fri, 24 Dec 2021 17:48:07 +0100
+
+llvm-defaults (0.53) unstable; urgency=medium
+
+  * Upload to unstable to default to 13
+  * Remove old libomp-dev dep
+  * Remove python-lldb & python-clang
+
+  [ Debian Janitor ]
+  * Remove constraints unnecessary since buster:
+    + Build-Depends: Drop versioned constraint on dpkg-dev.
+    + clang: Drop versioned constraint on clang in Replaces.
+    + clang-tools: Drop versioned constraint on clang in Replaces.
+    + clang-tools: Drop versioned constraint on clang in Breaks.
+    + clang-tidy: Drop versioned constraint on clang in Replaces.
+    + clang-tidy: Drop versioned constraint on clang in Breaks.
+    + clang-format: Drop versioned constraint on clang in Replaces.
+    + clang-format: Drop versioned constraint on clang in Breaks.
+    + python3-clang: Drop versioned constraint on python-clang in Replaces.
+    + python3-clang: Drop versioned constraint on python-clang in Breaks.
+    + python3-lldb: Drop versioned constraint on python-lldb in Replaces.
+    + python3-lldb: Drop versioned constraint on python-lldb in Breaks.
+    + libomp-dev: Drop versioned constraint on libomp-dev in Replaces.
+    + libomp-dev: Drop versioned constraint on libomp-dev in Breaks.
+  * Apply multi-arch hints.
+    + clang-format, clang-tidy, clang-tools, clangd, libclang-dev, liblldb-dev,
+      libomp-dev, lld, lldb, llvm-runtime, python-clang, python-lldb,
+      python3-clang, python3-lldb: Add Multi-Arch: same.
+  * Avoid setting debhelper compat version in debian/rules and debian/compat.
+  * Bump debhelper from old 12 to 13.
+  * Update standards version to 4.6.0, no changes needed.
+
+ -- Sylvestre Ledru <sylvestre@debian.org>  Tue, 30 Nov 2021 22:19:56 +0100
+
+llvm-defaults (0.53~exp1) experimental; urgency=medium
+
+  [ Matthias Klose ]
+  * Default to llvm-13.
+
+ -- Gianfranco Costamagna <locutusofborg@debian.org>  Tue, 28 Sep 2021 12:13:47 +0200
+
+llvm-defaults (0.52~exp2) experimental; urgency=medium
+
+  * Merge 0.51+nmu5 into experimental branch
+
+ -- Gianfranco Costamagna <locutusofborg@debian.org>  Thu, 03 Jun 2021 15:38:40 +0200
+
+llvm-defaults (0.52~exp1) experimental; urgency=medium
+
+  * Drop TODO and Breaks/Replaces
+  * Bump defaults to llvm-12
+  * Drop double breaks/replaces for clang-tools
+
+ -- Gianfranco Costamagna <locutusofborg@debian.org>  Mon, 15 Mar 2021 11:26:07 +0100
+
+llvm-defaults (0.51+nmu5) unstable; urgency=medium
+
+  * Non-maintainer upload.
+  * llvm: Drop broken manpage symlinks, targets removed since llvm-9.
+    (Closes: #952533)
+  * lldb: Drop lldb-mi symlink, target removed since lldb-10.
+  * libllvm-ocaml-dev: Fix /usr/lib/ocaml/METAS/META.llvm symlink.
+    (Closes: #857768)
+
+ -- Andreas Beckmann <anbe@debian.org>  Wed, 12 May 2021 18:30:33 +0200
+
+llvm-defaults (0.51+nmu4) unstable; urgency=medium
+
+  * Non-maintainer upload.
+
+  * really fix relax breaks+replaces;
+    closes: bug#979817, thanks (again) to Andreas Beckmann
+
+ -- Jonas Smedegaard <dr@jones.dk>  Thu, 14 Jan 2021 16:39:00 +0100
+
+llvm-defaults (0.51+nmu3) unstable; urgency=medium
+
+  * Non-maintainer upload.
+
+  * add note documenting need for Breaks+Replaces
+  * fix relax breaks+replaces;
+    closes: bug#979817, thanks to Andreas Beckmann and Sylvestre Ledru
+
+ -- Jonas Smedegaard <dr@jones.dk>  Mon, 11 Jan 2021 15:49:22 +0100
+
+llvm-defaults (0.51+nmu2) unstable; urgency=medium
+
+  * Non-maintainer upload.
+
+  * fix provide unversioned wasm-ld in lld
+    (not broken symlink in llvm),
+    and replace + break broken package;
+    thanks to Paul Wise and Sylvestre Ledru
+
+ -- Jonas Smedegaard <dr@jones.dk>  Sat, 09 Jan 2021 18:25:49 +0100
+
+llvm-defaults (0.51+nmu1) unstable; urgency=medium
+
+  * Non-maintainer upload.
+
+  * Provide unversioned wasm-ld in llvm;
+    closes: bug#976431
+
+ -- Jonas Smedegaard <dr@jones.dk>  Sat, 19 Dec 2020 17:10:28 +0100
+
+llvm-defaults (0.51) unstable; urgency=medium
+
+  * Upload to unstable
+
+ -- Gianfranco Costamagna <locutusofborg@debian.org>  Fri, 04 Dec 2020 23:43:26 +0100
+
+llvm-defaults (0.51~exp2) experimental; urgency=medium
 
   [ Alexander Volkov ]
   * Add libclang-cpp-dev package
 
- -- Alexander Volkov <avolkov@astralinux.ru>  Thu, 26 Nov 2020 19:42:49 +0300
+ -- Gianfranco Costamagna <locutusofborg@debian.org>  Fri, 04 Dec 2020 21:05:39 +0100
 
 llvm-defaults (0.51~exp1) experimental; urgency=medium
 
@@ -104,7 +222,7 @@ llvm-defaults (0.48.1) unstable; urgency=medium
 
 llvm-defaults (0.48) unstable; urgency=medium
 
-  * Upload to unstable
+  * Default to 10
   * Ship clangd as a new package
 
  -- Sylvestre Ledru <sylvestre@debian.org>  Sat, 03 Aug 2019 16:00:11 +0200
