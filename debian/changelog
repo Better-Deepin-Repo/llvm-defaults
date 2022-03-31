@@ -1,11 +1,14 @@
-llvm-defaults (0.55) UNRELEASED; urgency=medium
+llvm-defaults (0.55~exp1) experimental; urgency=medium
 
   [ Kasper Kantz ]
   * Add riscv64 architecture in control
     enable liblldb, libomp and others which are
     currently unavailable in riscv64 repository.
 
- -- Sylvestre Ledru <sylvestre@debian.org>  Thu, 03 Feb 2022 21:15:32 +0100
+  [ Matthias Klose ]
+  * Default to llvm-14.
+
+ -- Gianfranco Costamagna <locutusofborg@debian.org>  Thu, 31 Mar 2022 07:05:21 +0200
 
 llvm-defaults (0.54) unstable; urgency=medium
 
