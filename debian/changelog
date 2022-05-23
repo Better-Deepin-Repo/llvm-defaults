@@ -1,3 +1,9 @@
+llvm-defaults (0.55~exp3) experimental; urgency=medium
+
+  * Bring ocaml back on riscv64, llvm-14 looks now building it
+
+ -- Gianfranco Costamagna <locutusofborg@debian.org>  Mon, 23 May 2022 13:37:40 +0200
+
 llvm-defaults (0.55~exp2) experimental; urgency=medium
 
   * Revert addition of riscv64 for lldb packages, llvm-14 is still
