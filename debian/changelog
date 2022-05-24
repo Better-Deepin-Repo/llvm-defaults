@@ -1,3 +1,9 @@
+llvm-defaults (0.55~exp4) experimental; urgency=medium
+
+  * Only drop lldb* on riscv64, not built there.
+
+ -- Gianfranco Costamagna <locutusofborg@debian.org>  Tue, 24 May 2022 10:32:30 +0200
+
 llvm-defaults (0.55~exp3) experimental; urgency=medium
 
   * Bring ocaml back on riscv64, llvm-14 looks now building it
