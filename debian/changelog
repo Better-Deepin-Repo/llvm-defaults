@@ -1,3 +1,9 @@
+llvm-defaults (0.55) unstable; urgency=medium
+
+  * Upload to unstable to default to 14
+
+ -- Sylvestre Ledru <sylvestre@debian.org>  Tue, 26 Jul 2022 10:56:20 +0200
+
 llvm-defaults (0.55~exp4) experimental; urgency=medium
 
   * Only drop lldb* on riscv64, not built there.
