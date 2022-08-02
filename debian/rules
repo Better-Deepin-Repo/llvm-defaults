@@ -190,7 +190,7 @@ install: build README substvars
 		llvm-dwp llvm-exegesis llvm-lib llvm-lto llvm-lto2 llvm-mca llvm-modextract \
 		llvm-mt llvm-objcopy llvm-opt-report llvm-pdbutil llvm-rc llvm-readelf \
 		llvm-readobj llvm-split llvm-stress llvm-strings llvm-strip llvm-undname \
-		llvm-xray sanstats opt \
+		llvm-xray sanstats opt llvm-addr2line \
 		; do \
 		dh_link -pllvm \
 			/usr/lib/llvm-$(PV_LLVM)/bin/$$bin \
@@ -204,11 +204,15 @@ install: build README substvars
 			/usr/bin/$$bin ; \
 	done
 # To know if there is a manpage or not
+# L="LIST ABOVE"
 # for f in $L; do if test -f /usr/share/man/man1/$f-7.1.gz; then echo $f; fi; done|tr "\n" " "
 	for man in \
-		llvm-ranlib llvm-dwarfdump \
-		llvm-objdump llvm-rtdyld llvm-size llvm-mc \
-		; do \
+		bugpoint llc llvm-ar llvm-as llvm-bcanalyzer llvm-config llvm-cov \
+		llvm-diff llvm-dis llvm-dwarfdump llvm-extract llvm-link llvm-mc \
+		llvm-nm llvm-objdump llvm-ranlib llvm-rtdyld llvm-size llvm-tblgen \
+		llvm-profdata llvm-symbolizer dsymutil llvm-cxxfilt llvm-exegesis \
+		llvm-lib llvm-mca llvm-objcopy llvm-pdbutil llvm-readelf llvm-readobj \
+		llvm-stress llvm-strings llvm-strip opt llvm-addr2line; do \
 		dh_link -pllvm \
 			/usr/share/man/man1/$$man-$(PV_LLVM).1.gz \
 			/usr/share/man/man1/$$man.1.gz ; \
