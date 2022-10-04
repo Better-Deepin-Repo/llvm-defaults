@@ -350,3 +350,17 @@ Description: LLVM low level support for a standard C++ library (development file
    * Provide a portable sublayer to ease the porting of libc++
  This is the development package providing low level support to
  LLVM C++ Standard library.
+
+Package: liblld-dev
+Architecture: any
+Section: libdevel
+Depends: ${shlibs:Depends}, ${misc:Depends}, ${dep:devlibs},
+ liblld-${pv:llvm}-dev ${reqv:llvm}
+Multi-Arch: same
+Description: LLVM-based linker, library
+ LLD is a new, high-performance linker. It is built as a set of reusable
+ components which highly leverage existing libraries in the larger LLVM
+ Project.
+ .
+ This is a dependency package providing the default liblld-dev package.
+

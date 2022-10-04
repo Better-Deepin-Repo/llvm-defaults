@@ -108,9 +108,9 @@ endif
 
 LLD_SUPPORTED=amd64 arm64 armel armhf i386 mips mipsel mips64el ppc64el kfreebsd-amd64 kfreebsd-i386 s390 sparc alpha hppa m68k powerpcspe ppc64 sh4 sparc64 x32 riscv64
 ifneq (,$(filter $(DEB_HOST_ARCH),$(LLD_SUPPORTED)))
-    all_packages += lld
+    all_packages += lld liblld-dev
 else
-    no_packages += lld
+    no_packages += lld liblld-dev
 endif
 
 
@@ -304,6 +304,11 @@ install: build README substvars
 		/usr/lib/llvm-$(PV_LLVM)/lib/$$lib /usr/lib/$$lib; \
 	done
 
+	: # liblld-dev
+	dh_installdirs -pliblld-dev \
+		/usr/include
+	dh_link -pliblld-dev \
+		/usr/lib/llvm-$(PV_LLVM)/include/lldb /usr/include/lld \
 
 	: libllvm-ocaml-dev
 	dh_installdirs -plibllvm-ocaml-dev \
