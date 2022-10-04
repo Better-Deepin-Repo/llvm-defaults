@@ -223,6 +223,8 @@ Description: LLVM-based linker
  LLD is a new, high-performance linker. It is built as a set of reusable
  components which highly leverage existing libraries in the larger LLVM
  Project.
+ .
+ This is a dependency package providing the lld linker.
 
 Package: python3-clang
 Section: python
@@ -239,7 +241,7 @@ Description: Clang Python Bindings
  Clang implements all of the ISO C++ 1998, 11 and 14 standards and also
  provides most of the support of C++17.
  .
- This binding package provides access to the Clang compiler and libraries.
+ This is a dependency package providing the Python binding to Clang.
 
 Package: python3-lldb
 Section: python
@@ -252,7 +254,7 @@ Description: Next generation, high-performance debugger, python lib
  reusable components which highly leverage existing libraries in the larger LLVM
  Project, such as the Clang expression parser and LLVM disassembler.
  .
- This binding package provides access to lldb.
+ This is a dependency package providing the Python binding to lldb.
 
 Package: libomp-dev
 Section: libdevel
@@ -264,6 +266,7 @@ Description: LLVM OpenMP runtime - dev package
  The runtime is the part of the OpenMP implementation that your code is
  linked against, and that manages the multiple threads in an OpenMP program
  while it is executing.
+ .
  This is a dependency package providing the default LLVM OpenMP dev
  package.
 
@@ -276,6 +279,7 @@ Description: LLVM OpenMP runtime
  The runtime is the part of the OpenMP implementation that your code is
  linked against, and that manages the multiple threads in an OpenMP program
  while it is executing.
+ .
  This is a dependency package providing the default LLVM OpenMP runtime.
 
 Package: libc++1
@@ -296,6 +300,7 @@ Description: LLVM C++ Standard library
    * ABI compatibility with gcc's libstdc++ for some low-level features such
      as exception objects, rtti and memory allocation.
    * Extensive unit tests.
+ .
  This is a dependency package providing the default LLVM C++ Standard library.
 
 Package: libc++-dev
@@ -315,6 +320,7 @@ Description: LLVM C++ Standard library (development files)
    * ABI compatibility with gcc's libstdc++ for some low-level features such
      as exception objects, rtti and memory allocation.
    * Extensive unit tests.
+ .
  This is a dependency package providing the default LLVM C++ Standard library
  development files.
 
@@ -332,6 +338,7 @@ Description: LLVM low level support for a standard C++ library
  .
    * Correctness as defined by the C++ standards.
    * Provide a portable sublayer to ease the porting of libc++
+ .
  This is a dependency package providing low level support to
  LLVM C++ Standard library.
 
@@ -348,8 +355,10 @@ Description: LLVM low level support for a standard C++ library (development file
  .
    * Correctness as defined by the C++ standards.
    * Provide a portable sublayer to ease the porting of libc++
- This is the development package providing low level support to
- LLVM C++ Standard library.
+ .
+ This is a dependency package providing low level support to
+ dev LLVM C++ Standard library.
+
 
 Package: liblld-dev
 Architecture: any
