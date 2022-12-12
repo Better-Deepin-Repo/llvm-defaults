@@ -187,7 +187,7 @@ install: build README substvars
 		llvm-dwp llvm-exegesis llvm-lib llvm-lto llvm-lto2 llvm-mca llvm-modextract \
 		llvm-mt llvm-objcopy llvm-opt-report llvm-pdbutil llvm-rc llvm-readelf \
 		llvm-readobj llvm-split llvm-stress llvm-strings llvm-strip llvm-undname \
-		llvm-xray sanstats opt llvm-addr2line \
+		llvm-xray sanstats opt llvm-addr2line llvm-reduce \
 		; do \
 		dh_link -pllvm \
 			/usr/lib/llvm-$(PV_LLVM)/bin/$$bin \
@@ -209,7 +209,7 @@ install: build README substvars
 		llvm-nm llvm-objdump llvm-ranlib llvm-rtdyld llvm-size llvm-tblgen \
 		llvm-profdata llvm-symbolizer dsymutil llvm-cxxfilt llvm-exegesis \
 		llvm-lib llvm-mca llvm-objcopy llvm-pdbutil llvm-readelf llvm-readobj \
-		llvm-stress llvm-strings llvm-strip opt llvm-addr2line; do \
+		llvm-stress llvm-strings llvm-strip opt llvm-addr2line llvm-reduce; do \
 		dh_link -pllvm \
 			/usr/share/man/man1/$$man-$(PV_LLVM).1.gz \
 			/usr/share/man/man1/$$man.1.gz ; \
