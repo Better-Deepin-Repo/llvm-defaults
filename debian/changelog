@@ -1,3 +1,11 @@
+llvm-defaults (0.55.5) UNRELEASED; urgency=medium
+
+  * Update lintian override info to new format:
+    + debian/clang-tidy.lintian-overrides: line 1
+    + debian/clang-format.lintian-overrides: line 1
+
+ -- Sylvestre Ledru <sylvestre@debian.org>  Thu, 05 Jan 2023 23:20:47 -0000
+
 llvm-defaults (0.55.4) unstable; urgency=medium
 
   * remove llvm-reduce symlink manpage (Closes: #1026967)
