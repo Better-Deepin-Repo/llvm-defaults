@@ -209,7 +209,7 @@ install: build README substvars
 		llvm-nm llvm-objdump llvm-ranlib llvm-rtdyld llvm-size llvm-tblgen \
 		llvm-profdata llvm-symbolizer dsymutil llvm-cxxfilt llvm-exegesis \
 		llvm-lib llvm-mca llvm-objcopy llvm-pdbutil llvm-readelf llvm-readobj \
-		llvm-stress llvm-strings llvm-strip opt llvm-addr2line llvm-reduce; do \
+		llvm-stress llvm-strings llvm-strip opt llvm-addr2line; do \
 		dh_link -pllvm \
 			/usr/share/man/man1/$$man-$(PV_LLVM).1.gz \
 			/usr/share/man/man1/$$man.1.gz ; \
