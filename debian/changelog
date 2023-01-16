@@ -1,10 +1,10 @@
 llvm-defaults (0.55.5) unstable; urgency=medium
 
-  * Create new dependencies packages
+  * Create new dependencies packages - request for Firefox
     - libclang-rt-dev => libclang-rt-14-dev
-    - libc++-dev-wasm32 => libc++-14-dev-wasm32
     - libclang-rt-dev-wasm32 => libclang-rt-14-dev-wasm32
     - libclang-rt-dev-wasm64 => libclang-rt-14-dev-wasm64
+    - libc++-dev-wasm32 => libc++-14-dev-wasm32
 
  -- Sylvestre Ledru <sylvestre@debian.org>  Mon, 16 Jan 2023 09:36:09 +0100
 
