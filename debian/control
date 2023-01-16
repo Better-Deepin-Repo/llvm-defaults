@@ -139,7 +139,7 @@ Description: Tool to format C/C++/Obj-C code
 Package: libclang-cpp-dev
 Architecture: any
 Section: libdevel
-Depends: ${shlibs:Depends}, ${misc:Depends}, ${dep:devlibs},
+Depends: ${shlibs:Depends}, ${misc:Depends},
  libclang-cpp${pv:llvm}-dev ${reqv:llvm}
 Description: C++ interface to the clang library
  Clang project is a C, C++, Objective C and Objective C++ front-end
@@ -188,6 +188,66 @@ Description: clang library - Development package
  .
  This is a dependency package providing the default libclang libraries and
  headers.
+
+Package: libclang-rt-dev
+Architecture: any
+Section: libdevel
+Depends: ${shlibs:Depends}, ${misc:Depends}, ${dep:devlibs},
+ libclang-rt-${pv:llvm}-dev ${reqv:llvm}
+Description: Compiler-rt - Development package
+ This package provides various libraries:
+ .
+   * builtins - Simple libraries that provide implementation of the
+     low-level target-specific hooks required by code generation
+     and other runtime components.
+   * sanitizer runtimes - AddressSanitizer, ThreadSanitizer,
+     UndefinedBehaviorSanitizer, MemorySanitizer, LeakSanitizer
+     DataFlowSanitizer, etc
+   * profile - Library which is used to collect coverage information.
+ .
+ This is a dependency package providing the default compiler-rt libraries and
+ headers.
+
+Package: libclang-rt-dev-wasm32
+Architecture: any
+Section: libdevel
+Depends: ${shlibs:Depends}, ${misc:Depends}, ${dep:devlibs},
+ libclang-rt-${pv:llvm}-dev-wasm32 ${reqv:llvm}
+Description: Compiler-rt - wasm32 builtins
+ Provides the compiler-rt builtins for WebAssembly 32 bits
+ .
+ This is a dependency package providing the default libclang wasm32 library.
+
+Package: libclang-rt-dev-wasm64
+Architecture: any
+Section: libdevel
+Depends: ${shlibs:Depends}, ${misc:Depends}, ${dep:devlibs},
+ libclang-rt-${pv:llvm}-dev-wasm64 ${reqv:llvm}
+Description: Compiler-rt - wasm64 builtins
+ Provides the compiler-rt builtins for WebAssembly 64 bits
+ .
+ This is a dependency package providing the default libclang wasm64 library.
+
+Package: libc++-dev-wasm32
+Architecture: any
+Section: libdevel
+Depends: ${shlibs:Depends}, ${misc:Depends}, ${dep:devlibs},
+ libc++-${pv:llvm}-dev-wasm32
+Description: LLVM C++ Standard library (WASI)
+ libc++ is another implementation of the C++ standard library
+ .
+ Features and Goals
+ .
+   * Correctness as defined by the C++ standards.
+   * Fast execution.
+   * Minimal memory use.
+   * Fast compile times.
+   * ABI compatibility with gcc's libstdc++ for some low-level features such
+     as exception objects, rtti and memory allocation.
+   * Extensive unit tests.
+ .
+ This is a dependency package providing the default 32-bit WebAssembly
+ System Interface.
 
 Package: liblldb-dev
 Architecture: any
