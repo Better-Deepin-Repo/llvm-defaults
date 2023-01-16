@@ -154,7 +154,7 @@ Description: C++ interface to the clang library
 Package: libclang1
 Section: libs
 Architecture: any
-Depends: ${shlibs:Depends}, ${misc:Depends}, ${dep:devlibs}, libclang1-${pv:llvm} ${reqv:llvm}
+Depends: ${shlibs:Depends}, ${misc:Depends}, libclang1-${pv:llvm} ${reqv:llvm}
 Pre-Depends: ${misc:Pre-Depends}
 Multi-Arch: same
 Description: C, C++ and Objective-C compiler (LLVM based)
@@ -176,7 +176,7 @@ Description: C, C++ and Objective-C compiler (LLVM based)
 Package: libclang-dev
 Architecture: any
 Section: libdevel
-Depends: ${shlibs:Depends}, ${misc:Depends}, ${dep:devlibs},
+Depends: ${shlibs:Depends}, ${misc:Depends},
  libclang-${pv:llvm}-dev ${reqv:llvm}
 Description: clang library - Development package
  Clang project is a C, C++, Objective C and Objective C++ front-end
@@ -192,7 +192,7 @@ Description: clang library - Development package
 Package: libclang-rt-dev
 Architecture: any
 Section: libdevel
-Depends: ${shlibs:Depends}, ${misc:Depends}, ${dep:devlibs},
+Depends: ${shlibs:Depends}, ${misc:Depends},
  libclang-rt-${pv:llvm}-dev ${reqv:llvm}
 Description: Compiler-rt - Development package
  This package provides various libraries:
@@ -211,7 +211,7 @@ Description: Compiler-rt - Development package
 Package: libclang-rt-dev-wasm32
 Architecture: any
 Section: libdevel
-Depends: ${shlibs:Depends}, ${misc:Depends}, ${dep:devlibs},
+Depends: ${shlibs:Depends}, ${misc:Depends},
  libclang-rt-${pv:llvm}-dev-wasm32 ${reqv:llvm}
 Description: Compiler-rt - wasm32 builtins
  Provides the compiler-rt builtins for WebAssembly 32 bits
@@ -221,7 +221,7 @@ Description: Compiler-rt - wasm32 builtins
 Package: libclang-rt-dev-wasm64
 Architecture: any
 Section: libdevel
-Depends: ${shlibs:Depends}, ${misc:Depends}, ${dep:devlibs},
+Depends: ${shlibs:Depends}, ${misc:Depends},
  libclang-rt-${pv:llvm}-dev-wasm64 ${reqv:llvm}
 Description: Compiler-rt - wasm64 builtins
  Provides the compiler-rt builtins for WebAssembly 64 bits
@@ -231,7 +231,7 @@ Description: Compiler-rt - wasm64 builtins
 Package: libc++-dev-wasm32
 Architecture: any
 Section: libdevel
-Depends: ${shlibs:Depends}, ${misc:Depends}, ${dep:devlibs},
+Depends: ${shlibs:Depends}, ${misc:Depends},
  libc++-${pv:llvm}-dev-wasm32
 Description: LLVM C++ Standard library (WASI)
  libc++ is another implementation of the C++ standard library
@@ -252,7 +252,7 @@ Description: LLVM C++ Standard library (WASI)
 Package: liblldb-dev
 Architecture: any
 Section: libdevel
-Depends: ${shlibs:Depends}, ${misc:Depends}, ${dep:devlibs},
+Depends: ${shlibs:Depends}, ${misc:Depends},
  liblldb-${pv:llvm}-dev ${reqv:llvm}
 Multi-Arch: same
 Description: Next generation, high-performance debugger, header files
@@ -319,7 +319,7 @@ Description: Next generation, high-performance debugger, python lib
 Package: libomp-dev
 Section: libdevel
 Architecture: amd64 arm64 armhf i386 mips64el ppc64el ppc64 riscv64
-Depends: ${shlibs:Depends}, ${misc:Depends}, ${dep:devlibs},
+Depends: ${shlibs:Depends}, ${misc:Depends},
  libomp-${pv:llvm}-dev ${reqv:llvm}
 Multi-Arch: same
 Description: LLVM OpenMP runtime - dev package
@@ -423,7 +423,7 @@ Description: LLVM low level support for a standard C++ library (development file
 Package: liblld-dev
 Architecture: any
 Section: libdevel
-Depends: ${shlibs:Depends}, ${misc:Depends}, ${dep:devlibs},
+Depends: ${shlibs:Depends}, ${misc:Depends},
  liblld-${pv:llvm}-dev ${reqv:llvm}
 Multi-Arch: same
 Description: LLVM-based linker, library
