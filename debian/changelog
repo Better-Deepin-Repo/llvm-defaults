@@ -1,3 +1,45 @@
+llvm-defaults (0.56~exp2) experimental; urgency=medium
+
+  * Default to 15
+
+ -- Gianfranco Costamagna <locutusofborg@debian.org>  Tue, 17 Jan 2023 09:13:20 +0100
+
+llvm-defaults (0.55.5) unstable; urgency=medium
+
+  * Create new dependencies packages - request for Firefox
+    - libclang-rt-dev => libclang-rt-14-dev
+    - libclang-rt-dev-wasm32 => libclang-rt-14-dev-wasm32
+    - libclang-rt-dev-wasm64 => libclang-rt-14-dev-wasm64
+    - libc++-dev-wasm32 => libc++-14-dev-wasm32
+
+ -- Sylvestre Ledru <sylvestre@debian.org>  Mon, 16 Jan 2023 09:36:09 +0100
+
+llvm-defaults (0.55.4) unstable; urgency=medium
+
+  * remove llvm-reduce symlink manpage (Closes: #1026967)
+  * Update lintian override info to new format:
+    + debian/clang-tidy.lintian-overrides: line 1
+    + debian/clang-format.lintian-overrides: line 1
+  * Trim trailing whitespace.
+  * Update standards version to 4.6.2, no changes needed.
+
+ -- Sylvestre Ledru <sylvestre@debian.org>  Thu, 05 Jan 2023 23:14:50 +0100
+
+llvm-defaults (0.55.3) unstable; urgency=medium
+
+  * Install llvm-reduce in llvm-defaults
+    Upstream 59303
+
+ -- Sylvestre Ledru <sylvestre@debian.org>  Mon, 12 Dec 2022 14:34:50 +0100
+
+llvm-defaults (0.55.2) unstable; urgency=medium
+
+  * Update standards version to 4.6.1, no changes needed.
+  * Add a meta package for liblld-dev (Closes: #1003109)
+  * Update of the descriptions (more consistency)
+
+ -- Sylvestre Ledru <sylvestre@debian.org>  Tue, 04 Oct 2022 18:24:46 +0200
+
 llvm-defaults (0.56~exp1) experimental; urgency=medium
 
   * Default to 15
