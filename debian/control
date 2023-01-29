@@ -419,7 +419,6 @@ Description: LLVM low level support for a standard C++ library (development file
  This is a dependency package providing low level support to
  dev LLVM C++ Standard library.
 
-
 Package: liblld-dev
 Architecture: any
 Section: libdevel
@@ -432,3 +431,13 @@ Description: LLVM-based linker, library
  Project.
  .
  This is a dependency package providing the default liblld-dev package.
+
+Package: flang
+Architecture: any
+Depends: flang-${pv:llvm} ${reqv:llvm}, ${misc:Depends}
+Description: Fortran compiler
+ Ground-up implementation of a Fortran front end written in
+ modern C++.
+ .
+ While it is capable of generating executables for a number
+ of examples, some functionalities are still missing.
