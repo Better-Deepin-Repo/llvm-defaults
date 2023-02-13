@@ -1,3 +1,9 @@
+llvm-defaults (0.55.6) unstable; urgency=medium
+
+  * Add s390x in the lld supported archs
+
+ -- Sylvestre Ledru <sylvestre@debian.org>  Mon, 13 Feb 2023 23:43:35 +0100
+
 llvm-defaults (0.55.5) unstable; urgency=medium
 
   * Create new dependencies packages - request for Firefox
