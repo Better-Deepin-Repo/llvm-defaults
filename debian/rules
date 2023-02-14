@@ -109,7 +109,7 @@ else
     no_packages += lldb liblldb-dev python3-lldb
 endif
 
-LLD_SUPPORTED=amd64 arm64 armel armhf i386 mips mipsel mips64el ppc64el kfreebsd-amd64 kfreebsd-i386 s390 sparc alpha hppa m68k powerpcspe ppc64 sh4 sparc64 x32 riscv64
+LLD_SUPPORTED=amd64 arm64 armel armhf i386 mips mipsel mips64el ppc64el kfreebsd-amd64 kfreebsd-i386 s390 s390x sparc alpha hppa m68k powerpcspe ppc64 sh4 sparc64 x32 riscv64
 ifneq (,$(filter $(DEB_HOST_ARCH),$(LLD_SUPPORTED)))
     all_packages += lld liblld-dev
 else
