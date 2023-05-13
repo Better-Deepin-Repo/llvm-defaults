@@ -123,6 +123,7 @@ ifneq (,$(filter $(DEB_HOST_ARCH),$(FLANG_SUPPORTED)))
     all_packages += flang
 else
     no_packages += flang
+endif
 
 BOLT_SUPPORTED=amd64
 ifneq (,$(filter $(DEB_HOST_ARCH),$(BOLT_SUPPORTED)))
