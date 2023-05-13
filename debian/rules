@@ -432,6 +432,16 @@ install: build README substvars
 	dh_link -plld \
 			/usr/bin/wasm-ld-$(PV_LLVM) \
 			/usr/bin/wasm-ld
+
+# flang
+	for bin in \
+	bbc f18-parse-demo fir-opt flang-new flang-to-external-fc tco \
+	; do \
+	dh_link -pflang \
+		/usr/bin/$$bin-$(PV_LLVM) \
+		/usr/bin/$$bin ; \
+	done
+
 # bolt
 	for bin in \
 	llvm-bolt llvm-bolt-heatmap llvm-boltdiff merge-fdata perf2bolt \
