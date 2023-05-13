@@ -1,3 +1,9 @@
+llvm-defaults (0.57~exp2) unstable; urgency=medium
+
+  * Add libbolt-dev & bolt as packages (amd64 only)
+
+ -- Sylvestre Ledru <sylvestre@debian.org>  Sat, 13 May 2023 16:32:31 +0200
+
 llvm-defaults (0.57~exp1) experimental; urgency=medium
 
   * Default to 16

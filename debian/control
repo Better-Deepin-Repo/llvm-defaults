@@ -286,6 +286,17 @@ Description: LLVM-based linker
  .
  This is a dependency package providing the lld linker.
 
+Package: bolt
+Architecture: any
+Depends: bolt-${pv:llvm} ${reqv:llvm}, ${misc:Depends}
+Pre-Depends: ${misc:Pre-Depends}
+Multi-Arch: same
+Description: Post-link optimizer
+ It achieves the improvements by optimizing application's code layout based on
+ execution profile gathered by sampling profiler.
+ .
+ This is a dependency package providing bolt.
+
 Package: python3-clang
 Section: python
 Architecture: any
@@ -441,3 +452,16 @@ Description: Fortran compiler
  .
  While it is capable of generating executables for a number
  of examples, some functionalities are still missing.
+
+Package: libbolt-dev
+Architecture: any
+Section: libdevel
+Depends: ${shlibs:Depends}, ${misc:Depends},
+ libbolt-${pv:llvm}-dev ${reqv:llvm}
+Multi-Arch: same
+Description: Post-link optimizer
+ It achieves the improvements by optimizing application's code layout based on
+ execution profile gathered by sampling profiler.
+ .
+ This is a dependency package providing the default libbolt-dev package.
+
