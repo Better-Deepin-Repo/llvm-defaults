@@ -40,7 +40,7 @@ How to build with a specific version of clang?
 ----------------------------------------------
 
 Please give the CC or CXX variables to the build system.
-For example, to build with clang-15, the following command should
+For example, to build with clang-16, the following command should
 do the work:
 
 CC=clang-16 CXX=clang++-16 make
@@ -71,5 +71,3 @@ Matthias Klose <doko@debian.org>
 Sylvestre Ledru <sylvestre@debian.org>
 
 ===============================================================================
-
- -- Sylvestre Ledru <sylvestre@debian.org>, Tue,  2 Aug 2022 14:09:11 +0200
