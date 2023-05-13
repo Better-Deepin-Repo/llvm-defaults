@@ -113,6 +113,13 @@ else
     no_packages += lld liblld-dev
 endif
 
+BOLT_SUPPORTED=amd64
+ifneq (,$(filter $(DEB_HOST_ARCH),$(BOLT_SUPPORTED)))
+    all_packages += bolt libbolt-dev
+else
+    no_packages += bolt libbolt-dev
+endif
+
 
 packages := $(filter-out $(no_packages), $(all_packages))
 
@@ -310,13 +317,13 @@ install: build README substvars
 	dh_link -pliblld-dev \
 		/usr/lib/llvm-$(PV_LLVM)/include/lldb /usr/include/lld \
 
-	: libllvm-ocaml-dev
+	: # libllvm-ocaml-dev
 	dh_installdirs -plibllvm-ocaml-dev \
 		/usr/lib/ocaml/METAS
 	dh_link -plibllvm-ocaml-dev \
 		/usr/lib/ocaml/META.llvm /usr/lib/ocaml/METAS/META.llvm
 
-#  clang
+	: #  clang
 
 	dh_installdirs -pclang \
 		usr/bin usr/share/man/man1
@@ -413,6 +420,14 @@ install: build README substvars
 	dh_link -plld \
 			/usr/bin/wasm-ld-$(PV_LLVM) \
 			/usr/bin/wasm-ld
+# bolt
+	for bin in \
+	llvm-bolt llvm-bolt-heatmap llvm-boltdiff merge-fdata perf2bolt \
+	; do \
+	dh_link -pbolt \
+		/usr/bin/$$bin-$(PV_LLVM) \
+		/usr/bin/$$bin ; \
+	done
 
 
 nopkgs := $(foreach p, $(no_packages),-N$(p))
