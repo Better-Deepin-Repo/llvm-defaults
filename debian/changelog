@@ -1,3 +1,10 @@
+llvm-defaults (0.55.7) UNRELEASED; urgency=medium
+
+  * Add Breaks against not co-installable packages for smoother upgrades from
+    bullseye.  (Closes: #1036580)
+
+ -- Andreas Beckmann <anbe@debian.org>  Mon, 15 May 2023 17:18:27 +0200
+
 llvm-defaults (0.55.6) unstable; urgency=medium
 
   * Add s390x in the lld supported archs
