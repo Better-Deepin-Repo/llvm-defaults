@@ -308,7 +308,7 @@ install: build README substvars
 	dh_installdirs -pliblld-dev \
 		/usr/include
 	dh_link -pliblld-dev \
-		/usr/lib/llvm-$(PV_LLVM)/include/lldb /usr/include/lld \
+		/usr/lib/llvm-$(PV_LLVM)/include/lld /usr/include/lld \
 
 	: libllvm-ocaml-dev
 	dh_installdirs -plibllvm-ocaml-dev \
