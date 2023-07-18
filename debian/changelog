@@ -1,8 +1,12 @@
 llvm-defaults (0.57~exp2) unstable; urgency=medium
 
+  [ Sylvestre Ledru ]
   * Add libbolt-dev & bolt as packages (amd64 only)
 
- -- Sylvestre Ledru <sylvestre@debian.org>  Sat, 13 May 2023 16:32:31 +0200
+  [ Gianfranco Costamagna ]
+  * Add new libflang-dev package
+
+ -- Gianfranco Costamagna <locutusofborg@debian.org>  Tue, 18 Jul 2023 18:06:38 +0200
 
 llvm-defaults (0.57~exp1) experimental; urgency=medium
 
