@@ -1,4 +1,4 @@
-llvm-defaults (0.57~exp2) unstable; urgency=medium
+llvm-defaults (0.57~exp2) experimental; urgency=medium
 
   [ Sylvestre Ledru ]
   * Add libbolt-dev & bolt as packages (amd64 only)
