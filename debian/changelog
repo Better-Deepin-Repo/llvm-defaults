@@ -22,6 +22,18 @@ llvm-defaults (0.56~exp2) experimental; urgency=medium
 
  -- Gianfranco Costamagna <locutusofborg@debian.org>  Tue, 17 Jan 2023 09:13:20 +0100
 
+llvm-defaults (0.55.7) unstable; urgency=medium
+
+  [ Andreas Beckmann ]
+  * Add Breaks against not co-installable packages for smoother upgrades from
+    bullseye.  (Closes: #1036580)
+  * Fix /usr/include/lld symlink.  (Closes: #1036577)
+
+  [ Sylvestre Ledru ]
+  * Silent the breaks-without-version lintian warnings
+
+ -- Sylvestre Ledru <sylvestre@debian.org>  Tue, 11 Jul 2023 13:00:54 +0200
+
 llvm-defaults (0.55.6) unstable; urgency=medium
 
   * Add s390x in the lld supported archs
