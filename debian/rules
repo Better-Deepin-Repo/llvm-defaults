@@ -120,9 +120,9 @@ endif
 
 FLANG_SUPPORTED=amd64 arm64 mips64el ppc64el kfreebsd-amd64 ppc64 sparc64 riscv64
 ifneq (,$(filter $(DEB_HOST_ARCH),$(FLANG_SUPPORTED)))
-    all_packages += flang
+    all_packages += flang libflang-dev
 else
-    no_packages += flang
+    no_packages += flang libflang-dev
 endif
 
 BOLT_SUPPORTED=amd64

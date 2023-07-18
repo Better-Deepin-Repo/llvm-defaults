@@ -459,6 +459,17 @@ Description: Fortran compiler
  While it is capable of generating executables for a number
  of examples, some functionalities are still missing.
 
+Package: libflang-dev
+Architecture: any
+Depends: libflang-${pv:llvm}-dev ${reqv:llvm}, ${misc:Depends}
+Description: Fortran compiler
+ Ground-up implementation of a Fortran front end written in
+ modern C++.
+ .
+ While it is capable of generating executables for a number
+ of examples, some functionalities are still missing.
+ This is a dependency package providing the default libflang-dev package.
+
 Package: libbolt-dev
 Architecture: any
 Section: libdevel
