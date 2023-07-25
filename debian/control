@@ -468,6 +468,9 @@ Description: Flang library - Development package
  .
  While it is capable of generating executables for a number
  of examples, some functionalities are still missing.
+ .
+ This package contains the flang libraries and headers.
+ .
  This is a dependency package providing the default libflang-dev package.
 
 Package: libbolt-dev
