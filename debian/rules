@@ -127,9 +127,9 @@ endif
 
 BOLT_SUPPORTED=amd64
 ifneq (,$(filter $(DEB_HOST_ARCH),$(BOLT_SUPPORTED)))
-    all_packages += bolt libbolt-dev
+    all_packages += libbolt-dev
 else
-    no_packages += bolt libbolt-dev
+    no_packages += libbolt-dev
 endif
 
 
@@ -443,13 +443,13 @@ install: build README substvars
 	done
 
 # bolt
-	for bin in \
-	llvm-bolt llvm-bolt-heatmap llvm-boltdiff merge-fdata perf2bolt \
-	; do \
-	dh_link -pbolt \
-		/usr/bin/$$bin-$(PV_LLVM) \
-		/usr/bin/$$bin ; \
-	done
+#	for bin in \
+#	llvm-bolt llvm-bolt-heatmap llvm-boltdiff merge-fdata perf2bolt \
+#	; do \
+#	dh_link -pbolt \
+#		/usr/bin/$$bin-$(PV_LLVM) \
+#		/usr/bin/$$bin ; \
+#	done
 
 
 nopkgs := $(foreach p, $(no_packages),-N$(p))
