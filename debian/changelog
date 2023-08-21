@@ -1,6 +1,6 @@
-llvm-defaults (0.57~exp3) UNRELEASED; urgency=medium
+llvm-defaults (0.57~exp3) experimental; urgency=medium
 
-  * Revert bolt addition on amd64, breaks src:bolt
+  * Revert bolt addition on amd64, breaks src:bolt (Closes: #1041871)
 
  -- Gianfranco Costamagna <locutusofborg@debian.org>  Tue, 01 Aug 2023 07:56:03 +0200
 
