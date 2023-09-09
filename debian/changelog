@@ -1,3 +1,9 @@
+llvm-defaults (0.57~exp4) experimental; urgency=medium
+
+  * Rename bolt to llvm-bolt (Closes: #1041871)
+
+ -- Sylvestre Ledru <sylvestre@debian.org>  Sat, 09 Sep 2023 22:17:18 +0200
+
 llvm-defaults (0.57~exp3) experimental; urgency=medium
 
   * Revert bolt addition on amd64, breaks src:bolt (Closes: #1041871)

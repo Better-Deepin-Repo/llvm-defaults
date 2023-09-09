@@ -288,17 +288,19 @@ Description: LLVM-based linker
  .
  This is a dependency package providing the lld linker.
 
-#Package: bolt
-#Architecture: any
-#Depends: bolt-${pv:llvm} ${reqv:llvm}, ${misc:Depends}
-#Pre-Depends: ${misc:Pre-Depends}
-#Multi-Arch: same
-#Description: Post-link optimizer
-# It achieves the improvements by optimizing application's code layout based on
-# execution profile gathered by sampling profiler.
-# .
-# This is a dependency package providing bolt.
-#
+Package: llvm-bolt
+Architecture: any
+Depends: bolt-${pv:llvm} ${reqv:llvm}, ${misc:Depends}
+Pre-Depends: ${misc:Pre-Depends}
+Multi-Arch: same
+Description: Post-link optimizer
+ It achieves the improvements by optimizing application's code layout based on
+ execution profile gathered by sampling profiler.
+ .
+ This is a dependency package providing bolt.
+ .
+ This package is not called bolt because it is already used.
+
 Package: python3-clang
 Section: python
 Architecture: any
