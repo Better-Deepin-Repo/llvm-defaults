@@ -1,3 +1,9 @@
+llvm-defaults (0.57~exp5) experimental; urgency=medium
+
+  * Really build llvm-bolt package
+
+ -- Gianfranco Costamagna <locutusofborg@debian.org>  Tue, 12 Sep 2023 13:37:06 +0200
+
 llvm-defaults (0.57~exp4) experimental; urgency=medium
 
   * Rename bolt to llvm-bolt (Closes: #1041871)
