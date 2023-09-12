@@ -127,9 +127,9 @@ endif
 
 BOLT_SUPPORTED=amd64
 ifneq (,$(filter $(DEB_HOST_ARCH),$(BOLT_SUPPORTED)))
-    all_packages += libbolt-dev
+    all_packages += llvm-bolt libbolt-dev
 else
-    no_packages += libbolt-dev
+    no_packages += llvm-bolt libbolt-dev
 endif
 
 
