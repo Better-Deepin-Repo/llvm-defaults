@@ -1,3 +1,9 @@
+llvm-defaults (0.57) unstable; urgency=medium
+
+  * Upload to unstable. See bug #1050071 for the transition
+
+ -- Sylvestre Ledru <sylvestre@debian.org>  Wed, 13 Sep 2023 15:35:38 +0200
+
 llvm-defaults (0.57~exp5) experimental; urgency=medium
 
   * Really build llvm-bolt package
