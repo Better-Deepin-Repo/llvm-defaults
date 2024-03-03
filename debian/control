@@ -64,8 +64,8 @@ Description: C, C++ and Objective-C compiler (LLVM based), clang binary
  for the LLVM compiler. Its goal is to offer a replacement to the GNU Compiler
  Collection (GCC).
  .
- Clang implements all of the ISO C++ 1998, 11 and 14 standards and also
- provides most of the support of C++17.
+ Clang implements all of the ISO C++ 1998, 11, 14 and 17 standards and also
+ provides most of the support of C++20.
  .
  This is a dependency package providing the default clang compiler.
 
@@ -80,8 +80,8 @@ Description: clang-based tools
  for the LLVM compiler. Its goal is to offer a replacement to the GNU Compiler
  Collection (GCC).
  .
- Clang implements all of the ISO C++ 1998, 11 and 14 standards and also
- provides most of the support of C++17.
+ Clang implements all of the ISO C++ 1998, 11, 14 and 17 standards and also
+ provides most of the support of C++20.
  .
  This is a dependency package providing the clang tools package.
 
@@ -146,8 +146,8 @@ Description: C++ interface to the clang library
  for the LLVM compiler. Its goal is to offer a replacement to the GNU Compiler
  Collection (GCC).
  .
- Clang implements all of the ISO C++ 1998, 11 and 14 standards and also
- provides most of the support of C++17.
+ Clang implements all of the ISO C++ 1998, 11, 14 and 17 standards and also
+ provides most of the support of C++20.
  .
  This is a dependency package providing the default Clang C++ library.
 
@@ -162,8 +162,8 @@ Description: C, C++ and Objective-C compiler (LLVM based)
  for the LLVM compiler. Its goal is to offer a replacement to the GNU Compiler
  Collection (GCC).
  .
- Clang implements all of the ISO C++ 1998, 11 and 14 standards and also
- provides most of the support of C++17.
+ Clang implements all of the ISO C++ 1998, 11, 14 and 17 standards and also
+ provides most of the support of C++20.
  .
  This is a dependency package providing the default clang libraries.
  .
@@ -183,8 +183,8 @@ Description: clang library - Development package
  for the LLVM compiler. Its goal is to offer a replacement to the GNU Compiler
  Collection (GCC).
  .
- Clang implements all of the ISO C++ 1998, 11 and 14 standards and also
- provides most of the support of C++17.
+ Clang implements all of the ISO C++ 1998, 11, 14 and 17 standards and also
+ provides most of the support of C++20.
  .
  This is a dependency package providing the default libclang libraries and
  headers.
@@ -313,8 +313,8 @@ Description: Clang Python Bindings
  based on the LLVM compiler. Its goal is to offer a replacement to the
  GNU Compiler Collection (GCC).
  .
- Clang implements all of the ISO C++ 1998, 11 and 14 standards and also
- provides most of the support of C++17.
+ Clang implements all of the ISO C++ 1998, 11, 14 and 17 standards and also
+ provides most of the support of C++20.
  .
  This is a dependency package providing the Python binding to Clang.
 

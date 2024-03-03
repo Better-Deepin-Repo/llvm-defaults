@@ -18,6 +18,12 @@ llvm-defaults (0.58.1) unstable; urgency=medium
 
  -- Matthias Klose <doko@debian.org>  Sat, 30 Mar 2024 11:27:13 +0100
 
+llvm-defaults (0.58) unstable; urgency=medium
+
+  * Update of the description of clang package
+
+ -- Sylvestre Ledru <sylvestre@debian.org>  Sun, 03 Mar 2024 09:54:22 +0100
+
 llvm-defaults (0.58~exp2) experimental; urgency=medium
 
   [ chenli ]
