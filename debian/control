@@ -154,7 +154,7 @@ Description: C++ interface to the clang library
 Package: libclang1
 Section: libs
 Architecture: any
-Depends: ${shlibs:Depends}, ${misc:Depends}, libclang1-${pv:llvm} ${reqv:llvm}
+Depends: ${shlibs:Depends}, ${misc:Depends}, libclang1-${pv:llvm}t64 ${reqv:llvm}
 Pre-Depends: ${misc:Pre-Depends}
 Multi-Arch: same
 Description: C, C++ and Objective-C compiler (LLVM based)
@@ -362,7 +362,7 @@ Section: libs
 Architecture: any
 Multi-Arch: same
 Pre-Depends: ${misc:Pre-Depends}
-Depends: libc++1-${pv:llvm} ${reqv:llvm}, ${shlibs:Depends}, ${misc:Depends}
+Depends: libc++1-${pv:llvm}t64 ${reqv:llvm}, ${shlibs:Depends}, ${misc:Depends}
 Breaks: libc++1-11, libc++abi1-11
 Description: LLVM C++ Standard library
  libc++ is another implementation of the C++ standard library.
@@ -406,7 +406,7 @@ Section: libs
 Architecture: any
 Multi-Arch: same
 Pre-Depends: ${misc:Pre-Depends}
-Depends: libc++abi1-${pv:llvm} ${reqv:llvm}, ${shlibs:Depends}, ${misc:Depends}
+Depends: libc++abi1-${pv:llvm}t64 ${reqv:llvm}, ${shlibs:Depends}, ${misc:Depends}
 Breaks: libc++abi1-11
 Description: LLVM low level support for a standard C++ library
  libc++abi is another implementation of low level support for a standard C++
