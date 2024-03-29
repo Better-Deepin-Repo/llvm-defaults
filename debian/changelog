@@ -1,3 +1,9 @@
+llvm-defaults (0.58.1) UNRELEASED; urgency=medium
+
+  * Fix t64 dependency for libomp5.
+
+ -- Matthias Klose <doko@debian.org>  Fri, 29 Mar 2024 16:00:50 +0100
+
 llvm-defaults (0.58) unstable; urgency=medium
 
   [ Sylvestre Ledru ]

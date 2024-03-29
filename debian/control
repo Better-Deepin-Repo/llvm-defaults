@@ -349,7 +349,7 @@ Package: libomp5
 Multi-Arch: same
 Section: libs
 Architecture: amd64 arm64 armhf i386 mips64el ppc64el ppc64 riscv64
-Depends: libomp5-${pv:llvm} ${reqv:llvm}, ${shlibs:Depends}, ${misc:Depends}
+Depends: libomp5-${pv:llvm}t64 ${reqv:llvm}, ${shlibs:Depends}, ${misc:Depends}
 Description: LLVM OpenMP runtime
  The runtime is the part of the OpenMP implementation that your code is
  linked against, and that manages the multiple threads in an OpenMP program
