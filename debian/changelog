@@ -5,6 +5,13 @@ llvm-defaults (0.59~exp1) experimental; urgency=medium
 
  -- Gianfranco Costamagna <locutusofborg@debian.org>  Wed, 28 Feb 2024 09:30:40 +0100
 
+llvm-defaults (0.58~exp2) experimental; urgency=medium
+
+  [ chenli ]
+  * Fix the default selection on loong64
+
+ -- Sylvestre Ledru <sylvestre@debian.org>  Mon, 15 Jan 2024 10:34:15 +0100
+
 llvm-defaults (0.58~exp1) experimental; urgency=medium
 
   * Default to 17
