@@ -1,9 +1,22 @@
+llvm-defaults (0.59~exp2) experimental; urgency=medium
+
+  * Merge loong64 0.58~exp2 upload
+  * Merge entry for 0.58.1 (no renaming necesary for llvm-18)
+
+ -- Gianfranco Costamagna <locutusofborg@debian.org>  Sat, 30 Mar 2024 12:19:55 +0100
+
 llvm-defaults (0.59~exp1) experimental; urgency=medium
 
   [ Matthias Klose ]
   * Default to 18
 
  -- Gianfranco Costamagna <locutusofborg@debian.org>  Wed, 28 Feb 2024 09:30:40 +0100
+
+llvm-defaults (0.58.1) unstable; urgency=medium
+
+  * Fix t64 dependency for libomp5.
+
+ -- Matthias Klose <doko@debian.org>  Sat, 30 Mar 2024 11:27:13 +0100
 
 llvm-defaults (0.58~exp2) experimental; urgency=medium
 
