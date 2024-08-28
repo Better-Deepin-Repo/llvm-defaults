@@ -1,3 +1,9 @@
+llvm-defaults (0.60~exp1) UNRELEASED; urgency=medium
+
+  * Default to 19.
+
+ -- Matthias Klose <doko@debian.org>  Wed, 28 Aug 2024 08:29:22 +0200
+
 llvm-defaults (0.59~exp2) experimental; urgency=medium
 
   [ chenli ]
