@@ -2,6 +2,7 @@ llvm-defaults (0.60~0ubuntu1) oracular; urgency=medium
 
   * Default to 19.
   * Update architectures for libllvm-ocaml-dev, libomp-dev and libomp5.
+  * Don't build libclang-rt-dev on 32bit archs, except for i386.
 
  -- Matthias Klose <doko@debian.org>  Tue, 03 Sep 2024 17:17:08 +0200
 

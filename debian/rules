@@ -141,6 +141,14 @@ else
     no_packages += llvm-bolt libbolt-dev
 endif
 
+# 64bit and i386
+CLANG_RT_SUPPORTED=amd64 arm64 i386 mips64el ppc64el hurd-amd64 kfreebsd-amd64 ppc64 sparc64 riscv64 loong64
+ifneq (,$(filter $(DEB_HOST_ARCH),$(CLANG_RT_SUPPORTED)))
+    #all_packages += libclang-rt-dev
+else
+    no_packages += libclang-rt-dev
+endif
+
 
 packages := $(filter-out $(no_packages), $(all_packages))
 
