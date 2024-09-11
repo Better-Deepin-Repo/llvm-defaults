@@ -363,7 +363,7 @@ Architecture: any
 Multi-Arch: same
 Pre-Depends: ${misc:Pre-Depends}
 Depends: libc++1-${pv:llvm} ${reqv:llvm}, ${shlibs:Depends}, ${misc:Depends}
-Breaks: libc++1-11, libc++abi1-11
+Breaks: libc++1-11, libc++abi1-11, libc++1-14, libc++abi1-14
 Description: LLVM C++ Standard library
  libc++ is another implementation of the C++ standard library.
  .
