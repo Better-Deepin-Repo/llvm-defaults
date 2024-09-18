@@ -1,4 +1,4 @@
-llvm-defaults (0.60~exp1) UNRELEASED; urgency=medium
+llvm-defaults (0.60~exp1) experimental; urgency=medium
 
   [ Matthias Klose ]
   * Default to 19.
@@ -18,7 +18,7 @@ llvm-defaults (0.59~exp2) experimental; urgency=medium
   [ Gianfranco Costamagna ]
   * Merge loong64 0.58~exp2 upload
   * Merge entries for 0.58 and 0.58.1 from sid
-    (no renaming necesary for llvm-18)
+    (no renaming necessary for llvm-18)
 
  -- Gianfranco Costamagna <locutusofborg@debian.org>  Sat, 30 Mar 2024 12:19:55 +0100
 
