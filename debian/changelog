@@ -8,7 +8,10 @@ llvm-defaults (0.60~exp1) experimental; urgency=medium
   [ Gianfranco Costamagna ]
   * Help apt breaking libc++1-14 libc++abi1-14 (Closes: #1052585)
 
- -- Gianfranco Costamagna <locutusofborg@debian.org>  Wed, 11 Sep 2024 13:26:07 +0200
+  [ Sylvestre Ledru ]
+  * Update of the package descriptions
+
+ -- Sylvestre Ledru <sylvestre@debian.org>  Wed, 18 Sep 2024 13:51:34 +0200
 
 llvm-defaults (0.59~exp2) experimental; urgency=medium
 

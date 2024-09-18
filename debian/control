@@ -14,10 +14,10 @@ Vcs-Browser: https://salsa.debian.org/pkg-llvm-team/llvm-defaults/
 Package: llvm
 Architecture: any
 Depends: llvm-runtime (= ${binary:Version}), llvm-${pv:llvm} ${reqv:llvm}, ${misc:Depends}
-Description: Low-Level Virtual Machine (LLVM)
- The Low-Level Virtual Machine (LLVM) is a collection of libraries and
- tools that make it easy to build compilers, optimizers, Just-In-Time
- code generators, and many other compiler-related programs.
+Description: Modular compiler and toolchain technologies
+ LLVM is a collection of libraries and tools that make it easy to build
+ compilers, optimizers, just-in-time code generators, and many other
+ compiler-related programs.
  .
  This is a dependency package providing the default llvm package.
 
@@ -25,20 +25,20 @@ Package: llvm-runtime
 Architecture: any
 Depends: llvm-${pv:llvm}-runtime ${reqv:llvm}, ${misc:Depends}
 Multi-Arch: same
-Description: Low-Level Virtual Machine (LLVM), bytecode interpreter
- The Low-Level Virtual Machine (LLVM) is a collection of libraries and
- tools that make it easy to build compilers, optimizers, Just-In-Time
- code generators, and many other compiler-related programs.
+Description: Modular compiler and toolchain technologies, bytecode interpreter
+ LLVM is a collection of libraries and tools that make it easy to build
+ compilers, optimizers, just-in-time code generators, and many other
+ compiler-related programs.
  .
  This is a dependency package providing the default bytecode interpreter.
 
 Package: llvm-dev
 Architecture: any
 Depends: llvm-runtime (= ${binary:Version}), llvm-${pv:llvm}-dev ${reqv:llvm}, ${misc:Depends}, llvm
-Description: Low-Level Virtual Machine (LLVM), libraries and headers
- The Low-Level Virtual Machine (LLVM) is a collection of libraries and
- tools that make it easy to build compilers, optimizers, Just-In-Time
- code generators, and many other compiler-related programs.
+Description: Modular compiler and toolchain technologies, libraries and headers
+ LLVM is a collection of libraries and tools that make it easy to build
+ compilers, optimizers, just-in-time code generators, and many other
+ compiler-related programs.
  .
  This is a dependency package providing the default libraries and headers.
 
@@ -46,10 +46,10 @@ Package: libllvm-ocaml-dev
 Architecture: amd64 arm64 ppc64el riscv64 s390x
 Section: ocaml
 Depends: llvm-runtime (= ${binary:Version}), libllvm-${pv:llvm}-ocaml-dev ${reqv:llvm}, ${misc:Depends}
-Description: Low-Level Virtual Machine (LLVM), bindings for OCaml
- The Low-Level Virtual Machine (LLVM) is a collection of libraries and
- tools that make it easy to build compilers, optimizers, Just-In-Time
- code generators, and many other compiler-related programs.
+Description: Modular compiler and toolchain technologies, bindings for OCaml
+ LLVM is a collection of libraries and tools that make it easy to build
+ compilers, optimizers, just-in-time code generators, and many other
+ compiler-related programs.
  .
  This is a dependency package providing the default bindings for OCaml.
 
@@ -95,8 +95,6 @@ Description: clang-based C++ linter tool
  errors, like style violations, interface misuse, or bugs that can be deduced
  via static analysis. clang-tidy is modular and provides a convenient interface
  for writing new checks.
- .
- clang-tidy replaces clang-modernize
  .
  This is a dependency package providing the clang tidy tool.
 
