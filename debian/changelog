@@ -1,3 +1,11 @@
+llvm-defaults (0.60) unstable; urgency=medium
+
+  * Upload to 19
+    See https://release.debian.org/transitions/html/llvm-defaults-19.html
+    for the transition
+
+ -- Sylvestre Ledru <sylvestre@debian.org>  Sat, 05 Oct 2024 07:57:05 +0200
+
 llvm-defaults (0.60~exp1) experimental; urgency=medium
 
   [ Matthias Klose ]
