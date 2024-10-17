@@ -1,3 +1,9 @@
+llvm-defaults (0.61) unstable; urgency=medium
+
+  * Please provide scan-build-py symlink
+
+ -- Sylvestre Ledru <sylvestre@debian.org>  Fri, 18 Oct 2024 00:18:28 +0200
+
 llvm-defaults (0.60) unstable; urgency=medium
 
   * Upload to 19
