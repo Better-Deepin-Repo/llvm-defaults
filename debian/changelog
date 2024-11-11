@@ -1,3 +1,11 @@
+llvm-defaults (0.63) UNRELEASED; urgency=medium
+
+  * Provide libomp5 and libomp-dev on riscv64 (and mips64el and loong64)
+    Thanks to Aurélien Jarno for the patch
+    (Closes: #1087281)
+
+ -- Sylvestre Ledru <sylvestre@debian.org>  Mon, 11 Nov 2024 12:42:42 +0100
+
 llvm-defaults (0.62) unstable; urgency=medium
 
   * flang isn't a thing on mips64el (Closes: #1085422)
