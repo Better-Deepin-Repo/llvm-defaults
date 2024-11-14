@@ -1,4 +1,4 @@
-llvm-defaults (0.63) unstable;; urgency=medium
+llvm-defaults (0.63) unstable; urgency=medium
 
   * Provide libomp5 and libomp-dev on riscv64 (and mips64el and loong64)
     Thanks to Aurélien Jarno for the patch
