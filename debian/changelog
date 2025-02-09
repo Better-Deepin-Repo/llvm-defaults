@@ -1,3 +1,10 @@
+llvm-defaults (0.61~exp1) UNRELEASED; urgency=medium
+
+  [ Kasper Kantz ]
+  * Add riscv64 architecture in control
+    enable liblldb, libomp and others which are
+    currently unavailable in riscv64 repository.
+
 llvm-defaults (0.60~exp1) experimental; urgency=medium
 
   [ Matthias Klose ]
