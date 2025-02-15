@@ -438,7 +438,9 @@ install: build README substvars
 	dh_link -plldb \
 			/usr/bin/lldb-server-$(PV_LLVM) \
 			/usr/bin/lldb-server
-
+	dh_link -plldb \
+			/usr/bin/lldb-dap-$(PV_LLVM) \
+			/usr/bin/lldb-dap
 #  lld
 	dh_link -plld \
 			/usr/bin/lld-$(PV_LLVM) \
