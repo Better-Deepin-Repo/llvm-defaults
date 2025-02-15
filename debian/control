@@ -331,7 +331,7 @@ Description: Next generation, high-performance debugger, python lib
 
 Package: libomp-dev
 Section: libdevel
-Architecture: amd64 arm64 armhf ppc64 ppc64el hurd-amd64
+Architecture: amd64 arm64 armhf ppc64 ppc64el hurd-amd64 loong64 mips64el riscv64
 Depends: ${shlibs:Depends}, ${misc:Depends},
  libomp-${pv:llvm}-dev ${reqv:llvm}
 Multi-Arch: same
@@ -346,7 +346,7 @@ Description: LLVM OpenMP runtime - dev package
 Package: libomp5
 Multi-Arch: same
 Section: libs
-Architecture: amd64 arm64 armhf ppc64 ppc64el hurd-amd64
+Architecture: amd64 arm64 armhf ppc64 ppc64el hurd-amd64 loong64 mips64el riscv64
 Depends: libomp5-${pv:llvm} ${reqv:llvm}, ${shlibs:Depends}, ${misc:Depends}
 Description: LLVM OpenMP runtime
  The runtime is the part of the OpenMP implementation that your code is
@@ -450,7 +450,7 @@ Description: LLVM-based linker, library
  This is a dependency package providing the default liblld-dev package.
 
 Package: flang
-Architecture: any
+Architecture: amd64 arm64 ppc64el ppc64 sparc64 riscv64 loong64
 Depends: flang-${pv:llvm} ${reqv:llvm}, ${misc:Depends}
 Description: Fortran compiler
  Ground-up implementation of a Fortran front end written in
@@ -460,7 +460,7 @@ Description: Fortran compiler
  of examples, some functionalities are still missing.
 
 Package: libflang-dev
-Architecture: any
+Architecture: amd64 arm64 ppc64el ppc64 sparc64 riscv64 loong64
 Depends: libflang-${pv:llvm}-dev ${reqv:llvm}, ${misc:Depends}
 Description: Flang library - Development package
  Ground-up implementation of a Fortran front end written in

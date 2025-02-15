@@ -1,7 +1,44 @@
-llvm-defaults (0.61~exp1) UNRELEASED; urgency=medium
+
+llvm-defaults (0.65) UNRELEASED; urgency=medium
 
   [ Kasper Kantz ]
   * Fix the default lldb selection on riscv64
+
+llvm-defaults (0.64) UNRELEASED; urgency=medium
+
+  * Add lldb-dap symlimk
+    Thanks Norbert Lange for the patch
+
+ -- Sylvestre Ledru <sylvestre@debian.org>  Sat, 15 Feb 2025 09:06:07 +0100
+
+llvm-defaults (0.63) unstable; urgency=medium
+
+  * Provide libomp5 and libomp-dev on riscv64 (and mips64el and loong64)
+    Thanks to Aurélien Jarno for the patch
+    (Closes: #1087281)
+
+ -- Sylvestre Ledru <sylvestre@debian.org>  Mon, 11 Nov 2024 12:42:42 +0100
+
+llvm-defaults (0.62) unstable; urgency=medium
+
+  * flang isn't a thing on mips64el (Closes: #1085422)
+    Use a defined list of archs instead of "any"
+
+ -- Sylvestre Ledru <sylvestre@debian.org>  Tue, 22 Oct 2024 08:44:12 +0200
+
+llvm-defaults (0.61) unstable; urgency=medium
+
+  * Please provide scan-build-py symlink
+
+ -- Sylvestre Ledru <sylvestre@debian.org>  Fri, 18 Oct 2024 00:18:28 +0200
+
+llvm-defaults (0.60) unstable; urgency=medium
+
+  * Upload to 19
+    See https://release.debian.org/transitions/html/llvm-defaults-19.html
+    for the transition
+
+ -- Sylvestre Ledru <sylvestre@debian.org>  Sat, 05 Oct 2024 07:57:05 +0200
 
 llvm-defaults (0.60~exp1) experimental; urgency=medium
 
