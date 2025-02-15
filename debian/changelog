@@ -1,3 +1,10 @@
+llvm-defaults (0.64) UNRELEASED; urgency=medium
+
+  * Add lldb-dap symlimk
+    Thanks Norbert Lange for the patch
+
+ -- Sylvestre Ledru <sylvestre@debian.org>  Sat, 15 Feb 2025 09:06:07 +0100
+
 llvm-defaults (0.63) unstable; urgency=medium
 
   * Provide libomp5 and libomp-dev on riscv64 (and mips64el and loong64)
