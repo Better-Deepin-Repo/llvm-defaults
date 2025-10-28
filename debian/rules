@@ -260,7 +260,7 @@ install: build README substvars
 
 	for man in \
 		clang-apply-replacements clang-check clang-query \
-		scan-build scan-view sancov; do \
+		scan-build scan-build-py scan-view sancov; do \
 		dh_link -pclang-tools \
 			/usr/share/man/man1/$$man-$(PV_LLVM).1.gz \
 			/usr/share/man/man1/$$man.1.gz ; \
@@ -416,6 +416,9 @@ install: build README substvars
 	dh_link -pclang-tools \
 			/usr/bin/scan-build-$(PV_LLVM) \
 			/usr/bin/scan-build
+	dh_link -pclang-tools \
+			/usr/bin/scan-build-py-$(PV_LLVM) \
+			/usr/bin/scan-build-py
 	dh_link -pclang-tools \
 			/usr/bin/scan-view-$(PV_LLVM) \
 			/usr/bin/scan-view
