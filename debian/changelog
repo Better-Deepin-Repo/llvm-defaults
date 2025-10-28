@@ -1,3 +1,10 @@
+llvm-defaults (0.64) UNRELEASED; urgency=medium
+
+  * Default to 21
+  * Don't build omp packages on riscv64 anymore.
+
+ -- Matthias Klose <doko@debian.org>  Tue, 28 Oct 2025 21:41:45 +0100
+
 llvm-defaults (0.63) unstable; urgency=medium
 
   * Provide libomp5 and libomp-dev on riscv64 (and mips64el and loong64)
