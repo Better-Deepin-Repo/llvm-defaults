@@ -8,6 +8,7 @@ llvm-defaults (0.64) UNRELEASED; urgency=medium
   * Build a libclang-rt-dev-win package.
   * Generate the control file the same way as done in the llvm-X.Y packages.
     Use the same *_ARCHS macros as defined in these packages.
+    Builds again libclang-rt-dev on s390x. Closes: #1108683.
 
  -- Matthias Klose <doko@debian.org>  Tue, 28 Oct 2025 21:41:45 +0100
 
