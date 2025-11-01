@@ -1,6 +1,7 @@
 llvm-defaults (0.64) UNRELEASED; urgency=medium
 
   * Default to 21. Closes: #1110843.
+  * Add the epoch for the dependencies. Closes: #803174.
   * Don't build omp packages on riscv64 anymore.
   * Stop building libc++1, libc++abi1 and libomp5. These are now normal
     M-A: same library packages.
