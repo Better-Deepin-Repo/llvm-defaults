@@ -129,6 +129,7 @@ ANY_ARCHS := amd64 arm64 armel armhf hurd-amd64 hurd-i386 i386 loong64 m68k \
 OFFLOAD_ARCHS = amd64 arm64 ppc64el
 OMP_ARCHS = $(OFFLOAD_ARCHS) loong64 mips64el
 
+HWASAN_ARCHS = amd64 arm64 riscv64 i386 x32
 
 LLDB_ARCHS = amd64 arm64 armel armhf i386 loong64 m68k ppc64el riscv64 s390x x32
 ifneq (,$(filter $(DEB_HOST_ARCH),$(LLDB_ARCHS)))
@@ -381,7 +382,7 @@ install: build README substvars
 	dh_installdirs -pclang \
 		usr/bin usr/share/man/man1
 	for bin in \
-		clang clang++ \
+		clang clang++ clang-cl clang-cpp clang-scan-deps \
 		; do \
 		dh_link -pclang \
 			/usr/lib/llvm-$(PV_LLVM)/bin/$$bin \
@@ -446,11 +447,14 @@ install: build README substvars
 	dh_link -pclang-tools \
 			/usr/bin/scan-view-$(PV_LLVM) \
 			/usr/bin/scan-view
-
-#  clang
-	dh_link -pclang \
+	dh_link -pclang-tools \
 			/usr/bin/asan_symbolize-$(PV_LLVM) \
 			/usr/bin/asan_symbolize
+ifneq (,$(filter $(DEB_HOST_ARCH),$(HWASAN_ARCHS)))
+	dh_link -pclang-tools \
+			/usr/bin/hwasan_symbolize-$(PV_LLVM) \
+			/usr/bin/hwasan_symbolize
+endif
 
 #  lldb
 	dh_link -plldb \

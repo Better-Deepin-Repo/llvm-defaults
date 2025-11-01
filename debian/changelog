@@ -11,6 +11,10 @@ llvm-defaults (0.64) UNRELEASED; urgency=medium
     Use the same *_ARCHS macros as defined in these packages.
     Builds again libclang-rt-dev on s390x. Closes: #1108683.
   * Build a libpolly-dev package. Closes: #1041321.
+  * Move asan_symbolize symlink from clang to clang-tools.
+  * clang-tools: Add hwasan_symbolize symlink.
+  * clang: Add symlinks for clang-cl, clang-cpp and clang-scan-deps.
+    Closes: #1100754.
 
  -- Matthias Klose <doko@debian.org>  Tue, 28 Oct 2025 21:41:45 +0100
 
