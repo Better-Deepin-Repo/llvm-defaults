@@ -2,6 +2,9 @@ llvm-defaults (0.64) UNRELEASED; urgency=medium
 
   * Default to 21
   * Don't build omp packages on riscv64 anymore.
+  * Stop building libc++1, libc++abi1 and libomp5. These are now normal
+    M-A: same library packages.
+  * Stop building libclang1, not needed.
 
  -- Matthias Klose <doko@debian.org>  Tue, 28 Oct 2025 21:41:45 +0100
 
