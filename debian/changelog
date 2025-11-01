@@ -1,6 +1,6 @@
 llvm-defaults (0.64) UNRELEASED; urgency=medium
 
-  * Default to 21
+  * Default to 21. Closes: #1110843.
   * Don't build omp packages on riscv64 anymore.
   * Stop building libc++1, libc++abi1 and libomp5. These are now normal
     M-A: same library packages.
@@ -9,6 +9,7 @@ llvm-defaults (0.64) UNRELEASED; urgency=medium
   * Generate the control file the same way as done in the llvm-X.Y packages.
     Use the same *_ARCHS macros as defined in these packages.
     Builds again libclang-rt-dev on s390x. Closes: #1108683.
+  * Build a libpolly-dev package. Closes: #1041321.
 
  -- Matthias Klose <doko@debian.org>  Tue, 28 Oct 2025 21:41:45 +0100
 

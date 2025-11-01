@@ -319,7 +319,7 @@ Description: Next generation, high-performance debugger, python lib
 
 Package: libomp-dev
 Section: libdevel
-Architecture: amd64 arm64 ppc64el loong64 mips64el riscv64
+Architecture: amd64 arm64 ppc64el loong64 mips64el
 Depends: ${shlibs:Depends}, ${misc:Depends},
  libomp-${pv:llvm}-dev ${reqv:llvm}
 Multi-Arch: same
@@ -417,5 +417,17 @@ Multi-Arch: same
 Description: Post-link optimizer - Development package
  It achieves the improvements by optimizing application's code layout based on
  execution profile gathered by sampling profiler.
+ .
+ This is a dependency package providing the default libbolt-dev package.
+
+Package: libpolly-dev
+Architecture: amd64 arm64 armel armhf hurd-amd64 hurd-i386 i386 loong64 m68k mips64el mipsel powerpc ppc64 ppc64el riscv64 s390x sparc sparc64 x32
+Section: libdevel
+Depends: ${shlibs:Depends}, ${misc:Depends},
+ libpolly-${pv:llvm}-dev ${reqv:llvm}
+Multi-Arch: same
+Description: High-level loop and data-locality optimizer
+ Uses an abstract mathematical representation based on integer polyhedra
+ to analyze and optimize the memory access pattern of a program
  .
  This is a dependency package providing the default libbolt-dev package.

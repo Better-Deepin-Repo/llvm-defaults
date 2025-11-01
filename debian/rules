@@ -158,6 +158,13 @@ else
     no_packages += llvm-bolt libbolt-dev
 endif
 
+POLLY_ARCHS = $(ANY_ARCHS)
+ifneq (,$(filter $(DEB_HOST_ARCH),$(POLLY_ARCHS)))
+    all_packages += libpolly-dev
+else
+    no_packages += libpolly-dev
+endif
+
 # 64bit and i386
 CLANG_RT_ARCHS = $(ANY_ARCHS)
 ifneq (,$(filter $(DEB_HOST_ARCH),$(CLANG_RT_ARCHS)))

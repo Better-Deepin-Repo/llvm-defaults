@@ -419,3 +419,15 @@ Description: Post-link optimizer - Development package
  execution profile gathered by sampling profiler.
  .
  This is a dependency package providing the default libbolt-dev package.
+
+Package: libpolly-dev
+Architecture: @POLLY_ARCHS@
+Section: libdevel
+Depends: ${shlibs:Depends}, ${misc:Depends},
+ libpolly-${pv:llvm}-dev ${reqv:llvm}
+Multi-Arch: same
+Description: High-level loop and data-locality optimizer
+ Uses an abstract mathematical representation based on integer polyhedra
+ to analyze and optimize the memory access pattern of a program
+ .
+ This is a dependency package providing the default libbolt-dev package.
