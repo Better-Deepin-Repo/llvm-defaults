@@ -1,4 +1,4 @@
-llvm-defaults (0.64) UNRELEASED; urgency=medium
+llvm-defaults (0.64) experimental; urgency=medium
 
   * Default to 21. Closes: #1110843.
   * Add the epoch for the dependencies. Closes: #803174, #1041246.
@@ -15,8 +15,9 @@ llvm-defaults (0.64) UNRELEASED; urgency=medium
   * clang-tools: Add hwasan_symbolize symlink.
   * clang: Add symlinks for clang-cl, clang-cpp and clang-scan-deps.
     Closes: #1100754, #1072379.
+  * Still TODO: update for new/removed binaries and man pages.
 
- -- Matthias Klose <doko@debian.org>  Tue, 28 Oct 2025 21:41:45 +0100
+ -- Matthias Klose <doko@debian.org>  Sat, 01 Nov 2025 11:55:26 +0100
 
 llvm-defaults (0.63) unstable; urgency=medium
 
