@@ -123,37 +123,44 @@ all_packages   := llvm llvm-runtime llvm-dev \
 	flang
 no_packages    :=
 
-EXTRA_SUPPORTED=amd64 arm64 armel armhf i386 ppc64el kfreebsd-amd64 kfreebsd-i386 s390 s390x sparc alpha hppa m68k powerpcspe ppc64 sh4 sparc64 x32 loong64
-ifneq (,$(filter $(DEB_HOST_ARCH),$(EXTRA_SUPPORTED)))
+ANY_ARCHS := amd64 arm64 armel armhf hurd-amd64 hurd-i386 i386 loong64 m68k \
+        mipsel mips64el powerpc ppc64 ppc64el riscv64 s390x sparc sparc64 x32
+
+OFFLOAD_ARCHS = amd64 arm64 ppc64el
+OMP_ARCHS = $(OFFLOAD_ARCHS) loong64 mips64el riscv64
+
+
+LLDB_ARCHS = amd64 arm64 armel armhf i386 loong64 m68k ppc64el riscv64 s390x x32
+ifneq (,$(filter $(DEB_HOST_ARCH),$(LLDB_ARCHS)))
     all_packages += lldb liblldb-dev python3-lldb
 else
     no_packages += lldb liblldb-dev python3-lldb
 endif
 
-LLD_SUPPORTED=amd64 arm64 armel armhf i386 mips mipsel mips64el ppc64el kfreebsd-amd64 kfreebsd-i386 s390 s390x sparc alpha hppa m68k powerpcspe ppc64 sh4 sparc64 x32 riscv64 loong64
-ifneq (,$(filter $(DEB_HOST_ARCH),$(LLD_SUPPORTED)))
+LLD_ARCHS = $(ANY_ARCHS)
+ifneq (,$(filter $(DEB_HOST_ARCH),$(LLD_ARCHS)))
     all_packages += lld liblld-dev
 else
     no_packages += lld liblld-dev
 endif
 
-FLANG_SUPPORTED=amd64 arm64 mips64el ppc64el kfreebsd-amd64 ppc64 sparc64 riscv64 loong64
-ifneq (,$(filter $(DEB_HOST_ARCH),$(FLANG_SUPPORTED)))
+FLANG_ARCHS = amd64 arm64 ppc64el ppc64 sparc64 riscv64 loong64
+ifneq (,$(filter $(DEB_HOST_ARCH),$(FLANG_ARCHS)))
     all_packages += flang libflang-dev
 else
     no_packages += flang libflang-dev
 endif
 
-BOLT_SUPPORTED=amd64
-ifneq (,$(filter $(DEB_HOST_ARCH),$(BOLT_SUPPORTED)))
+BOLT_ARCHS = amd64 arm64
+ifneq (,$(filter $(DEB_HOST_ARCH),$(BOLT_ARCHS)))
     all_packages += llvm-bolt libbolt-dev
 else
     no_packages += llvm-bolt libbolt-dev
 endif
 
 # 64bit and i386
-CLANG_RT_SUPPORTED=amd64 arm64 i386 mips64el ppc64el hurd-amd64 kfreebsd-amd64 ppc64 sparc64 riscv64 loong64
-ifneq (,$(filter $(DEB_HOST_ARCH),$(CLANG_RT_SUPPORTED)))
+CLANG_RT_ARCHS = $(ANY_ARCHS)
+ifneq (,$(filter $(DEB_HOST_ARCH),$(CLANG_RT_ARCHS)))
     #all_packages += libclang-rt-dev
 else
     no_packages += libclang-rt-dev
@@ -202,7 +209,7 @@ substvars:
 build: build-arch build-indep
 build-arch: build-stamp
 build-indep: build-stamp
-build-stamp:
+build-stamp: control-stamp
 	dh_testdir
 	touch build-stamp
 
@@ -504,6 +511,25 @@ binary-arch: build install
 
 	dh_md5sums -a $(nopkgs)
 	dh_builddeb -a $(nopkgs)
+
+control-stamp: debian/control
+debian/control: debian/control.in
+	sed \
+	    -e "s|@MULTILIB_ARCHS@|$(MULTILIB_ARCHS)|g" \
+	    -e "s|@LLDB_ARCHS@|$(LLDB_ARCHS)|g" \
+	    -e "s|@OCAML_ARCHS@|$(OCAML_ARCHS)|g" \
+	    -e "s|@OMP_ARCHS@|$(OMP_ARCHS)|g" \
+	    -e "s|@OFFLOAD_ARCHS@|$(OFFLOAD_ARCHS)|g" \
+	    -e "s|@FLANG_ARCHS@|$(FLANG_ARCHS)|g" \
+	    -e "s|@LIBC_ARCHS@|$(LIBC_ARCHS)|g" \
+	    -e "s|@LLD_ARCHS@|$(sort $(LLD_ARCHS))|g" \
+	    -e "s|@POLLY_ARCHS@|$(sort $(POLLY_ARCHS))|g" \
+	    -e "s|@LIBUNWIND_ARCHS@|$(sort $(LIBUNWIND_ARCHS))|g" \
+	    -e "s|@ANY_ARCHS@|$(sort $(ANY_ARCHS))|g" \
+	    -e "s|@LIBFUZZER_ARCHS@|$(sort $(LIBFUZZER_ARCHS))|g" \
+	    -e "s|@BOLT_ARCHS@|$(sort $(BOLT_ARCHS))|g" \
+		debian/control.in > debian/control
+
 
 binary: binary-indep binary-arch
 .PHONY: build clean binary-indep binary-arch binary install
