@@ -116,7 +116,11 @@ include /usr/share/dpkg/architecture.mk
 CV_LLVM		:= 1:$(CURRENT_VERSION)-$(REL_NO_210)
 
 distribution := $(shell lsb_release -is)
-all_packages   := llvm llvm-runtime llvm-dev clang clang-tools libclang-cpp-dev libclang-dev clang-format clang-tidy clangd python3-clang libomp-dev libc++-dev libc++abi-dev libllvm-ocaml-dev libclang-rt-dev libc++-dev-wasm32 libclang-rt-dev-wasm32 libclang-rt-dev-wasm64 flang
+all_packages   := llvm llvm-runtime llvm-dev \
+	clang clang-tools libclang-cpp-dev libclang-dev clang-format clang-tidy clangd \
+	python3-clang libomp-dev libc++-dev libc++abi-dev libllvm-ocaml-dev libclang-rt-dev \
+	libc++-dev-wasm32 libclang-rt-dev-wasm32 libclang-rt-dev-wasm64 libclang-rt-dev-win \
+	flang
 no_packages    :=
 
 EXTRA_SUPPORTED=amd64 arm64 armel armhf i386 ppc64el kfreebsd-amd64 kfreebsd-i386 s390 s390x sparc alpha hppa m68k powerpcspe ppc64 sh4 sparc64 x32 loong64

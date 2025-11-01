@@ -225,6 +225,16 @@ Description: LLVM C++ Standard library (WASI)
  This is a dependency package providing the default 32-bit WebAssembly
  System Interface.
 
+Package: libclang-rt-dev-win
+Architecture: any
+Section: libdevel
+Depends: ${shlibs:Depends}, ${misc:Depends},
+ libclang-rt-${pv:llvm}-dev-win ${reqv:llvm}
+Description: Compiler-rt - MingW 64 builtins
+ Provides the compiler-rt builtins for MingW 64
+ .
+ This is a dependency package providing the default libclang MingW 64 library.
+
 Package: liblldb-dev
 Architecture: any
 Section: libdevel
