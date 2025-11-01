@@ -1,7 +1,7 @@
 llvm-defaults (0.64) UNRELEASED; urgency=medium
 
   * Default to 21. Closes: #1110843.
-  * Add the epoch for the dependencies. Closes: #803174.
+  * Add the epoch for the dependencies. Closes: #803174, #1041246.
   * Don't build omp packages on riscv64 anymore.
   * Stop building libc++1, libc++abi1 and libomp5. These are now normal
     M-A: same library packages.
@@ -14,7 +14,7 @@ llvm-defaults (0.64) UNRELEASED; urgency=medium
   * Move asan_symbolize symlink from clang to clang-tools.
   * clang-tools: Add hwasan_symbolize symlink.
   * clang: Add symlinks for clang-cl, clang-cpp and clang-scan-deps.
-    Closes: #1100754.
+    Closes: #1100754, #1072379.
 
  -- Matthias Klose <doko@debian.org>  Tue, 28 Oct 2025 21:41:45 +0100
 
