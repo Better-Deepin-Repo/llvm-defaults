@@ -1,3 +1,12 @@
+llvm-defaults (0.65) UNRELEASED; urgency=medium
+
+  * Don't track the binaries and man pages of packages manually, but
+    build-depend on all binary packages having versioned binaries
+    and man pages and create the symlinks based on the contents of
+    the binary packages.
+
+ -- Matthias Klose <doko@debian.org>  Sun, 02 Nov 2025 11:27:40 +0100
+
 llvm-defaults (0.64) experimental; urgency=medium
 
   * Default to 21. Closes: #1110843.
