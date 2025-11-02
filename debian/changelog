@@ -4,6 +4,7 @@ llvm-defaults (0.65) UNRELEASED; urgency=medium
     build-depend on all binary packages having versioned binaries
     and man pages and create the symlinks based on the contents of
     the binary packages.
+  * Bump standards version.
 
  -- Matthias Klose <doko@debian.org>  Sun, 02 Nov 2025 11:27:40 +0100
 
