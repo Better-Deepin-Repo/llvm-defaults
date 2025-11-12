@@ -72,8 +72,8 @@ Description: C, C++ and Objective-C compiler (LLVM based), clang binary
 Package: clang-tools
 Architecture: @ANY_ARCHS@
 Depends: clang-tools-${pv:llvm} ${reqv:llvm}, ${misc:Depends}
-Breaks: clang (<< 1:21.1)
-Replaces: clang (<< 1:21.1)
+Breaks: clang (<< 1:21.1.5-1~)
+Replaces: clang (<< 1:21.1.5~)
 Multi-Arch: same
 Description: clang-based tools
  Clang project is a C, C++, Objective C and Objective C++ front-end

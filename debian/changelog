@@ -8,6 +8,7 @@ llvm-defaults (0.65) UNRELEASED; urgency=medium
   * Don't hard-code the ARCHS macros, but take them from the llvm-X.Y-dev
     package (/usr/lib/llvm-X.Y/share/debian_config.mk).
   * Require a llvm-21 1:21.1.5-3 build.
+  * clang-tools: Add breaks/replaces for clang (asan_symbolizer move).
 
  -- Matthias Klose <doko@debian.org>  Wed, 12 Nov 2025 19:34:01 +0100
 
