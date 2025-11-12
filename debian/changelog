@@ -5,8 +5,11 @@ llvm-defaults (0.65) UNRELEASED; urgency=medium
     and man pages and create the symlinks based on the contents of
     the binary packages.
   * Bump standards version.
+  * Don't hard-code the ARCHS macros, but take them from the llvm-X.Y-dev
+    package (/usr/lib/llvm-X.Y/share/debian_config.mk).
+  * Require a llvm-21 1:21.1.5-3 build.
 
- -- Matthias Klose <doko@debian.org>  Sun, 02 Nov 2025 11:27:40 +0100
+ -- Matthias Klose <doko@debian.org>  Wed, 12 Nov 2025 19:34:01 +0100
 
 llvm-defaults (0.64) experimental; urgency=medium
 

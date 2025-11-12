@@ -106,14 +106,21 @@ REL_NO_210   := $(shell expr $(VMINOR) - 0)$(REL_EXT)
 # minimum required version
 
 LV		= 21
-REQV            = (>= 1:$(LV).1.4-4)
+REQV            = (>= 1:$(LV).1.5-3)
 CURRENT_VERSION = $(LV).1.4
+
+# complete version number, including the release
+CV_LLVM		:= 1:$(CURRENT_VERSION)-$(REL_NO_210)
 
 # architecture dependent variables
 include /usr/share/dpkg/architecture.mk
 
-# complete version number, including the release
-CV_LLVM		:= 1:$(CURRENT_VERSION)-$(REL_NO_210)
+# get some build information from llvm-toolchain-$(LV)
+ifeq (,$(wildcard /usr/lib/llvm-$(LV)/share/debian_config.mk))
+  $(error file /usr/lib/llvm-$(LV)/share/debian_config.mk not found, install llvm-$(LV)-dev)
+else
+include /usr/lib/llvm-$(LV)/share/debian_config.mk
+endif
 
 distribution := $(shell lsb_release -is)
 all_packages   := llvm llvm-runtime llvm-dev \
@@ -123,22 +130,13 @@ all_packages   := llvm llvm-runtime llvm-dev \
 	flang
 no_packages    :=
 
-ANY_ARCHS := amd64 arm64 armel armhf hurd-amd64 hurd-i386 i386 loong64 m68k \
-        mipsel mips64el powerpc ppc64 ppc64el riscv64 s390x sparc sparc64 x32
-
-LLVM_BUILD_DEPS = llvm-$(LV) $(REQV), llvm-$(LV)-runtime, \
+LLVM_BUILD_DEPS = llvm-$(LV) $(REQV), llvm-$(LV)-runtime, llvm-$(LV)-dev \
 	clang-$(LV), clang-tools-$(LV), clangd-$(LV), \
-	clang-tidy-$(LV), clang-format-$(LV), lld-$(LV),
+	clang-tidy-$(LV), clang-format-$(LV), lld-$(LV), \
+	lldb-$(LV) [$(LLDB_ARCHS)], \
+	flang-$(LV) [$(FLANG_ARCHS)], \
+	bolt-$(LV) [$(BOLT_ARCHS)], \
 
-OFFLOAD_ARCHS = amd64 arm64 ppc64el
-OMP_ARCHS = $(OFFLOAD_ARCHS) loong64 mips64el
-
-HWASAN_ARCHS = amd64 arm64 riscv64 i386 x32
-
-OCAML_ARCHS = amd64 arm64 ppc64el riscv64 s390x
-
-LLDB_ARCHS = amd64 arm64 armel armhf i386 loong64 m68k ppc64el riscv64 s390x x32
-LLVM_BUILD_DEPS += lldb-$(LV) [$(LLDB_ARCHS)],
 
 ifneq (,$(filter $(DEB_HOST_ARCH),$(LLDB_ARCHS)))
     all_packages += lldb liblldb-dev python3-lldb
@@ -146,15 +144,11 @@ else
     no_packages += lldb liblldb-dev python3-lldb
 endif
 
-LLD_ARCHS = $(ANY_ARCHS)
 ifneq (,$(filter $(DEB_HOST_ARCH),$(LLD_ARCHS)))
     all_packages += lld liblld-dev
 else
     no_packages += lld liblld-dev
 endif
-
-FLANG_ARCHS = amd64 arm64 ppc64el ppc64 sparc64 riscv64 loong64
-LLVM_BUILD_DEPS += flang-$(LV) [$(FLANG_ARCHS)],
 
 ifneq (,$(filter $(DEB_HOST_ARCH),$(FLANG_ARCHS)))
     all_packages += flang libflang-dev
@@ -162,16 +156,12 @@ else
     no_packages += flang libflang-dev
 endif
 
-BOLT_ARCHS = amd64 arm64
-LLVM_BUILD_DEPS += bolt-$(LV) [$(BOLT_ARCHS)],
-
 ifneq (,$(filter $(DEB_HOST_ARCH),$(BOLT_ARCHS)))
     all_packages += llvm-bolt libbolt-dev
 else
     no_packages += llvm-bolt libbolt-dev
 endif
 
-POLLY_ARCHS = $(ANY_ARCHS)
 ifneq (,$(filter $(DEB_HOST_ARCH),$(POLLY_ARCHS)))
     all_packages += libpolly-dev
 else
@@ -179,7 +169,6 @@ else
 endif
 
 # 64bit and i386
-CLANG_RT_ARCHS = $(ANY_ARCHS)
 ifneq (,$(filter $(DEB_HOST_ARCH),$(CLANG_RT_ARCHS)))
     #all_packages += libclang-rt-dev
 else
@@ -379,21 +368,25 @@ binary-arch: build install
 control-stamp: debian/control
 debian/control: debian/control.in
 	sed \
-	    -e "s|@MULTILIB_ARCHS@|$(MULTILIB_ARCHS)|g" \
-	    -e "s|@LLDB_ARCHS@|$(LLDB_ARCHS)|g" \
-	    -e "s|@OCAML_ARCHS@|$(OCAML_ARCHS)|g" \
-	    -e "s|@OMP_ARCHS@|$(OMP_ARCHS)|g" \
-	    -e "s|@OFFLOAD_ARCHS@|$(OFFLOAD_ARCHS)|g" \
-	    -e "s|@OCAML_ARCHS@|$(OCAML_ARCHS)|g" \
-	    -e "s|@FLANG_ARCHS@|$(FLANG_ARCHS)|g" \
-	    -e "s|@LIBC_ARCHS@|$(LIBC_ARCHS)|g" \
-	    -e "s|@LLD_ARCHS@|$(sort $(LLD_ARCHS))|g" \
-	    -e "s|@POLLY_ARCHS@|$(sort $(POLLY_ARCHS))|g" \
-	    -e "s|@LIBUNWIND_ARCHS@|$(sort $(LIBUNWIND_ARCHS))|g" \
 	    -e "s|@ANY_ARCHS@|$(sort $(ANY_ARCHS))|g" \
-	    -e "s|@LIBFUZZER_ARCHS@|$(sort $(LIBFUZZER_ARCHS))|g" \
 	    -e "s|@BOLT_ARCHS@|$(sort $(BOLT_ARCHS))|g" \
-	    -e "s|@LLVM_BUILD_DEPS@|$(LLVM_BUILD_DEPS)|g" \
+	    -e "s|@CLANG_GRPC_ARCHS@|$(CLANG_GRPC_ARCHS)|g" \
+	    -e "s|@CLANG_RT_ARCHS@|$(CLANG_RT_ARCHS)|g" \
+	    -e "s|@FLANG_ARCHS@|$(FLANG_ARCHS)|g" \
+	    -e "s|@HWASAN_ARCHS@|$(HWASAN_ARCHS)|g" \
+	    -e "s|@LIBFUZZER_ARCHS@|$(sort $(LIBFUZZER_ARCHS))|g" \
+	    -e "s|@LIBUNWIND_ARCHS@|$(sort $(LIBUNWIND_ARCHS))|g" \
+	    -e "s|@LLD_ARCHS@|$(sort $(LLD_ARCHS))|g" \
+	    -e "s|@LLDB_ARCHS@|$(LLDB_ARCHS)|g" \
+	    -e "s|@LLVM_LIBC_ARCHS@|$(LLVM_LIBC_ARCHS)|g" \
+	    -e "s|@LLVM_SPIRV_ARCHS@|$(LLVM_SPIRV_ARCHS)|g" \
+	    -e "s|@MULTILIB_ARCHS@|$(MULTILIB_ARCHS)|g" \
+	    -e "s|@OCAML_ARCHS@|$(OCAML_ARCHS)|g" \
+	    -e "s|@OFFLOAD_ARCHS@|$(OFFLOAD_ARCHS)|g" \
+	    -e "s|@OMP_ARCHS@|$(OMP_ARCHS)|g" \
+	    -e "s|@OMPD_ARCHS@|$(OMPD_ARCHS)|g" \
+	    -e "s|@POLLY_ARCHS@|$(sort $(POLLY_ARCHS))|g" \
+	    -e "s|@LLVM_BUILD_DEPS@|$(strip $(LLVM_BUILD_DEPS))|g" \
 		debian/control.in > debian/control
 
 
