@@ -106,7 +106,7 @@ REL_NO_210   := $(shell expr $(VMINOR) - 0)$(REL_EXT)
 # minimum required version
 
 LV		= 21
-REQV            = (>= 1:$(LV).1.5-3)
+REQV            = (>= 1:$(LV).1.5-2)
 CURRENT_VERSION = $(LV).1.4
 
 # complete version number, including the release
@@ -366,7 +366,7 @@ binary-arch: build install
 	dh_builddeb -a $(nopkgs)
 
 control-stamp: debian/control
-debian/control: debian/control.in
+debian/control: debian/rules debian/control.in
 	sed \
 	    -e "s|@ANY_ARCHS@|$(sort $(ANY_ARCHS))|g" \
 	    -e "s|@BOLT_ARCHS@|$(sort $(BOLT_ARCHS))|g" \
