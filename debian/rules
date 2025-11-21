@@ -106,8 +106,8 @@ REL_NO_210   := $(shell expr $(VMINOR) - 0)$(REL_EXT)
 # minimum required version
 
 LV		= 21
-REQV            = (>= 1:$(LV).1.5-2)
-CURRENT_VERSION = $(LV).1.4
+REQV            = (>= 1:$(LV).1.6-1)
+CURRENT_VERSION = $(LV).1.6
 
 # complete version number, including the release
 CV_LLVM		:= 1:$(CURRENT_VERSION)-$(REL_NO_210)
