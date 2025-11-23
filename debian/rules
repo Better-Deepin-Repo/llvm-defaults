@@ -130,7 +130,7 @@ all_packages   := llvm llvm-runtime llvm-dev \
 	flang
 no_packages    :=
 
-LLVM_BUILD_DEPS = llvm-$(LV) $(REQV), llvm-$(LV)-runtime, llvm-$(LV)-dev \
+LLVM_BUILD_DEPS = llvm-$(LV) $(REQV), llvm-$(LV)-runtime, llvm-$(LV)-dev, \
 	clang-$(LV), clang-tools-$(LV), clangd-$(LV), \
 	clang-tidy-$(LV), clang-format-$(LV), lld-$(LV), \
 	lldb-$(LV) [$(LLDB_ARCHS)], \

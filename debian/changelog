@@ -9,8 +9,9 @@ llvm-defaults (0.65) UNRELEASED; urgency=medium
     package (/usr/lib/llvm-X.Y/share/debian_config.mk).
   * Require a llvm-21 1:21.1.6-1 build.
   * clang-tools: Add breaks/replaces for clang (asan_symbolizer move).
+  * Adjust breaks/replaces for clang-scan-deps move. Addresses: #1121175.
 
- -- Matthias Klose <doko@debian.org>  Fri, 21 Nov 2025 18:51:13 +0100
+ -- Matthias Klose <doko@debian.org>  Sun, 23 Nov 2025 06:03:17 +0100
 
 llvm-defaults (0.64) experimental; urgency=medium
 
