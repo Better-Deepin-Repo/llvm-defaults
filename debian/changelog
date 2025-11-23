@@ -1,9 +1,9 @@
-llvm-defaults (0.65) UNRELEASED; urgency=medium
+llvm-defaults (0.65) experimental; urgency=medium
 
   * Don't track the binaries and man pages of packages manually, but
     build-depend on all binary packages having versioned binaries
     and man pages and create the symlinks based on the contents of
-    the binary packages.
+    the binary packages. Closes: #1110754.
   * Bump standards version.
   * Don't hard-code the ARCHS macros, but take them from the llvm-X.Y-dev
     package (/usr/lib/llvm-X.Y/share/debian_config.mk).
