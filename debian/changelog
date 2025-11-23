@@ -1,3 +1,9 @@
+llvm-defaults (0.66) experimental; urgency=medium
+
+  * d/rules: Guard lldb actions with LLDB_ARCHS conditional.
+
+ -- Matthias Klose <doko@debian.org>  Sun, 23 Nov 2025 07:18:41 +0100
+
 llvm-defaults (0.65) experimental; urgency=medium
 
   * Don't track the binaries and man pages of packages manually, but

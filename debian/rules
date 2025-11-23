@@ -275,12 +275,6 @@ install: build README substvars
 	: # clang-tidy
 	$(call link_bin_and_man, clang-tidy, clang-tidy-$(LV))
 
-	: # lldb
-	$(call link_bin_and_man, lldb, lldb-$(LV))
-
-	: # lld
-	$(call link_bin_and_man, lld, lld-$(LV))
-
 	: # llvm-runtime
 	$(call link_bin_and_man, llvm-runtime, llvm-$(LV)-runtime)
 
@@ -303,6 +297,9 @@ install: build README substvars
 	done
 
 ifneq (,$(filter $(DEB_HOST_ARCH),$(LLDB_ARCHS)))
+	: # lldb
+	$(call link_bin_and_man, lldb, lldb-$(LV))
+
 	: # liblldb-dev
 	dh_installdirs -pliblldb-dev \
 		/usr/include \
@@ -316,6 +313,9 @@ ifneq (,$(filter $(DEB_HOST_ARCH),$(LLDB_ARCHS)))
 		/usr/lib/llvm-$(PV_LLVM)/lib/$$lib /usr/lib/$$lib; \
 	done
 endif
+
+	: # lld
+	$(call link_bin_and_man, lld, lld-$(LV))
 
 	: # liblld-dev
 	dh_installdirs -pliblld-dev \
