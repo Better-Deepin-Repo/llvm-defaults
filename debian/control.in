@@ -265,7 +265,7 @@ Description: Next generation, high-performance debugger
  This is a dependency package providing the default version of lldb.
 
 Package: lld
-Architecture: @ANY_ARCHS@
+Architecture: @LLD_ARCHS@
 Depends: lld-${pv:llvm} ${reqv:llvm}, ${misc:Depends}
 Pre-Depends: ${misc:Pre-Depends}
 Multi-Arch: same
