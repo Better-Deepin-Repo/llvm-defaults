@@ -315,6 +315,7 @@ ifneq (,$(filter $(DEB_HOST_ARCH),$(LLDB_ARCHS)))
 	done
 endif
 
+ifneq (,$(filter $(DEB_HOST_ARCH),$(LLD_ARCHS)))
 	: # lld
 	$(call link_bin_and_man, lld, lld-$(LV))
 
@@ -322,7 +323,8 @@ endif
 	dh_installdirs -pliblld-dev \
 		/usr/include
 	dh_link -pliblld-dev \
-		/usr/lib/llvm-$(PV_LLVM)/include/lld /usr/include/lld \
+		/usr/lib/llvm-$(PV_LLVM)/include/lld /usr/include/lld
+endif
 
 ifneq (,$(filter $(DEB_HOST_ARCH),$(OCAML_ARCHS)))
 	: # libllvm-ocaml-dev
