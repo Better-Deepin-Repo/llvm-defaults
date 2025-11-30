@@ -1,8 +1,8 @@
-llvm-defaults (0.67) UNRELEASED; urgency=medium
+llvm-defaults (0.67) experimental; urgency=medium
 
   * Limit lld build to LLD_ARCHS.
 
- -- Matthias Klose <doko@debian.org>  Tue, 25 Nov 2025 10:31:48 +0100
+ -- Matthias Klose <doko@debian.org>  Sun, 30 Nov 2025 08:23:24 +0100
 
 llvm-defaults (0.66) experimental; urgency=medium
 
