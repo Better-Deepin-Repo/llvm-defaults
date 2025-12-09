@@ -1,3 +1,9 @@
+llvm-defaults (0.69) unstable; urgency=medium
+
+  * Upload to unstable.
+
+ -- Matthias Klose <doko@debian.org>  Tue, 09 Dec 2025 23:27:25 +0100
+
 llvm-defaults (0.68) experimental; urgency=medium
 
   * Limit lld build to LLD_ARCHS.
