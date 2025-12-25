@@ -67,7 +67,6 @@ llvm-defaults (0.64) experimental; urgency=medium
   * Still TODO: update for new/removed binaries and man pages.
 
  -- Matthias Klose <doko@debian.org>  Sat, 01 Nov 2025 11:55:26 +0100
->>>>>>> @{-1}
 
 llvm-defaults (0.63) unstable; urgency=medium
 
