@@ -2,6 +2,7 @@ llvm-defaults (0.70) UNRELEASED; urgency=medium
 
   * Add lldb-dap symlimk
     Thanks Norbert Lange for the patch
+  * Fix Vcs-Git
 
   [ Kasper Kantz ]
   * Fix the default lldb selection on riscv64
