@@ -32,6 +32,16 @@ Description: Modular compiler and toolchain technologies, bytecode interpreter
  .
  This is a dependency package providing the default bytecode interpreter.
 
+Package: llvm-tools
+Architecture: @ANY_ARCHS@
+Depends: llvm-runtime (= ${binary:Version}), llvm-${pv:llvm}-tools ${reqv:llvm}, ${misc:Depends}
+Description: Modular compiler and toolchain technologies
+ LLVM is a collection of libraries and tools that make it easy to build
+ compilers, optimizers, just-in-time code generators, and many other
+ compiler-related programs.
+ .
+ This is a dependency package providing the default llvm package.
+
 Package: llvm-dev
 Architecture: @ANY_ARCHS@
 Depends: llvm-runtime (= ${binary:Version}), llvm-${pv:llvm}-dev ${reqv:llvm}, ${misc:Depends}, llvm

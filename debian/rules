@@ -123,14 +123,14 @@ include /usr/lib/llvm-$(LV)/share/debian_config.mk
 endif
 
 distribution := $(shell lsb_release -is)
-all_packages   := llvm llvm-runtime llvm-dev \
+all_packages   := llvm llvm-runtime llvm-tools llvm-dev \
 	clang clang-tools libclang-cpp-dev libclang-dev clang-format clang-tidy clangd \
 	python3-clang libomp-dev libc++-dev libc++abi-dev libllvm-ocaml-dev libclang-rt-dev \
 	libc++-dev-wasm32 libclang-rt-dev-wasm32 libclang-rt-dev-wasm64 libclang-rt-dev-win \
 	flang
 no_packages    :=
 
-LLVM_BUILD_DEPS = llvm-$(LV) $(REQV), llvm-$(LV)-runtime, llvm-$(LV)-dev, \
+LLVM_BUILD_DEPS = llvm-$(LV) $(REQV), llvm-$(LV)-runtime, llvm-$(LV)-tools, llvm-$(LV)-dev, \
 	clang-$(LV), clang-tools-$(LV), clangd-$(LV), \
 	clang-tidy-$(LV), clang-format-$(LV), \
         lld-$(LV) [$(LLD_ARCHS)], \
@@ -278,6 +278,21 @@ install: build README substvars
 
 	: # llvm-runtime
 	$(call link_bin_and_man, llvm-runtime, llvm-$(LV)-runtime)
+
+	: # llvm-tools
+	$(call link_bin_and_man, llvm-tools, llvm-$(LV)-tools)
+	: # but use not so generic names for those ...
+	rm -f debian/llvm-tools/usr/bin/count
+	rm -f debian/llvm-tools/usr/bin/not
+	rm -f debian/llvm-tools/usr/bin/lit
+	rm -f debian/llvm-tools/usr/bin/split-file
+	rm -f debian/llvm-tools/usr/bin/yaml-bench
+	dh_link -pllvm-tools \
+		/usr/bin/count-$(PV_LLVM) /usr/bin/llvm-count \
+		/usr/bin/lit-$(PV_LLVM) /usr/bin/llvm-lit \
+		/usr/bin/not-$(PV_LLVM) /usr/bin/llvm-not \
+		/usr/bin/split-file-$(PV_LLVM) /usr/bin/llvm-split-file \
+		/usr/bin/yaml-bench-$(PV_LLVM) /usr/bin/llvm-yaml-bench
 
 	: # llvm-dev
 	dh_installdirs -pllvm-dev \
