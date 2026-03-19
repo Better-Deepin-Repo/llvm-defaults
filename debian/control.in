@@ -40,7 +40,7 @@ Description: Modular compiler and toolchain technologies
  compilers, optimizers, just-in-time code generators, and many other
  compiler-related programs.
  .
- This is a dependency package providing the default llvm package.
+ This is a dependency package providing the default llvm-tools package.
 
 Package: llvm-dev
 Architecture: @ANY_ARCHS@
