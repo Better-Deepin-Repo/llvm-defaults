@@ -1,10 +1,10 @@
-llvm-defaults (0.71) UNRELEASED; urgency=medium
+llvm-defaults (0.71) unstable; urgency=medium
 
   * Build a llvm-tools package.
   * Install binaries with a llvm- prefix, if they don't already have one.
   * Bump standards version.
 
- -- Matthias Klose <doko@debian.org>  Thu, 19 Mar 2026 08:26:07 +0100
+ -- Matthias Klose <doko@debian.org>  Thu, 19 Mar 2026 18:29:55 +0100
 
 llvm-defaults (0.70) unstable; urgency=medium
 
