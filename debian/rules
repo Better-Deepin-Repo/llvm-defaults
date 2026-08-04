@@ -103,14 +103,17 @@ REL_NO_200   := $(shell expr $(VMINOR) - 0)$(REL_EXT)
 # llvm-defaults 0.63 is the first version for 21.
 REL_NO_210   := $(shell expr $(VMINOR) - 0)$(REL_EXT)
 
+# llvm-defaults 0.72~exp1 is the first version for 23.
+REL_NO_230   := $(shell expr $(VMINOR) - 0)$(REL_EXT)
+
 # minimum required version
 
-LV		= 21
-REQV            = (>= 1:$(LV).1.6-1)
-CURRENT_VERSION = $(LV).1.6
+LV		= 23
+REQV            = (>= 1:$(LV)~)
+CURRENT_VERSION = $(LV).0
 
 # complete version number, including the release
-CV_LLVM		:= 1:$(CURRENT_VERSION)-$(REL_NO_210)
+CV_LLVM		:= 1:$(CURRENT_VERSION)-$(REL_NO_230)
 
 # architecture dependent variables
 include /usr/share/dpkg/architecture.mk
