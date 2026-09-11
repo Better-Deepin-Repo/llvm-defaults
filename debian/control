@@ -7,7 +7,7 @@ Uploaders: Matthias Klose <doko@debian.org>, Sylvestre Ledru <sylvestre@debian.o
 Standards-Version: 4.7.3
 Rules-Requires-Root: no
 Build-Depends: debhelper-compat (= 13), dpkg-dev (>= 1.13.9), lsb-release,
- m4, llvm-23 (>= 1:23~), llvm-23-runtime, llvm-23-tools, llvm-23-dev, clang-23, clang-tools-23, clangd-23, clang-tidy-23, clang-format-23, lld-23 [amd64 arm64 armel armhf i386 mipsel mips64el ppc64el s390x sparc m68k ppc64 sparc64 x32 riscv64 loong64], lldb-23 [amd64 arm64 armel armhf i386 loong64 m68k ppc64el riscv64 s390x x32], flang-23 [amd64 arm64 ppc64el ppc64 sparc64 riscv64 loong64], bolt-23 [amd64 arm64],
+ m4, llvm-23 (>= 1:23~), llvm-23-runtime, llvm-23-tools, llvm-23-dev, clang-23, clang-tools-23, clangd-23, clang-tidy-23, clang-format-23, lld-23 [amd64 arm64 armel armhf i386 mipsel mips64el ppc64el s390x sparc m68k ppc64 sparc64 x32 riscv64 loong64], lldb-23 [amd64 arm64 armel armhf i386 loong64 m68k ppc64el riscv64 s390x x32], flang-23 [amd64 arm64 ppc64el ppc64 sparc64 riscv64 loong64], bolt-23 [amd64 arm64], libfuzzer-23-dev [amd64 arm64 armel armhf i386 loong64 m68k mipsel mips64el powerpc ppc64 ppc64el riscv64 s390x sparc sparc64 x32],
 Vcs-Git: https://salsa.debian.org/pkg-llvm-team/llvm-defaults.git -b snapshot
 Vcs-Browser: https://salsa.debian.org/pkg-llvm-team/llvm-defaults/
 
@@ -443,3 +443,14 @@ Description: High-level loop and data-locality optimizer
  to analyze and optimize the memory access pattern of a program
  .
  This is a dependency package providing the default libbolt-dev package.
+
+Package: libfuzzer-dev
+Architecture: amd64 arm64 armel armhf i386 loong64 m68k mips64el mipsel powerpc ppc64 ppc64el riscv64 s390x sparc sparc64 x32
+Section: libdevel
+Depends: ${shlibs:Depends}, ${misc:Depends},
+ libfuzzer-${pv:llvm}-dev ${reqv:llvm}
+Description: Library for coverage-guided fuzz testing
+ LibFuzzer is a library for in-process, coverage-guided, evolutionary fuzzing
+ of other libraries.
+ .
+ This is a dependency package providing the default libfuzzer-dev package.

@@ -130,7 +130,7 @@ all_packages   := llvm llvm-runtime llvm-tools llvm-dev \
 	clang clang-tools libclang-cpp-dev libclang-dev clang-format clang-tidy clangd \
 	python3-clang libomp-dev libc++-dev libc++abi-dev libllvm-ocaml-dev libclang-rt-dev \
 	libc++-dev-wasm32 libclang-rt-dev-wasm32 libclang-rt-dev-wasm64 libclang-rt-dev-win \
-	flang
+	flang libfuzzer-dev
 no_packages    :=
 
 LLVM_BUILD_DEPS = llvm-$(LV) $(REQV), llvm-$(LV)-runtime, llvm-$(LV)-tools, llvm-$(LV)-dev, \
@@ -140,6 +140,7 @@ LLVM_BUILD_DEPS = llvm-$(LV) $(REQV), llvm-$(LV)-runtime, llvm-$(LV)-tools, llvm
 	lldb-$(LV) [$(LLDB_ARCHS)], \
 	flang-$(LV) [$(FLANG_ARCHS)], \
 	bolt-$(LV) [$(BOLT_ARCHS)], \
+	libfuzzer-$(LV)-dev [$(LIBFUZZER_ARCHS)], \
 
 
 ifneq (,$(filter $(DEB_HOST_ARCH),$(LLDB_ARCHS)))
@@ -170,6 +171,12 @@ ifneq (,$(filter $(DEB_HOST_ARCH),$(POLLY_ARCHS)))
     all_packages += libpolly-dev
 else
     no_packages += libpolly-dev
+endif
+
+ifneq (,$(filter $(DEB_HOST_ARCH),$(LIBFUZZER_ARCHS)))
+    all_packages += libfuzzer-dev
+else
+    no_packages += libfuzzer-dev
 endif
 
 # 64bit and i386
@@ -362,6 +369,13 @@ ifneq (,$(filter $(DEB_HOST_ARCH),$(BOLT_ARCHS)))
 	$(call link_bin_and_man, llvm-bolt, bolt-$(LV))
 endif
 
+ifneq (,$(filter $(DEB_HOST_ARCH),$(LIBFUZZER_ARCHS)))
+	: # libfuzzer-dev
+	dh_installdirs -plibfuzzer-dev \
+		/usr/include /usr/lib
+	dh_link -plibfuzzer-dev \
+		/usr/lib/llvm-$(PV_LLVM)/lib/libFuzzer.a /usr/lib/libFuzzer.a
+endif
 
 nopkgs := $(foreach p, $(no_packages),-N$(p))
 

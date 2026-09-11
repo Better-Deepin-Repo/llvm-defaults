@@ -443,3 +443,14 @@ Description: High-level loop and data-locality optimizer
  to analyze and optimize the memory access pattern of a program
  .
  This is a dependency package providing the default libbolt-dev package.
+
+Package: libfuzzer-dev
+Architecture: @LIBFUZZER_ARCHS@
+Section: libdevel
+Depends: ${shlibs:Depends}, ${misc:Depends},
+ libfuzzer-${pv:llvm}-dev ${reqv:llvm}
+Description: Library for coverage-guided fuzz testing
+ LibFuzzer is a library for in-process, coverage-guided, evolutionary fuzzing
+ of other libraries.
+ .
+ This is a dependency package providing the default libfuzzer-dev package.
