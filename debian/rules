@@ -106,14 +106,24 @@ REL_NO_210   := $(shell expr $(VMINOR) - 0)$(REL_EXT)
 # llvm-defaults 0.72~exp1 is the first version for 23.
 REL_NO_230   := $(shell expr $(VMINOR) - 0)$(REL_EXT)
 
+# llvm-defaults 0.74~exp1 is the first version for 23.
+REL_NO_231   := $(shell expr $(VMINOR) - 73)$(REL_EXT)
+
 # minimum required version
 
 LV		= 23
-REQV            = (>= 1:$(LV)~)
-CURRENT_VERSION = $(LV).0
+REQV            = (>= 1:$(LV).1.1-2)
+CURRENT_VERSION = $(LV).1
 
 # complete version number, including the release
-CV_LLVM		:= 1:$(CURRENT_VERSION)-$(REL_NO_230)
+CV_LLVM		:= 1:$(CURRENT_VERSION)-$(REL_NO_231)
+
+VMAJOR	:= $(shell echo $(DEB_VERSION) | awk -F. '{print $$1}')
+VMINOR	:= $(shell echo $(DEB_VERSION) | awk -F. '{print $$2}' | sed -e 's/\([0-9]*\).*/\1/')
+REL_EXT	:= $(shell echo $(DEB_VERSION) | sed -e 's/^$(VMAJOR)\.$(VMINOR)//')
+
+version-info:
+	@echo "versions: $(VMAJOR) / $(VMINOR) / $(REL_EXT) / $(REQV) / $(CURRENT_VERSION) / $(CV_LLVM)"
 
 # architecture dependent variables
 include /usr/share/dpkg/architecture.mk
@@ -401,7 +411,7 @@ binary-arch: build install
 	dh_builddeb -a $(nopkgs)
 
 control-stamp: debian/control
-debian/control: debian/rules debian/control.in
+debian/control: version-info debian/rules debian/control.in
 	sed \
 	    -e "s|@ANY_ARCHS@|$(sort $(ANY_ARCHS))|g" \
 	    -e "s|@BOLT_ARCHS@|$(sort $(BOLT_ARCHS))|g" \
