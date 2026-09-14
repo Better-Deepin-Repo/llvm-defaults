@@ -1,4 +1,4 @@
-llvm-defaults (0.74~exp1) UNRELEASED; urgency=medium
+llvm-defaults (0.74~exp1) experimental; urgency=medium
 
   * Build a libfuzzer-dev package, to be able to remove the versioned
     libfuzzer-N-dev build dependency in vboot-utils.
@@ -8,7 +8,7 @@ llvm-defaults (0.74~exp1) UNRELEASED; urgency=medium
   * libfuzzer-dev: Depend on libclang-rt-dev.
   * Stop shipping the libFuzzer.a symlink.
 
- -- Matthias Klose <doko@debian.org>  Fri, 11 Sep 2026 16:16:48 +0200
+ -- Matthias Klose <doko@debian.org>  Mon, 14 Sep 2026 11:12:34 +0200
 
 llvm-defaults (0.72~exp1) experimental; urgency=medium
 
