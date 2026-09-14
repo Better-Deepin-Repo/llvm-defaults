@@ -381,10 +381,6 @@ endif
 
 ifneq (,$(filter $(DEB_HOST_ARCH),$(LIBFUZZER_ARCHS)))
 	: # libfuzzer-dev
-	dh_installdirs -plibfuzzer-dev \
-		/usr/include /usr/lib
-	dh_link -plibfuzzer-dev \
-		/usr/lib/llvm-$(PV_LLVM)/lib/libFuzzer.a /usr/lib/libFuzzer.a
 endif
 
 nopkgs := $(foreach p, $(no_packages),-N$(p))

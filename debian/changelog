@@ -5,6 +5,8 @@ llvm-defaults (0.74~exp1) UNRELEASED; urgency=medium
   * Reset the debian revision for each upstream version, e.g. 0.74 starts
     for 23.1.1 with 1:23.1-1.
   * Bump standards version.
+  * libfuzzer-dev: Depend on libclang-rt-dev.
+  * Stop shipping the libFuzzer.a symlink.
 
  -- Matthias Klose <doko@debian.org>  Fri, 11 Sep 2026 16:16:48 +0200
 

@@ -447,7 +447,7 @@ Description: High-level loop and data-locality optimizer
 Package: libfuzzer-dev
 Architecture: @LIBFUZZER_ARCHS@
 Section: libdevel
-Depends: ${shlibs:Depends}, ${misc:Depends},
+Depends: ${shlibs:Depends}, ${misc:Depends}, libclang-rt-dev
  libfuzzer-${pv:llvm}-dev ${reqv:llvm}
 Description: Library for coverage-guided fuzz testing
  LibFuzzer is a library for in-process, coverage-guided, evolutionary fuzzing
